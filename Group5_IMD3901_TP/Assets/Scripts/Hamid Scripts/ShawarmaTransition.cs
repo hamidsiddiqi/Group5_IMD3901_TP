@@ -5,11 +5,16 @@ public class ShawarmaTransition : MonoBehaviour
 {
     public float speed = 5f;
     public float mouseSensitivity = 2f;
+    public float interactDistance = 3f;
 
     public CharacterController controller;
     public Transform cameraTransform;
 
+    public Transform shawarma;
+    public Transform holdPoint;
+
     float xRotation = 0f;
+    private bool isHolding = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,14 +51,33 @@ public class ShawarmaTransition : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
 
-void UpdateShawarama()
-{
+    }
 
+    void GrabShawarma()
+    {
+        isHolding = true;
+        // Parent the shawarma to the hold point
+        shawarma.SetParent(holdPoint);
+        // Reset local position/rotation so it sits perfectly in the hold point
+        shawarma.localPosition = Vector3.zero;
+        shawarma.localRotation = Quaternion.identity;
 
+        // If your shawarma has a Rigidbody, disable gravity so it doesn't fall while held
+        if (shawarma.GetComponent<Rigidbody>())
+        {
+            shawarma.GetComponent<Rigidbody>().isKinematic = true;
+        }
+    }
 
+    void DropShawarma()
+    {
+        isHolding = false;
+        shawarma.SetParent(null); // Unparent
 
-}
-
+        if (shawarma.GetComponent<Rigidbody>())
+        {
+            shawarma.GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
 }
 
