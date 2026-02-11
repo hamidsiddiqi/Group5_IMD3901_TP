@@ -55,7 +55,6 @@ public class MilesInteract : MonoBehaviour
             knife.transform.position = rightHand.transform.position; 
             Scooper.transform.position = leftHand.transform.position;
 
-
         }
 
 
