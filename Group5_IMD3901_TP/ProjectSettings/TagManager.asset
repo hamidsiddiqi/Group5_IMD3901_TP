@@ -4,9 +4,15 @@
 TagManager:
   serializedVersion: 3
   tags:
+<<<<<<< Updated upstream
   - Interactable
   - Knife&Scoop
   - skewer
+=======
+  - Container
+  - Undefined
+  - Interactable
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
