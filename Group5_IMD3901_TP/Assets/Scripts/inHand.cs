@@ -7,6 +7,8 @@ public class inHand : MonoBehaviour
     public bool isHolding;
     public GameObject leftHand;
     public GameObject rightHand;
+    public bool isIngred;
+    public Camera mainCamera;
 
 
 
@@ -15,6 +17,7 @@ public class inHand : MonoBehaviour
     {
         objInHand = null;
         isHolding = false;
+        isIngred = false;
     }
 
     // Update is called once per frame
@@ -32,9 +35,23 @@ public class inHand : MonoBehaviour
         {
             return;
         }
+
         objInHand.transform.SetParent(null);
-        objInHand=null;
+        objInHand.GetComponent<Rigidbody>().isKinematic = false;
+
+        if (isIngred)
+        {
+            if (objInHand.tag == "wrap")
+            {
+                objInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            }
+            objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*5f);
+
+        }
+
+        objInHand =null;
         isHolding=false;
+        isIngred=false;
     }
 
     public void pickUpObj(GameObject newObject)
@@ -45,8 +62,10 @@ public class inHand : MonoBehaviour
         }
         isHolding=true;
         objInHand= newObject;
-        objInHand.transform.SetParent(rightHand.transform,false);   
+        objInHand.transform.SetParent(rightHand.transform,false);
+        objInHand.GetComponent<Rigidbody>().isKinematic = true;
 
     }
+
 
 }

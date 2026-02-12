@@ -8,6 +8,7 @@ TagManager:
   - Knife&Scoop
   - skewer
   - wrap
+  - Container
   layers:
   - Default
   - TransparentFX

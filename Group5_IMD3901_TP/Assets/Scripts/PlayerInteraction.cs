@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
     public Camera playerCamera;
     public CrosshairUI crosshairUIScript;
     public inHand hand;
+    public pickIngredient ingredient;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +36,10 @@ public class PlayerInteraction : MonoBehaviour
                     if (hit.collider.CompareTag("Interactable"))
                     {
                         hand.pickUpObj(hit.collider.gameObject);
+                    }
+                    else if (hit.collider.CompareTag("Container"))
+                    {
+                        ingredient.grabIngredient(hit.collider.gameObject);
                     }
                 }
             }

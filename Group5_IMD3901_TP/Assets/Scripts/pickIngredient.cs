@@ -7,6 +7,7 @@ public class pickIngredient : MonoBehaviour
     public GameObject pickle;
     public GameObject pita;
     public GameObject hand;
+    public inHand grabHand;
 
 
 
@@ -25,21 +26,24 @@ public class pickIngredient : MonoBehaviour
 
     public void grabIngredient(GameObject container)
     {
+        GameObject newFood = null;
         if( container.name == "onion")
         {
-            Instantiate(onion, hand.transform);
+            newFood = Instantiate(onion, hand.transform);
         }
         else if (container.name == "tomato"){
-            Instantiate(tomato, hand.transform);
+            newFood = Instantiate(tomato, hand.transform);
         }
         else if (container.name == "pickle")
         {
-            Instantiate(pickle, hand.transform);
+            newFood = Instantiate(pickle, hand.transform);
         }
-        else if (container.name == "pita")
+        else if (container.name == "pitaPile")
         {
-            Instantiate(pita, hand.transform);
+            newFood = Instantiate(pita, hand.transform);
         }
+        grabHand.isIngred = true;
+        grabHand.pickUpObj(newFood);
 
     }
 
