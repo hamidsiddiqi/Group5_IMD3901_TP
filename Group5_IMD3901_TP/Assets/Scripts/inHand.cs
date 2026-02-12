@@ -45,6 +45,9 @@ public class inHand : MonoBehaviour
             {
                 objInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             }
+            Vector3 newPos = objInHand.transform.position;
+            newPos.y += 0.5f;
+            objInHand.transform.position = newPos;
             objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*5f);
 
         }
