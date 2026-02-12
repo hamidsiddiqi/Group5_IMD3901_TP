@@ -51,18 +51,64 @@ public class ShawarmaTransition : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
 
+
+        
+        
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            Debug.Log("E was pressed!"); // Check the Console for this!
+
+            if (!isHolding)
+            {
+                float distance = Vector3.Distance(transform.position, shawarma.position);
+                Debug.Log("Distance to Shawarma: " + distance); // This tells us if you're close enough
+
+                if (distance <= interactDistance)
+                {
+                    GrabShawarma();
+                }
+                else
+                {
+                    Debug.Log("Too far away! Increase Interact Distance.");
+                }
+            }
+            else
+            {
+                DropShawarma();
+            }
+        }
+
+
+
+
     }
+
+    //void GrabShawarma()
+    //{
+    //    isHolding = true;
+    //    // Parent the shawarma to the hold point
+    //    shawarma.SetParent(holdPoint);
+    //    // Reset local position/rotation so it sits perfectly in the hold point
+    //    shawarma.localPosition = Vector3.zero;
+    //    shawarma.localRotation = Quaternion.identity;
+
+    //    // If your shawarma has a Rigidbody, disable gravity so it doesn't fall while held
+    //    if (shawarma.GetComponent<Rigidbody>())
+    //    {
+    //        shawarma.GetComponent<Rigidbody>().isKinematic = true;
+    //    }
+    //}
 
     void GrabShawarma()
     {
         isHolding = true;
-        // Parent the shawarma to the hold point
         shawarma.SetParent(holdPoint);
-        // Reset local position/rotation so it sits perfectly in the hold point
-        shawarma.localPosition = Vector3.zero;
-        shawarma.localRotation = Quaternion.identity;
 
-        // If your shawarma has a Rigidbody, disable gravity so it doesn't fall while held
+        // Instead of Vector3.zero, let's give it a slight offset 
+        // so it sits nicely in the bottom right of the screen
+        shawarma.localPosition = new Vector3(0f, 0.2f, 1.8f);
+        shawarma.localRotation = Quaternion.Euler(90, 0, 0); // Rotates it to look side-ways
+
         if (shawarma.GetComponent<Rigidbody>())
         {
             shawarma.GetComponent<Rigidbody>().isKinematic = true;
