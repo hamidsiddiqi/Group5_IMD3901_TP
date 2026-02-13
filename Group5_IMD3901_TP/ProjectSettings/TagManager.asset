@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Interactable
-  - Knife&Scoop
   - skewer
   - wrap
   - Container
+  - Knife&Scooper
+  - meat
   layers:
   - Default
   - TransparentFX
