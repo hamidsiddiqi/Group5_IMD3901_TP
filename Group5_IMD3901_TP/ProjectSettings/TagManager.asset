@@ -10,6 +10,8 @@ TagManager:
   - Container
   - Knife&Scooper
   - meat
+  - customer
+  - scooper
   layers:
   - Default
   - TransparentFX

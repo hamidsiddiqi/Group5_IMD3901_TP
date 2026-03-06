@@ -3,13 +3,16 @@ using UnityEngine.UIElements;
 
 public class inHand : MonoBehaviour
 {
-    GameObject objInHand;
+    public GameObject objInHand;
     public bool isHolding;
     public GameObject leftHand;
     public GameObject rightHand;
     public bool isIngred;
     public Camera mainCamera;
+    public GameObject customer;
 
+    public GameObject knife;
+    public GameObject Scooper;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,9 +26,23 @@ public class inHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         if (objInHand != null)
         {
-            objInHand.transform.position = rightHand.transform.position;
+
+            if (objInHand.tag == "scooper")
+            {
+                knife.transform.position = rightHand.transform.position;
+                knife.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                Scooper.transform.position = leftHand.transform.position;
+            }
+            else
+            {
+                objInHand.transform.position = rightHand.transform.position;
+            }
+                
         }
     }
 
@@ -70,5 +87,27 @@ public class inHand : MonoBehaviour
 
     }
 
+    public void GiveShawarma()
+    {
+        Debug.Log("Shawarma delivered to customer!");
+        isHolding = false;
+
+        // Parent it to the customer so they "hold" it
+        objInHand.transform.SetParent(customer.transform);
+
+        // Position it in front of the customer capsule
+        objInHand.transform.localPosition = new Vector3(0f, 0.5f, 0.6f);
+        objInHand.transform.localRotation = Quaternion.identity;
+
+        // Keep it kinematic so it doesn't fall off the customer
+        if (objInHand.GetComponent<Rigidbody>())
+        {
+            objInHand.GetComponent<Rigidbody>().isKinematic = true;
+        }
+
+        objInHand = null;
+        isHolding = false;
+        isIngred = false;
+    }
 
 }

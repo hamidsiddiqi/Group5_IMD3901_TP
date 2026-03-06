@@ -32,7 +32,7 @@ public class PaniniGrill : MonoBehaviour
                     playerHand.rightHand.transform.position,
                     transform.position
                 );
-                Debug.Log("Distance to grill: " + dist); 
+                //Debug.Log("Distance to grill: " + dist); 
             }
         }
         // Check if player is holding wrap near grill
