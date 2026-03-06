@@ -23,9 +23,9 @@ public class UseItem : MonoBehaviour
                     if (sauce != null)
                     {
                         // Get the wrap from right hand
-                        if (hand.rightHand.transform.childCount > 0)
+                        if (hand.hand.transform.childCount > 0)
                         {
-                            GameObject heldObj = hand.rightHand.transform.GetChild(0).gameObject;
+                            GameObject heldObj = hand.hand.transform.GetChild(0).gameObject;
                             if (heldObj.GetComponent<WrapObject>() != null)
                             {
                                 sauce.ApplySauce(heldObj);

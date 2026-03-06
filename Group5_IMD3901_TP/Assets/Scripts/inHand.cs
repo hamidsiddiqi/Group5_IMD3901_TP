@@ -7,6 +7,7 @@ public class inHand : MonoBehaviour
     public bool isHolding;
     public GameObject leftHand;
     public GameObject rightHand;
+    public GameObject hand;
     public bool isIngred;
     public Camera mainCamera;
     public GameObject customer;
@@ -26,21 +27,21 @@ public class inHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
+        //if you have smth in your hand
         if (objInHand != null)
         {
-
+            //if its a scooper
             if (objInHand.tag == "scooper")
             {
+                //move the knife to right hand, scooper to left
                 knife.transform.position = rightHand.transform.position;
                 knife.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
                 Scooper.transform.position = leftHand.transform.position;
             }
+            //any other thing put in the middle
             else
             {
-                objInHand.transform.position = rightHand.transform.position;
+                objInHand.transform.position = hand.transform.position;
             }
                 
         }
@@ -48,20 +49,26 @@ public class inHand : MonoBehaviour
 
     public void dropObj()
     {
+        //if object is empty leave the function
         if (objInHand == null)
         {
             return;
         }
 
+        //unparent the object and make kinematic false
         objInHand.transform.SetParent(null);
         objInHand.GetComponent<Rigidbody>().isKinematic = false;
 
+        //if it is an ingredient that you are holding
         if (isIngred)
         {
+            //if its a wrap don't make it rotate 
             if (objInHand.tag == "wrap")
             {
                 objInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             }
+
+            //have it move from hand and shoot slightly forward
             Vector3 newPos = objInHand.transform.position;
             newPos.y += 0.5f;
             objInHand.transform.position = newPos;
@@ -69,6 +76,7 @@ public class inHand : MonoBehaviour
 
         }
 
+        //set variables back to nothing in hand
         objInHand =null;
         isHolding=false;
         isIngred=false;
@@ -76,22 +84,24 @@ public class inHand : MonoBehaviour
 
     public void pickUpObj(GameObject newObject)
     {
+        //if you have smth in hand leave function
         if(objInHand != null)
         {
             return;
         }
+
+        //set variables 
         isHolding=true;
         objInHand= newObject;
-        objInHand.transform.SetParent(rightHand.transform,false);
+
+        //parent the object to hand and enable kinematics
+        objInHand.transform.SetParent(hand.transform,false);
         objInHand.GetComponent<Rigidbody>().isKinematic = true;
 
     }
 
     public void GiveShawarma()
     {
-        Debug.Log("Shawarma delivered to customer!");
-        isHolding = false;
-
         // Parent it to the customer so they "hold" it
         objInHand.transform.SetParent(customer.transform);
 
@@ -105,6 +115,7 @@ public class inHand : MonoBehaviour
             objInHand.GetComponent<Rigidbody>().isKinematic = true;
         }
 
+        //reset variables 
         objInHand = null;
         isHolding = false;
         isIngred = false;

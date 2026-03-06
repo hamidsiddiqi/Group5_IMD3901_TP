@@ -570,6 +570,7 @@ MonoBehaviour:
   isHolding: 0
   leftHand: {fileID: 260630831}
   rightHand: {fileID: 260630830}
+  hand: {fileID: 260630829}
   isIngred: 0
   mainCamera: {fileID: 238778940}
   customer: {fileID: 1071781558}

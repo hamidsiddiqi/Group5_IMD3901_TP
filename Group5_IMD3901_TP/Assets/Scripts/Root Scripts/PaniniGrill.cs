@@ -26,10 +26,10 @@ public class PaniniGrill : MonoBehaviour
 
         if (playerHand.isHolding)
         {
-            if (playerHand.rightHand.transform.childCount > 0)
+            if (playerHand.hand.transform.childCount > 0)
             {
                 float dist = Vector3.Distance(
-                    playerHand.rightHand.transform.position,
+                    playerHand.hand.transform.position,
                     transform.position
                 );
                 //Debug.Log("Distance to grill: " + dist); 
@@ -39,14 +39,14 @@ public class PaniniGrill : MonoBehaviour
         if (!isCooking && playerHand.isHolding)
         {
             // Check if held object is a wrap
-            if (playerHand.rightHand.transform.childCount > 0)
+            if (playerHand.hand.transform.childCount > 0)
             {
-                GameObject heldObj = playerHand.rightHand.transform.GetChild(0).gameObject;
+                GameObject heldObj = playerHand.hand.transform.GetChild(0).gameObject;
                 WrapObject wrap = heldObj.GetComponent<WrapObject>();
 
                 // Check if hand is close to grill
                 float dist = Vector3.Distance(
-                    playerHand.rightHand.transform.position,
+                    playerHand.hand.transform.position,
                     transform.position
                 );
 

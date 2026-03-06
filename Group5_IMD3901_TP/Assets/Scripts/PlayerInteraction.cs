@@ -20,51 +20,54 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //makes a ray from camera forward
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
+        //did you hit the e key
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
+            //checks if there is smth in the hand
             if (hand.isHolding)
             {
+                //see what our ray cast is hitting
                 if (Physics.Raycast(ray, out hit, interactRange))
                 {
+                    //if we are hitting the customer we need to see if we have the wrap
                     if (hit.collider.CompareTag("customer"))
                     {
-                        Debug.Log("hit customer");
-                        WrapObject isWrap = hand.objInHand.GetComponent<WrapObject>();
+                        //checks if there is a wrap script
+                        WrapObject isWrap = hand.objInHand.GetComponent<WrapObject>();                       
                         if (isWrap != null)
                         {
+                            //give shawarma to customer
                             hand.GiveShawarma();
-                            Debug.Log("is given");
                             return;
                         }
                     }
                 }
 
+                //if you arent hitting the customer and holding a wrap then drop item
                 hand.dropObj();
-                Debug.Log("drop");
             }
+
+            //if you arentt holding somethingg
             else
             {
+                //check what our raycast is hitting
                 if (Physics.Raycast(ray, out hit, interactRange))
                 {
+                    //hitting smth interactable then pick it up
                     if (hit.collider.CompareTag("Interactable"))
                     {
                         hand.pickUpObj(hit.collider.gameObject);
                     }
+                    //hitting a container make an instance of that food and grab it
                     else if (hit.collider.CompareTag("Container"))
                     {
                         ingredient.grabIngredient(hit.collider.gameObject);
                     }
-                    else if (hit.collider.CompareTag("customer"))
-                    {
-                        WrapObject isWrap = hand.GetComponent<WrapObject>();
-                        if (isWrap != null)
-                        {
-                            hand.GiveShawarma();
-                        }
-                    }
+                    //hitting the knife and scoop then pick that up
                     else if (hit.collider.CompareTag("scooper"))
                     {
                         hand.pickUpObj(hit.collider.gameObject);
