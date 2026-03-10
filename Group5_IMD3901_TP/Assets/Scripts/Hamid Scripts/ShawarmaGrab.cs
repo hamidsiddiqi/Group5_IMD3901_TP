@@ -1,35 +1,43 @@
 using UnityEngine;
-using System.Collections; // Required for Coroutines
+using UnityEngine.InputSystem;
 
 public class ShawarmaGrab : MonoBehaviour
 {
-    // Drag your objects from the Hierarchy into these slots
     public GameObject shawarmaFlat;
     public GameObject shawarmaReady;
 
-    public float prepareTime = 12f; // Easy to change in the Inspector
+    public Transform player; // Drag your Player object here
+    public float wrapDistance = 3f;
 
     void Start()
     {
-        // Set the initial state
+        // Initial state: Flat is visible, Ready is hidden
         if (shawarmaFlat != null) shawarmaFlat.SetActive(true);
         if (shawarmaReady != null) shawarmaReady.SetActive(false);
-
-        // Start the countdown
-        StartCoroutine(PreparationTimer());
     }
 
-    IEnumerator PreparationTimer()
+    void Update()
     {
-        Debug.Log("Cooking started...");
+        // Check for Spacebar press
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            // Check if player is close enough to the table/shawarma
+            float distance = Vector3.Distance(player.position, transform.position);
 
-        // Wait for the specified seconds
-        yield return new WaitForSeconds(prepareTime);
+            if (distance <= wrapDistance)
+            {
+                WrapShawarma();
+            }
+        }
+    }
 
-        // Swap the objects
-        if (shawarmaFlat != null) shawarmaFlat.SetActive(false);
-        if (shawarmaReady != null) shawarmaReady.SetActive(true);
-
-        Debug.Log("Shawarma is ready!");
+    void WrapShawarma()
+    {
+        if (shawarmaFlat.activeSelf) // Only wrap if it hasn't been wrapped yet
+        {
+            Debug.Log("Shawarma Wrapped!");
+            shawarmaFlat.SetActive(false);
+            shawarmaReady.SetActive(true);
+        }
     }
 }
