@@ -8,7 +8,6 @@ public class PaniniGrill : MonoBehaviour
     public float cookTime = 4f;
     public Material cookedMaterial;
     public AudioClip sizzleSound;
-    public inHand playerHand; // reference to player's inHand
 
     private GameObject currentWrap;
     private bool isCooking = false;
@@ -21,55 +20,44 @@ public class PaniniGrill : MonoBehaviour
         topPlateClosedPos = topPlate.position - new Vector3(0, 0.15f, 0);
     }
 
-    void Update()
+    // method to detect wrap being placed on grill
+    void OnTriggerEnter(Collider other)
     {
-
-        if (playerHand.isHolding)
+        WrapObject wrap = other.GetComponent<WrapObject>();
+        if (wrap != null && !isCooking && currentWrap == null)
         {
-            if (playerHand.hand.transform.childCount > 0)
-            {
-                float dist = Vector3.Distance(
-                    playerHand.hand.transform.position,
-                    transform.position
-                );
-                //Debug.Log("Distance to grill: " + dist); 
-            }
+            currentWrap = other.gameObject;
+            
+            // snap to grill center
+            currentWrap.transform.position = new Vector3(
+                bottomPlate.position.x,
+                bottomPlate.position.y + 0.1f,
+                bottomPlate.position.z
+            );
+            
+            // disable physics
+            Rigidbody rb = currentWrap.GetComponent<Rigidbody>();
+            if (rb != null) rb.isKinematic = true;
+            
+            Debug.Log("Wrap placed on grill! Press button to cook.");
         }
-        // Check if player is holding wrap near grill
-        if (!isCooking && playerHand.isHolding)
+    }
+
+    // grilling method - called by button
+    public void TryStartGrilling()
+    {
+        if (currentWrap != null && !isCooking)
         {
-            // Check if held object is a wrap
-            if (playerHand.hand.transform.childCount > 0)
-            {
-                GameObject heldObj = playerHand.hand.transform.GetChild(0).gameObject;
-                WrapObject wrap = heldObj.GetComponent<WrapObject>();
-
-                // Check if hand is close to grill
-                float dist = Vector3.Distance(
-                    playerHand.hand.transform.position,
-                    transform.position
-                );
-
-                if (wrap != null && dist < 2.5f)
-                {
-                    // Auto drop from hand and place on grill
-                    playerHand.dropObj();
-                    currentWrap = heldObj;
-
-                    // Snap to grill center
-                    currentWrap.transform.position = new Vector3(
-                    bottomPlate.position.x,
-                    bottomPlate.position.y + 0.1f,
-                    bottomPlate.position.z
-                    );
-
-                    // Disable physics
-                    Rigidbody rb = currentWrap.GetComponent<Rigidbody>();
-                    if (rb != null) rb.isKinematic = true;
-
-                    StartCoroutine(CookWrap());
-                }
-            }
+            Debug.Log("Button pressed! Starting to grill...");
+            StartCoroutine(CookWrap());
+        }
+        else if (currentWrap == null)
+        {
+            Debug.Log("No wrap on grill!");
+        }
+        else if (isCooking)
+        {
+            Debug.Log("Already cooking!");
         }
     }
 
@@ -77,7 +65,7 @@ public class PaniniGrill : MonoBehaviour
     {
         isCooking = true;
 
-        // Close grill animation
+        // close grill animation
         float t = 0f;
         while (t < 1f)
         {
@@ -91,19 +79,19 @@ public class PaniniGrill : MonoBehaviour
         }
         topPlate.position = topPlateClosedPos;
 
-        // Play sizzle sound
+        // play sizzle sound
         if (sizzleSound != null)
             AudioSource.PlayClipAtPoint(sizzleSound, transform.position);
 
-        // Wait while cooking
+        // wait while cooking
         yield return new WaitForSeconds(cookTime);
 
-        // Change to cooked material
+        // change to cooked material
         Renderer rend = currentWrap.GetComponent<Renderer>();
         if (rend != null && cookedMaterial != null)
             rend.material = cookedMaterial;
 
-        // Open grill animation
+        // open grill animation
         t = 0f;
         while (t < 1f)
         {
@@ -117,7 +105,7 @@ public class PaniniGrill : MonoBehaviour
         }
         topPlate.position = topPlateOpenPos;
 
-        // Re-enable physics
+        // re-enable physics
         Rigidbody rb = currentWrap.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -126,5 +114,6 @@ public class PaniniGrill : MonoBehaviour
 
         Debug.Log("Wrap is cooked!");
         isCooking = false;
+        currentWrap = null; // clear wrap reference
     }
 }

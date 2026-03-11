@@ -57,6 +57,16 @@ public class PlayerInteraction : MonoBehaviour
                 //check what our raycast is hitting
                 if (Physics.Raycast(ray, out hit, interactRange))
                 {
+
+                    //check for grill button
+                    GrillButton button = hit.collider.GetComponent<GrillButton>();
+                    if (button != null)
+                    {
+                        button.Press();
+                        Debug.Log("Pressed grill button!");
+                        return;
+                    }
+
                     //hitting smth interactable then pick it up
                     if (hit.collider.CompareTag("Interactable"))
                     {

@@ -12,6 +12,7 @@ TagManager:
   - meat
   - customer
   - scooper
+  - button
   layers:
   - Default
   - TransparentFX
