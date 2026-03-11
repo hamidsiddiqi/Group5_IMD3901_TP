@@ -341,7 +341,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -403,7 +404,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -563,7 +565,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.301
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -633,7 +636,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -881,7 +885,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -951,7 +956,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1122,7 +1128,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1298,7 +1305,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1360,7 +1368,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1496,7 +1505,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1558,7 +1568,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1623,11 +1634,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80c543debb8bcb40a45c1e19dafd5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onion: {fileID: 6268048660519645365, guid: fc75d4b678bee2f46ba10820c2392e3b, type: 3}
-  tomato: {fileID: 294988434535779624, guid: cb5b434ef5be4714cb55e4c141636375, type: 3}
-  pickle: {fileID: 3556255361347145296, guid: d853008ebb6b19d4ebbeeb83ec411fd5, type: 3}
-  yellow: {fileID: 757750270055691305, guid: 380f357fc5ba0394fa23e6dd572bd432, type: 3}
-  pita: {fileID: 2099467560998445897, guid: 15839edc4f5b3444a820772188871dc5, type: 3}
+  onion: {fileID: 7826084562058138483, guid: 41aac60118295484e85e188296d38f32, type: 3}
+  tomato: {fileID: 4133699303071083194, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
+  pickle: {fileID: 2931222027736162328, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
+  lettuce: {fileID: 7153847468618675462, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
+  fries: {fileID: 423763324520779105, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
+  pita: {fileID: 2541956262652877410, guid: ef43a38d73654eb45bdc611032f2ec1d, type: 3}
   hand: {fileID: 260630829}
   grabHand: {fileID: 238205182}
 --- !u!114 &238205182
@@ -1839,7 +1851,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2088,7 +2101,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2667,7 +2681,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2931,7 +2946,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6315633556145618266, guid: ef43a38d73654eb45bdc611032f2ec1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3001,7 +3017,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3267,9 +3284,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390299890}
+  - component: {fileID: 390299891}
   m_Layer: 0
   m_Name: tomatoContainer
-  m_TagString: Untagged
+  m_TagString: Container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3308,6 +3326,27 @@ Transform:
   - {fileID: 1006220139}
   m_Father: {fileID: 4507597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &390299891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390299889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79674274, y: 0.17237103, z: 0.8288975}
+  m_Center: {x: -0.38095924, y: 0.040578544, z: 0.9114938}
 --- !u!4 &403141961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7894aac7ce820cc4ba4ef844e1dd2573, type: 3}
@@ -3528,7 +3567,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6315633556145618266, guid: ef43a38d73654eb45bdc611032f2ec1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3698,7 +3738,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3764,7 +3805,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4021,7 +4063,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.273
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4144,7 +4187,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4206,7 +4250,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.301
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4225,9 +4270,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571001462}
+  - component: {fileID: 571001463}
   m_Layer: 0
   m_Name: PitaPile
-  m_TagString: Untagged
+  m_TagString: Container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4253,6 +4299,27 @@ Transform:
   - {fileID: 375636926}
   m_Father: {fileID: 4507597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &571001463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571001461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.91139233, y: 0.50540674, z: 1}
+  m_Center: {x: 0.21678644, y: -0.24729663, z: 0}
 --- !u!1 &578488397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4422,7 +4489,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4492,7 +4560,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4554,7 +4623,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4616,7 +4686,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4678,7 +4749,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4740,7 +4812,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4908,7 +4981,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4970,7 +5044,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5186,7 +5261,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5663,7 +5739,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.069
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5943,7 +6020,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.505
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6141,7 +6219,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6336,7 +6415,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6506,7 +6586,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6690,7 +6771,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.069
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6752,7 +6834,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7079,7 +7162,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7141,7 +7225,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.505
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7160,9 +7245,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 980226764}
+  - component: {fileID: 980226765}
   m_Layer: 0
   m_Name: pickleContainer
-  m_TagString: Untagged
+  m_TagString: Container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7195,6 +7281,27 @@ Transform:
   - {fileID: 1475392126}
   m_Father: {fileID: 4507597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &980226765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980226763}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.851262, y: 0.35661197, z: 0.86843204}
+  m_Center: {x: 0.4150936, y: 0.82163405, z: -0.43061638}
 --- !u!1 &981487286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7477,7 +7584,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7613,7 +7721,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7679,7 +7788,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7749,7 +7859,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7955,7 +8066,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.273
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8017,7 +8129,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8079,7 +8192,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6315633556145618266, guid: ef43a38d73654eb45bdc611032f2ec1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8141,7 +8255,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8203,7 +8318,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8458,7 +8574,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8520,7 +8637,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8702,7 +8820,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8730,7 +8849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1176415405
 Transform:
   m_ObjectHideFlags: 0
@@ -9056,7 +9175,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6315633556145618266, guid: ef43a38d73654eb45bdc611032f2ec1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9131,7 +9251,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9239,7 +9360,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9301,7 +9423,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9572,7 +9695,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9634,7 +9758,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9704,7 +9829,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9766,7 +9892,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.301
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9836,7 +9963,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9902,7 +10030,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9968,7 +10097,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10038,7 +10168,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10215,7 +10346,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10285,7 +10417,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10347,7 +10480,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10409,7 +10543,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6315633556145618266, guid: ef43a38d73654eb45bdc611032f2ec1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10622,7 +10757,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6315633556145618266, guid: ef43a38d73654eb45bdc611032f2ec1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10887,7 +11023,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10953,7 +11090,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.273
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11078,9 +11216,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572004010}
+  - component: {fileID: 1572004011}
   m_Layer: 0
   m_Name: onionContainer
-  m_TagString: Untagged
+  m_TagString: Container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11121,6 +11260,27 @@ Transform:
   - {fileID: 1577225387}
   m_Father: {fileID: 4507597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1572004011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572004009}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.58797425, y: 0.20285201, z: 0.8835206}
+  m_Center: {x: -0.4306635, y: 0.036187768, z: 0.87072945}
 --- !u!1001 &1577225386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11173,7 +11333,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11351,7 +11512,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11523,7 +11685,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11585,7 +11748,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11816,7 +11980,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.273
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11982,7 +12147,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.301
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12052,7 +12218,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12148,7 +12315,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12405,7 +12573,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.069
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12553,7 +12722,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12820,7 +12990,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12976,9 +13147,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889625569}
+  - component: {fileID: 1889625570}
   m_Layer: 0
   m_Name: FriesContainer
-  m_TagString: Untagged
+  m_TagString: Container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13009,6 +13181,27 @@ Transform:
   - {fileID: 1664694197}
   m_Father: {fileID: 4507597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1889625570
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889625568}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.803478, y: 0.201464, z: 0.81568}
+  m_Center: {x: -0.69759786, y: 0.08594039, z: -1.49705}
 --- !u!1 &1892502126
 GameObject:
   m_ObjectHideFlags: 0
@@ -13177,7 +13370,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13462,7 +13656,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7292333866480180905, guid: 41aac60118295484e85e188296d38f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13644,7 +13839,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.069
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5068705337116339685, guid: bb03feb2ef7dd3648a5ac25a8736345a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13917,7 +14113,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14065,7 +14262,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1129325409253978517, guid: 5f2a5745d9cd4d3498d54be37cfd244a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14135,7 +14333,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.301
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545105516439069750, guid: 78544978652e5f544b9c24749f9919f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14307,7 +14506,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14396,9 +14596,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2070816373}
+  - component: {fileID: 2070816374}
   m_Layer: 0
   m_Name: LettuceContainer
-  m_TagString: Untagged
+  m_TagString: Container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14438,6 +14639,27 @@ Transform:
   - {fileID: 1805074803}
   m_Father: {fileID: 4507597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2070816374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070816372}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.94649494, y: 0.34088683, z: 0.9027424}
+  m_Center: {x: 0.1039924, y: -0.099630475, z: 0.69369006}
 --- !u!1001 &2078017419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14603,7 +14825,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pickle (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2030148273991348238, guid: 69932588f2bc8c4469288e21d5ff8af5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
