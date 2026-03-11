@@ -396,7 +396,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 400198c8b52e7ce48af97045a16d8c49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906654267018565830, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Desktop Player
       objectReference: {fileID: 0}
     - target: {fileID: 2906654267018565830, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_IsActive
@@ -2132,7 +2132,6 @@ MonoBehaviour:
   cookTime: 4
   cookedMaterial: {fileID: 2100000, guid: 7f0b4b0fbd41ce14ebed11c98878c047, type: 2}
   sizzleSound: {fileID: 8300000, guid: b3ea0e90b2bbe1b4e917db988a8a3d74, type: 3}
-  playerHand: {fileID: 238205182}
 --- !u!4 &674709678
 Transform:
   m_ObjectHideFlags: 0
