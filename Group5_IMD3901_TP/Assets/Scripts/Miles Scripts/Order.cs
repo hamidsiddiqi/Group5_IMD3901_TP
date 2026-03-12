@@ -75,7 +75,7 @@ public class Order : MonoBehaviour
             {
                if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    if (shawTrans.isHolding == false)
+                    if (isHoldingShaw == false)
                     {
 
                         Debug.Log("not yippee!!!!");
@@ -91,7 +91,8 @@ public class Order : MonoBehaviour
                         list.SetActive(true);
                         ordBubble.SetActive(false);
                     }
-                    else if (shawTrans.isHolding == true)
+
+                    if (isHoldingShaw == true)
                     {
                         Debug.Log("yipee!!!!");
 
