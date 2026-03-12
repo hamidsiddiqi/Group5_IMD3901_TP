@@ -15,7 +15,7 @@ public class ShawarmaTransition : MonoBehaviour
     public Transform customer; // Drag the Customer Capsule here
 
     float xRotation = 0f;
-    private bool isHolding = false;
+    public bool isHolding = false;
 
     void Start()
     {
