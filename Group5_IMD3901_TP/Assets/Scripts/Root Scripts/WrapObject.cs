@@ -63,6 +63,5 @@ public class WrapObject : MonoBehaviour
         Debug.Log(lettuce);
         Debug.Log(tomatoes);
         Debug.Log(fries);
-
     }
 }
