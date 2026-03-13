@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tomatoGRP
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c35a8c45ad32c5b4096e5f7336f3f15a, type: 3}
+      propertyPath: m_TagString
+      value: tomatoes
+      objectReference: {fileID: 0}
     - target: {fileID: 3624075600460607078, guid: c35a8c45ad32c5b4096e5f7336f3f15a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

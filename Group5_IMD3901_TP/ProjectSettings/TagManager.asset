@@ -13,6 +13,11 @@ TagManager:
   - customer
   - scooper
   - button
+  - fries
+  - lettuce
+  - tomatoes
+  - onions
+  - pickle
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,6 @@ public class pickIngredient : MonoBehaviour
     public GameObject lettuce;
     public GameObject fries;
     public GameObject pita;
-    public GameObject hand;
     public inHand grabHand;
 
 
@@ -26,7 +25,7 @@ public class pickIngredient : MonoBehaviour
         
     }
 
-    public void grabIngredient(GameObject container)
+    public void grabIngredient(GameObject container, GameObject hand, int isDesktop)
     {
         GameObject newFood = null;
         if( container.name == "onionContainer")
@@ -52,8 +51,12 @@ public class pickIngredient : MonoBehaviour
         {
             newFood = Instantiate(lettuce, hand.transform);
         }
+
+        if(isDesktop ==1)
+        {
             grabHand.isIngred = true;
-        grabHand.pickUpObj(newFood);
+            grabHand.pickUpObj(newFood);
+        }
 
     }
 

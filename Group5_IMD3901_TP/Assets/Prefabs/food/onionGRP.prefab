@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onionGRP
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5f9d11f769be254ca5bb098d060f2f2, type: 3}
+      propertyPath: m_TagString
+      value: onions
+      objectReference: {fileID: 0}
     - target: {fileID: 8570956165610098456, guid: c5f9d11f769be254ca5bb098d060f2f2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

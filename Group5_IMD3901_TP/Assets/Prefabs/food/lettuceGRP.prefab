@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lettuceGRP
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_TagString
+      value: lettuce
+      objectReference: {fileID: 0}
     - target: {fileID: 2332794472348021321, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2287817418702531724}
   m_Layer: 0
   m_Name: onion
-  m_TagString: Container
+  m_TagString: onions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

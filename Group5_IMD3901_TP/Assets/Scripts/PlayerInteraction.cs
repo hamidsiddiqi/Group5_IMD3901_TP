@@ -10,6 +10,8 @@ public class PlayerInteraction : MonoBehaviour
     public CrosshairUI crosshairUIScript;
     public inHand hand;
     public pickIngredient ingredient;
+    public GameObject playerHand;
+    public WrapObject wrap;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -75,7 +77,7 @@ public class PlayerInteraction : MonoBehaviour
                     //hitting a container make an instance of that food and grab it
                     else if (hit.collider.CompareTag("Container"))
                     {
-                        ingredient.grabIngredient(hit.collider.gameObject);
+                        ingredient.grabIngredient(hit.collider.gameObject, playerHand, 1);
                     }
                     //hitting the knife and scoop then pick that up
                     else if (hit.collider.CompareTag("scooper"))
@@ -85,6 +87,10 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 
+        }
+        else if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            wrap.getInside();
         }
 
     }
