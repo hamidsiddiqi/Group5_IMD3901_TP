@@ -116,13 +116,16 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     Debug.Log("Raycast hit: " + hit.collider.gameObject.name + " tag: " + hit.collider.tag);
                     if (hit.collider.CompareTag("Interactable"))
+                    {
                         hand.pickUpObj(hit.collider.gameObject);
+                    }
                     else if (hit.collider.CompareTag("Container"))
                     {
                         ingredient.grabIngredient(hit.collider.gameObject, playerHand, 1);
                     }
                     //hitting the knife and scoop then pick that up
                     else if (hit.collider.CompareTag("scooper"))
+                    {
                         hand.pickUpObj(hit.collider.gameObject);
                     }
                     else
@@ -150,4 +153,5 @@ public class PlayerInteraction : MonoBehaviour
             if (grill != null) grill.TryStartGrilling();
         }
     }
+
 }
