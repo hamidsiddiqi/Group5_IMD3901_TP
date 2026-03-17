@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using System.Collections.Generic;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -12,11 +13,12 @@ public class PlayerInteraction : MonoBehaviour
     public pickIngredient ingredient;
     public GameObject playerHand;
     public WrapObject wrap;
+    string[] foodTags = { "fries", "lettuce", "tomatoes", "onions", "pickle", "wrap" };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -83,6 +85,16 @@ public class PlayerInteraction : MonoBehaviour
                     else if (hit.collider.CompareTag("scooper"))
                     {
                         hand.pickUpObj(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        for (int i=0; i < foodTags.Length; i++)
+                        {
+                            if (hit.collider.CompareTag(foodTags[i]))
+                            {
+                                hand.pickUpObj(hit.collider.gameObject);
+                            }
+                        }
                     }
                 }
             }

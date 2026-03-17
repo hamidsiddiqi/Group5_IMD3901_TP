@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 835d001096b26034c94cd8b527c87197, type: 2}
     - target: {fileID: -8679921383154817045, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.056989808
+      value: 0.062027708
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.056989808
+      value: 0.062027708
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.056989808
+      value: 0.062027708
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,11 +66,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7828371813101337717, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.035840303
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: -7828371813101337717, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.16606104
+      objectReference: {fileID: 0}
+    - target: {fileID: -7828371813101337717, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.22
       objectReference: {fileID: 0}
     - target: {fileID: -7828371813101337717, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_LocalRotation.w
@@ -92,6 +96,30 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 835d001096b26034c94cd8b527c87197, type: 2}
+    - target: {fileID: -4964816304308624237, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5158403
+      objectReference: {fileID: 0}
+    - target: {fileID: -4964816304308624237, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.2199993
+      objectReference: {fileID: 0}
+    - target: {fileID: -2322166147010110179, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5158403
+      objectReference: {fileID: 0}
+    - target: {fileID: -2322166147010110179, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.2199993
+      objectReference: {fileID: 0}
+    - target: {fileID: -1609864143943734237, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5158403
+      objectReference: {fileID: 0}
+    - target: {fileID: -1609864143943734237, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.2199993
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
       propertyPath: m_Name
       value: lettuceGRP
@@ -116,6 +144,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 835d001096b26034c94cd8b527c87197, type: 2}
+    - target: {fileID: 7491907602156081042, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5158403
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491907602156081042, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.2199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686574079907033357, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5158403
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686574079907033357, guid: a730488a6d6c69347aa74e43c5d74256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.2199993
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -182,7 +226,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 3.9166403, y: 1.1281265, z: 5.573144}
-  m_Center: {x: -2.106516, y: 0.44902664, z: -7.339947}
+  m_Center: {x: 0, y: 0.44902664, z: 0}
 --- !u!114 &1309768209102638088
 MonoBehaviour:
   m_ObjectHideFlags: 0
