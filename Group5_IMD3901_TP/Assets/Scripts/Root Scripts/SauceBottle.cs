@@ -2,19 +2,22 @@ using UnityEngine;
 
 public class SauceBottle : MonoBehaviour
 {
-    public Color sauceColor = Color.white;
+    public Color sauceColor = Color.red;
+    public GameObject sauceSplatPrefab;
 
-    public void ApplySauce(GameObject wrap)
+    public void ApplySauce(GameObject wrap, RaycastHit hit)
     {
-        Renderer rend = wrap.GetComponent<Renderer>();
-        if (rend != null)
+        if (sauceSplatPrefab != null)
         {
-            rend.material.color = Color.Lerp(rend.material.color, sauceColor, 0.4f);
-            Debug.Log("Sauce applied! Color changed.");
+            Vector3 spawnPos = hit.point + Vector3.up * 0.02f;
+            Quaternion rotation = Quaternion.Euler(90f, 0f, 0f);
+            GameObject splat = Instantiate(sauceSplatPrefab, spawnPos, rotation);
+            splat.transform.parent = wrap.transform;
+            splat.GetComponent<SpriteRenderer>().color = sauceColor;
         }
         else
         {
-            Debug.Log("No renderer found on wrap!");
+            Debug.Log("No sauce splat prefab assigned!");
         }
     }
 }

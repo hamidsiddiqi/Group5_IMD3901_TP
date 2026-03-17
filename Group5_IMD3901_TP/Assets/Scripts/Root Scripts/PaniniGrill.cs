@@ -9,8 +9,9 @@ public class PaniniGrill : MonoBehaviour
     public Material cookedMaterial;
     public AudioClip sizzleSound;
 
-    private GameObject currentWrap;
-    private bool isCooking = false;
+    public GameObject currentWrap;
+    public bool isCooking = false;
+    public bool isCooked = false;
     private Vector3 topPlateOpenPos;
     private Vector3 topPlateClosedPos;
 
@@ -20,35 +21,11 @@ public class PaniniGrill : MonoBehaviour
         topPlateClosedPos = topPlate.position - new Vector3(0, 0.15f, 0);
     }
 
-    // method to detect wrap being placed on grill
-    void OnTriggerEnter(Collider other)
-    {
-        WrapObject wrap = other.GetComponent<WrapObject>();
-        if (wrap != null && !isCooking && currentWrap == null)
-        {
-            currentWrap = other.gameObject;
-            
-            // snap to grill center
-            currentWrap.transform.position = new Vector3(
-                bottomPlate.position.x,
-                bottomPlate.position.y + 0.1f,
-                bottomPlate.position.z
-            );
-            
-            // disable physics
-            Rigidbody rb = currentWrap.GetComponent<Rigidbody>();
-            if (rb != null) rb.isKinematic = true;
-            
-            Debug.Log("Wrap placed on grill! Press button to cook.");
-        }
-    }
-
-    // grilling method - called by button
     public void TryStartGrilling()
     {
         if (currentWrap != null && !isCooking)
         {
-            Debug.Log("Button pressed! Starting to grill...");
+            Debug.Log("Starting to grill...");
             StartCoroutine(CookWrap());
         }
         else if (currentWrap == null)
@@ -61,19 +38,40 @@ public class PaniniGrill : MonoBehaviour
         }
     }
 
+    // called by PlayerInteraction when player presses E near grill with cooked wrap
+    public GameObject TakeWrap()
+    {
+        if (currentWrap != null && isCooked)
+        {
+            GameObject wrap = currentWrap;
+
+            // unparent from grill
+            wrap.transform.SetParent(null);
+
+            // re-enable physics
+            Rigidbody rb = wrap.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+            }
+
+            currentWrap = null;
+            isCooked = false;
+            return wrap;
+        }
+        return null;
+    }
+
     IEnumerator CookWrap()
     {
         isCooking = true;
+        isCooked = false;
 
         // close grill animation
         float t = 0f;
         while (t < 1f)
         {
-            topPlate.position = Vector3.Lerp(
-                topPlateOpenPos,
-                topPlateClosedPos,
-                t
-            );
+            topPlate.position = Vector3.Lerp(topPlateOpenPos, topPlateClosedPos, t);
             t += Time.deltaTime * 2f;
             yield return null;
         }
@@ -95,25 +93,25 @@ public class PaniniGrill : MonoBehaviour
         t = 0f;
         while (t < 1f)
         {
-            topPlate.position = Vector3.Lerp(
-                topPlateClosedPos,
-                topPlateOpenPos,
-                t
-            );
+            topPlate.position = Vector3.Lerp(topPlateClosedPos, topPlateOpenPos, t);
             t += Time.deltaTime * 2f;
             yield return null;
         }
         topPlate.position = topPlateOpenPos;
 
-        // re-enable physics
-        Rigidbody rb = currentWrap.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-        }
+        // mark wrap as cooked on WrapObject
+        WrapObject wrapObj = currentWrap.GetComponent<WrapObject>();
+        if (wrapObj != null)
+            wrapObj.isCooked = true;
 
-        Debug.Log("Wrap is cooked!");
+        // parent wrap to grill so it stays perfectly still, no physics fighting
+        currentWrap.transform.SetParent(transform);
+        Rigidbody wrb = currentWrap.GetComponent<Rigidbody>();
+        if (wrb != null)
+            wrb.isKinematic = true;
+
+        isCooked = true;
         isCooking = false;
-        currentWrap = null; // clear wrap reference
+        Debug.Log("Wrap is cooked! Press E near grill to pick it up.");
     }
 }

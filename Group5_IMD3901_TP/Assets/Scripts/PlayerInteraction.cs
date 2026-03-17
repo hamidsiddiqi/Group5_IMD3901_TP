@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class PlayerInteraction : MonoBehaviour
 {
-
     public float interactRange = 5f;
     public Camera playerCamera;
     public CrosshairUI crosshairUIScript;
@@ -15,75 +14,115 @@ public class PlayerInteraction : MonoBehaviour
     public WrapObject wrap;
     string[] foodTags = { "fries", "lettuce", "tomatoes", "onions", "pickle", "wrap" };
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+    PaniniGrill GetNearestGrill()
+    {
+        PaniniGrill[] grills = FindObjectsOfType<PaniniGrill>();
+        PaniniGrill nearest = null;
+        float closestDist = Mathf.Infinity;
+
+        foreach (PaniniGrill grill in grills)
+        {
+            float dist = Vector3.Distance(transform.position, grill.transform.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                nearest = grill;
+            }
+        }
+        return nearest;
+    }
+
     void Update()
     {
-        //makes a ray from camera forward
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
-        //did you hit the e key
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            //checks if there is smth in the hand
             if (hand.isHolding)
             {
-                //see what our ray cast is hitting
+                WrapObject isWrap = hand.objInHand.GetComponent<WrapObject>();
+
+                // only place on grill if it's an uncooked wrap
+                if (isWrap != null && !isWrap.isCooked)
+                {
+                    PaniniGrill grill = GetNearestGrill();
+                    if (grill != null && !grill.isCooking)
+                    {
+                        GameObject wrapToPlace = hand.objInHand;
+
+                        // clear hand first so inHand.Update() stops moving it
+                        hand.objInHand = null;
+                        hand.isHolding = false;
+
+                        // unparent and kill physics
+                        wrapToPlace.transform.SetParent(null);
+                        Rigidbody rb = wrapToPlace.GetComponent<Rigidbody>();
+                        rb.isKinematic = true;
+                        rb.linearVelocity = Vector3.zero;
+                        rb.angularVelocity = Vector3.zero;
+
+                        // place just above the bottom plate
+                        wrapToPlace.transform.position = new Vector3(
+                            grill.bottomPlate.position.x,
+                            grill.bottomPlate.position.y + 0.1f,
+                            grill.bottomPlate.position.z
+                        );
+                        wrapToPlace.transform.rotation = Quaternion.Euler(0.014f, 181.611f, -90.514f);
+
+                        grill.currentWrap = wrapToPlace;
+                        Debug.Log("Wrap placed on grill!");
+                        return;
+                    }
+                }
+
                 if (Physics.Raycast(ray, out hit, interactRange))
                 {
-                    //if we are hitting the customer we need to see if we have the wrap
                     if (hit.collider.CompareTag("customer"))
                     {
-                        //checks if there is a wrap script
-                        WrapObject isWrap = hand.objInHand.GetComponent<WrapObject>();                       
-                        if (isWrap != null)
+                        hand.GiveShawarma();
+                        return;
+                    }
+                }
+
+                hand.dropObj();
+            }
+            else
+            {
+                // check if there's a cooked wrap on the nearest grill first
+                PaniniGrill nearbyGrill = GetNearestGrill();
+                if (nearbyGrill != null && nearbyGrill.isCooked)
+                {
+                    float distToGrill = Vector3.Distance(transform.position, nearbyGrill.transform.position);
+                    if (distToGrill <= interactRange)
+                    {
+                        GameObject cookedWrap = nearbyGrill.TakeWrap();
+                        if (cookedWrap != null)
                         {
-                            //give shawarma to customer
-                            hand.GiveShawarma();
+                            hand.pickUpObj(cookedWrap);
+                            Debug.Log("Picked up cooked wrap!");
                             return;
                         }
                     }
                 }
 
-                //if you arent hitting the customer and holding a wrap then drop item
-                hand.dropObj();
-            }
-
-            //if you arentt holding somethingg
-            else
-            {
-                //check what our raycast is hitting
+                // otherwise normal raycast pickup
                 if (Physics.Raycast(ray, out hit, interactRange))
                 {
-
-                    //check for grill button
-                    GrillButton button = hit.collider.GetComponent<GrillButton>();
-                    if (button != null)
-                    {
-                        button.Press();
-                        Debug.Log("Pressed grill button!");
-                        return;
-                    }
-
-                    //hitting smth interactable then pick it up
+                    Debug.Log("Raycast hit: " + hit.collider.gameObject.name + " tag: " + hit.collider.tag);
                     if (hit.collider.CompareTag("Interactable"))
-                    {
                         hand.pickUpObj(hit.collider.gameObject);
-                    }
-                    //hitting a container make an instance of that food and grab it
                     else if (hit.collider.CompareTag("Container"))
                     {
                         ingredient.grabIngredient(hit.collider.gameObject, playerHand, 1);
                     }
                     //hitting the knife and scoop then pick that up
                     else if (hit.collider.CompareTag("scooper"))
-                    {
                         hand.pickUpObj(hit.collider.gameObject);
                     }
                     else
@@ -98,12 +137,17 @@ public class PlayerInteraction : MonoBehaviour
                     }
                 }
             }
-
         }
         else if (Keyboard.current.lKey.wasPressedThisFrame)
         {
             wrap.getInside();
         }
 
+        // G key to start grilling - uses nearest grill
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            PaniniGrill grill = GetNearestGrill();
+            if (grill != null) grill.TryStartGrilling();
+        }
     }
 }

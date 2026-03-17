@@ -11,44 +11,50 @@ public class UseItem : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            Debug.Log("Left click detected, isHolding: " + hand.isHolding);
             if (hand.isHolding)
             {
-                Ray ray = new Ray(playerCamera.transform.position,
-                                  playerCamera.transform.forward);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit, interactRange))
+                Debug.Log("Child count: " + hand.hand.transform.childCount);
+                if (hand.hand.transform.childCount > 0)
                 {
-                    SauceBottle sauce = hit.collider.GetComponent<SauceBottle>();
-                    if (sauce != null)
+                    GameObject heldObj = hand.hand.transform.GetChild(0).gameObject;
+                    SauceBottle heldSauce = heldObj.GetComponent<SauceBottle>();
+
+                    if (heldSauce != null)
                     {
-                        // Get the wrap from right hand
-                        if (hand.hand.transform.childCount > 0)
+                        // Build a layermask that ignores whatever layer the held object is on
+                        int heldLayer = heldObj.layer;
+                        int layerMask = ~(1 << heldLayer);
+
+                        Ray ray = new Ray(playerCamera.transform.position,
+                                          playerCamera.transform.forward);
+                        RaycastHit hit;
+
+                        if (Physics.Raycast(ray, out hit, interactRange, layerMask))
                         {
-                            GameObject heldObj = hand.hand.transform.GetChild(0).gameObject;
-                            if (heldObj.GetComponent<WrapObject>() != null)
+                            Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+                            GameObject target = hit.collider.gameObject;
+                            if (!target.CompareTag("flatwrap") && target.transform.parent != null)
                             {
-                                sauce.ApplySauce(heldObj);
+                                target = target.transform.parent.gameObject;
+                            }
+
+                            if (target.CompareTag("flatwrap"))
+                            {
+                                heldSauce.ApplySauce(target, hit);
+                                Debug.Log("Sauce squirted onto flat wrap!");
                             }
                             else
                             {
-                                Debug.Log("Held object is not a wrap!");
+                                Debug.Log("Not looking at flat wrap! Hit: " + hit.collider.gameObject.name);
                             }
                         }
-                    }
-                    else
-                    {
-                        Debug.Log("Not looking at a sauce bottle!");
+                        else
+                        {
+                            Debug.Log("Raycast hit nothing!");
+                        }
                     }
                 }
-                else
-                {
-                    Debug.Log("Raycast hit nothing!");
-                }
-            }
-            else
-            {
-                Debug.Log("Not holding anything!");
             }
         }
     }

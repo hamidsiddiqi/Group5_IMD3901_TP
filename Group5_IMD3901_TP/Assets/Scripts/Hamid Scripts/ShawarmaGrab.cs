@@ -23,7 +23,8 @@ public class ShawarmaGrab : MonoBehaviour
         {
             // Check if player is close enough to the table/shawarma
             float distance = Vector3.Distance(player.position, transform.position);
-
+            Debug.Log("Space pressed! Distance: " + distance + " wrapDistance: " + wrapDistance);
+            
             if (distance <= wrapDistance)
             {
                 WrapShawarma();
@@ -33,11 +34,22 @@ public class ShawarmaGrab : MonoBehaviour
 
     void WrapShawarma()
     {
-        if (shawarmaFlat.activeSelf) // Only wrap if it hasn't been wrapped yet
+        if (shawarmaFlat.activeSelf)
         {
             Debug.Log("Shawarma Wrapped!");
+        
+            // spawn wrap at same position as flat wrap
+            shawarmaReady.transform.position = shawarmaFlat.transform.position;
+            shawarmaReady.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        
             shawarmaFlat.SetActive(false);
             shawarmaReady.SetActive(true);
+
+            Rigidbody rb = shawarmaReady.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+            }
         }
     }
 }

@@ -28,7 +28,7 @@ public class inHand : MonoBehaviour
     void Update()
     {
         //if you have smth in your hand
-        if (objInHand != null)
+        if (objInHand != null && isHolding)
         {
             //if its a scooper
             if (objInHand.tag == "scooper")
@@ -39,6 +39,11 @@ public class inHand : MonoBehaviour
                 Scooper.transform.position = leftHand.transform.position;
             }
             //any other thing put in the middle
+            if (objInHand.GetComponent<SauceBottle>() != null)
+            {
+                objInHand.transform.position = hand.transform.position + Vector3.up * 1f;
+            }
+            
             else
             {
                 objInHand.transform.position = hand.transform.position;
@@ -53,6 +58,11 @@ public class inHand : MonoBehaviour
         if (objInHand == null)
         {
             return;
+        }
+        //reset sauce bottle rotation
+        if (objInHand.GetComponent<SauceBottle>() != null)
+        {
+        objInHand.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
         }
 
         //unparent the object and make kinematic false
@@ -97,6 +107,13 @@ public class inHand : MonoBehaviour
         //parent the object to hand and enable kinematics
         objInHand.transform.SetParent(hand.transform,false);
         objInHand.GetComponent<Rigidbody>().isKinematic = true;
+
+        // flip upside down if its a sauce bottle
+        if (newObject.GetComponent<SauceBottle>() != null)
+        {
+        objInHand.transform.localRotation = Quaternion.Euler(270f, 0f, 0f);
+        objInHand.transform.localPosition = new Vector3(0f, 100f, 0f);
+        }
 
     }
 

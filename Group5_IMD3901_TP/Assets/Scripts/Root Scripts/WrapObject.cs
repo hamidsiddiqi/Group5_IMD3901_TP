@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class WrapObject : MonoBehaviour
 {
+
+    public bool isCooked = false;
+    
     public int onions;
     public int fries;
     public int pickles;

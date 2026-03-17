@@ -18,6 +18,9 @@ TagManager:
   - tomatoes
   - onions
   - pickle
+  - flatwrap
+  - Ingredient
+  - Grill
   layers:
   - Default
   - TransparentFX
@@ -27,6 +30,8 @@ TagManager:
   - UI
   - List
   - 
+  - 
+  - HeldItem
   - 
   - 
   - 
