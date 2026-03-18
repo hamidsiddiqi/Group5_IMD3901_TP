@@ -21,6 +21,9 @@ TagManager:
   - flatwrap
   - Ingredient
   - Grill
+  - Scooper_Area
+  - BeefSkewer
+  - ChickenSkewer
   layers:
   - Default
   - TransparentFX
@@ -32,8 +35,6 @@ TagManager:
   - 
   - 
   - HeldItem
-  - 
-  - 
   - 
   - 
   - 
