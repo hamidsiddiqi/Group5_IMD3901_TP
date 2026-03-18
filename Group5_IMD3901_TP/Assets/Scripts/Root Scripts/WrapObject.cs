@@ -33,6 +33,13 @@ public class WrapObject : MonoBehaviour
         {
             lettuce += 1;
         }
+        else
+        {
+            return;
+        }
+
+        collider.transform.SetParent(transform);
+
     }
 
     void OnTriggerExit(Collider collider)
@@ -57,14 +64,13 @@ public class WrapObject : MonoBehaviour
         {
             lettuce -= 1;
         }
+        else
+        {
+            return;
+        }
+
+        collider.transform.SetParent(null);
+
     }
 
-    public void getInside()
-    {
-        Debug.Log(onions);
-        Debug.Log(pickles);
-        Debug.Log(lettuce);
-        Debug.Log(tomatoes);
-        Debug.Log(fries);
-    }
 }

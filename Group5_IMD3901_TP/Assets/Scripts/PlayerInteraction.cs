@@ -141,10 +141,6 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
-        else if (Keyboard.current.lKey.wasPressedThisFrame)
-        {
-            wrap.getInside();
-        }
 
         // G key to start grilling - uses nearest grill
         if (Keyboard.current.gKey.wasPressedThisFrame)
