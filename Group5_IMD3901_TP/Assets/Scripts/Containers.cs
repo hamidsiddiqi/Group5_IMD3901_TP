@@ -1,29 +1,30 @@
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Containers : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private HashSet<Rigidbody> objectsInside = new HashSet<Rigidbody>();
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        Rigidbody rb = other.attachedRigidbody;
+
+        if (rb != null && !objectsInside.Contains(rb))
+        {
+            objectsInside.Add(rb);
+            rb.isKinematic = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
-    }
+        Rigidbody rb = other.attachedRigidbody;
 
-    void OnTriggerEnter(Collider collider)
-    {
-        Debug.Log(collider+"enter");
-        collider.GetComponent<Rigidbody>().isKinematic = true;
-    }
-
-    void OnTriggerExit(Collider collider)
-    {
-        Debug.Log(collider);
-        collider.GetComponent<Rigidbody>().isKinematic = false;
+        if (rb != null && objectsInside.Contains(rb))
+        {
+            objectsInside.Remove(rb);
+            rb.isKinematic = false;
+        }
     }
 
 }

@@ -111,8 +111,8 @@ public class inHand : MonoBehaviour
         // flip upside down if its a sauce bottle
         if (newObject.GetComponent<SauceBottle>() != null)
         {
-        objInHand.transform.localRotation = Quaternion.Euler(270f, 0f, 0f);
-        objInHand.transform.localPosition = new Vector3(0f, 100f, 0f);
+            objInHand.transform.localRotation = Quaternion.Euler(270f, 0f, 0f);
+            objInHand.transform.localPosition = new Vector3(0f, 100f, 0f);
         }
 
     }
