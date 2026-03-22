@@ -1,6 +1,6 @@
 using System.Collections;
 using TMPro;
-
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,6 +15,9 @@ public class TitleScreen : MonoBehaviour
     public float offsetMultiplier = 1f;
     public float smoothTime = .3f;
 
+    public AudioSource hoverSound;
+    public AudioSource pressedSound;
+
     private Vector2 startPosition;
     private Vector3 velocity;
 
@@ -26,12 +29,31 @@ public class TitleScreen : MonoBehaviour
 
     public void play()
     {
+        pressedSound.Play();
         Debug.Log("play");
         SceneManager.LoadScene("KAIT_ASSETS");
     }
 
+    public void Settings()
+    {
+        pressedSound.Play();
+    }
+
+    public void Credits()
+    {
+        pressedSound.Play();
+    }
+
+    public void Quit()
+    {
+        pressedSound.Play();
+        Application.Quit();
+     EditorApplication.isPlaying = false;
+    }
+
     public void grow(TextMeshProUGUI hoverBut)
     {
+        hoverSound.Play();
         hoverBut.fontSize = 24;
 
         if (hoverBut.fontSize < 30)
@@ -58,7 +80,7 @@ public class TitleScreen : MonoBehaviour
         {
 
             hoverBut.fontSize += 1;
-
+            hoverBut.color = Color.Lerp(hoverBut.color, Color.gray2, 0.5f);
             yield return new WaitForSeconds(0.025f);
         }
 
@@ -72,7 +94,7 @@ public class TitleScreen : MonoBehaviour
         {
 
             hoverBut.fontSize -= 1;
-
+            hoverBut.color = Color.Lerp(hoverBut.color, Color.black, 0.5f);
             yield return new WaitForSeconds(0.025f);
         }
     }
