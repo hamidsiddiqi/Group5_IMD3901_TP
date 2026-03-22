@@ -23,10 +23,12 @@ public class TitleScreen : MonoBehaviour
 
     public TransitionManager transitionManager;
 
+    public GameObject credits; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        credits.SetActive(false);
     }
 
     public void play()
@@ -44,6 +46,13 @@ public class TitleScreen : MonoBehaviour
     public void Credits()
     {
         pressedSound.Play();
+        credits.SetActive(true);
+    }
+
+    public void BackCredits()
+    {
+        pressedSound.Play();
+        credits.SetActive(false);
     }
 
     public void Quit()
