@@ -4,12 +4,13 @@ using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 
 public class TitleScreen : MonoBehaviour
 {
-    // public Button playBut; 
-    public TextMeshProUGUI playButText;
+
+    // public TextMeshProUGUI ButText;
 
     public float offsetMultiplier = 1f;
     public float smoothTime = .3f;
@@ -17,89 +18,60 @@ public class TitleScreen : MonoBehaviour
     private Vector2 startPosition;
     private Vector3 velocity;
 
-
-
-
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPosition = transform.position;
-
-    }
-
-    // Update is called once per frame
-
-
-    public void OnPointerEnter(PointerEventData eventData)
-
-    {
-        Debug.Log("Cursor Entering " + name);
-        // Place the function/action you want to occur here
-
-        Debug.Log("meme");
 
     }
 
     public void play()
     {
         Debug.Log("play");
-
-
-
+        SceneManager.LoadScene("KAIT_ASSETS");
     }
 
-    public void grow()
+    public void grow(TextMeshProUGUI hoverBut)
     {
-        playButText.fontSize = 24;
+        hoverBut.fontSize = 24;
 
-        if (playButText.fontSize < 30)
-
-
+        if (hoverBut.fontSize < 30)
         {
-
-            StartCoroutine(grow2());
-
+            StartCoroutine(grow2(hoverBut));
         }
 
     }
 
-    public void shrink()
+    public void shrink(TextMeshProUGUI hoverBut)
     {
-        playButText.fontSize = 29;
+        hoverBut.fontSize = 29;
 
-        if (playButText.fontSize > 20)
+        if (hoverBut.fontSize > 20)
         {
-
-            StartCoroutine(shrink2());
-
+            StartCoroutine(shrink2(hoverBut));
         }
 
     }
 
-    public IEnumerator grow2()
+    public IEnumerator grow2(TextMeshProUGUI hoverBut)
     {
         for (int i = 0; i < 5; i++)
         {
 
-            playButText.fontSize += 1;
+            hoverBut.fontSize += 1;
 
             yield return new WaitForSeconds(0.025f);
         }
 
-        Debug.Log(playButText.fontSize);
-
     }
 
-    public IEnumerator shrink2()
+    public IEnumerator shrink2(TextMeshProUGUI hoverBut)
     {
         // playButText.fontSize = 24;
 
         for (int i = 0; i < 5; i++)
         {
 
-            playButText.fontSize -= 1;
+            hoverBut.fontSize -= 1;
 
             yield return new WaitForSeconds(0.025f);
         }
