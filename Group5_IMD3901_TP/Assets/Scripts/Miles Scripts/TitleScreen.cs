@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,19 +8,23 @@ using UnityEngine.InputSystem;
 
 public class TitleScreen : MonoBehaviour
 {
-    // public Button playBut; 
-    public TextMeshProUGUI playButText;
 
     public float offsetMultiplier = 1f;
     public float smoothTime = .3f;
 
     private Vector2 startPosition;
     private Vector3 velocity; 
-   
+
+    private Color greyhighlight = new Color(150, 150, 150);
+
+    public GameObject CreditsScreen;
+    public GameObject TitleCanvas; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         startPosition = transform.position;
+        CreditsScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,66 +36,79 @@ public class TitleScreen : MonoBehaviour
       
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("Cursor Entering " + name);
-        // Place the function/action you want to occur here
-         
-            Debug.Log("meme");
-        
-    }
-
     public void play() {
         Debug.Log("play");
     }
 
-    public void grow()
+    public void settings()
     {
-        playButText.fontSize = 24;
 
-        if (playButText.fontSize < 30)
+    }
+    public void Credits()
+    {
+        CreditsScreen.SetActive(true);
+        CreditsScreen.transform.SetAsFirstSibling();
+    }
+
+    public void CreditsBack()
+    {
+        CreditsScreen.SetActive(false);
+    }
+
+
+    public void Quit()
+    {
+        Application.Quit();
+        EditorApplication.isPlaying = false;
+    }
+
+    public void grow(TextMeshProUGUI HoverText)
+    {
+
+        HoverText.fontSize = 24;
+
+        if (HoverText.fontSize < 30)
         {
             
-            StartCoroutine(grow2());
+            StartCoroutine(grow2(HoverText));
 
         }
         
     }
 
-    public void shrink()
+    public void shrink(TextMeshProUGUI HoverText)
     {
-        playButText.fontSize = 29;
+        HoverText.fontSize = 29;
 
-        if (playButText.fontSize > 20)
+        if (HoverText.fontSize > 20)
         {
 
-            StartCoroutine(shrink2());
+            StartCoroutine(shrink2(HoverText));
 
         }
 
     }
 
-    public IEnumerator grow2()
+    public IEnumerator grow2(TextMeshProUGUI HoverText)
     {
         for (int i = 0; i < 5; i++)
         {
-            
-            playButText.fontSize += 1;
+
+            HoverText.fontSize += 1;
+            HoverText.color = Color.Lerp(HoverText.color, Color.gray, 0.5f);
             yield return new WaitForSeconds(0.025f);
         }
 
-        Debug.Log(playButText.fontSize);
-
     }
 
-    public IEnumerator shrink2()
+    public IEnumerator shrink2(TextMeshProUGUI HoverText)
     {
-        // playButText.fontSize = 24;
 
         for (int i = 0; i < 5; i++)
         {
 
-            playButText.fontSize -= 1;
+            HoverText.fontSize -= 1;
+            HoverText.color = Color.Lerp(HoverText.color, Color.black, 0.5f);
             yield return new WaitForSeconds(0.025f);
         }
     }
