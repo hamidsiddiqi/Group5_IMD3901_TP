@@ -2485,7 +2485,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1339780239}
         m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
-        m_MethodName: BackCredits
+        m_MethodName: BackSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3453,7 +3453,7 @@ MonoBehaviour:
   pressedSound: {fileID: 1339780238}
   transitionManager: {fileID: 1823368846}
   credits: {fileID: 1228013795}
-  settings: {fileID: 0}
+  settings: {fileID: 504063431}
 --- !u!1 &1620287692
 GameObject:
   m_ObjectHideFlags: 0
