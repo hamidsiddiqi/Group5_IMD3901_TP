@@ -4,6 +4,7 @@ using UnityEngine.Windows;
 public class milesCutMeat : MonoBehaviour
 {
     public GameObject Knife;
+    public GameObject Scooper;
     public GameObject ChickenPiece;
     public GameObject BeefPiece; 
 
