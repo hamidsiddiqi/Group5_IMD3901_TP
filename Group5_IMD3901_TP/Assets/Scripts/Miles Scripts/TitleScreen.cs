@@ -21,6 +21,8 @@ public class TitleScreen : MonoBehaviour
     private Vector2 startPosition;
     private Vector3 velocity;
 
+    public TransitionManager transitionManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,8 +32,8 @@ public class TitleScreen : MonoBehaviour
     public void play()
     {
         pressedSound.Play();
-        Debug.Log("play");
-        SceneManager.LoadScene("KAIT_ASSETS");
+        transitionManager.playGame();
+        // SceneManager.LoadScene("KAIT_ASSETS");
     }
 
     public void Settings()
