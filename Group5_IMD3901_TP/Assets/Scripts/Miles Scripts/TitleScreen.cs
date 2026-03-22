@@ -1,9 +1,10 @@
 using System.Collections;
 using TMPro;
+
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
+
 
 public class TitleScreen : MonoBehaviour
 {
@@ -14,34 +15,39 @@ public class TitleScreen : MonoBehaviour
     public float smoothTime = .3f;
 
     private Vector2 startPosition;
-    private Vector3 velocity; 
-   
+    private Vector3 velocity;
+
+
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         startPosition = transform.position;
+
     }
 
     // Update is called once per frame
-    void Update() 
-    {
-        Vector2 offset = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
-        transform.position = Vector3.SmoothDamp(transform.position, startPosition + (offset * offsetMultiplier), ref velocity, smoothTime);
-      
-      
-    }
+
 
     public void OnPointerEnter(PointerEventData eventData)
+
     {
         Debug.Log("Cursor Entering " + name);
         // Place the function/action you want to occur here
-         
-            Debug.Log("meme");
-        
+
+        Debug.Log("meme");
+
     }
 
-    public void play() {
+    public void play()
+    {
         Debug.Log("play");
+
+
+
     }
 
     public void grow()
@@ -49,12 +55,14 @@ public class TitleScreen : MonoBehaviour
         playButText.fontSize = 24;
 
         if (playButText.fontSize < 30)
+
+
         {
-            
+
             StartCoroutine(grow2());
 
         }
-        
+
     }
 
     public void shrink()
@@ -74,8 +82,9 @@ public class TitleScreen : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            
+
             playButText.fontSize += 1;
+
             yield return new WaitForSeconds(0.025f);
         }
 
@@ -91,7 +100,9 @@ public class TitleScreen : MonoBehaviour
         {
 
             playButText.fontSize -= 1;
+
             yield return new WaitForSeconds(0.025f);
         }
     }
+
 }
