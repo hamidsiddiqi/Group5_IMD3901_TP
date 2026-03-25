@@ -36,7 +36,7 @@ public class TransitionManager : MonoBehaviour
     {
       
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("KAIT_ASSETS");
+            SceneManager.LoadScene("Verison2");
 
     }
 
@@ -50,7 +50,7 @@ public class TransitionManager : MonoBehaviour
     void Update()
     {
 
-        if (SceneManager.GetActiveScene().name == "KAIT_ASSETS" && transitioning == false)
+        if (SceneManager.GetActiveScene().name == "Verison2" && transitioning == false)
         {
             Debug.Log("Transitioning");
             transitioning = true;
