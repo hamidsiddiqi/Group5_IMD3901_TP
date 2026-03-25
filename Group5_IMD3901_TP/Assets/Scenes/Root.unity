@@ -1674,6 +1674,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCooked: 0
+  onions: 0
+  fries: 0
+  pickles: 0
+  lettuce: 0
+  tomatoes: 0
 --- !u!54 &1406259922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1966,6 +1971,7 @@ GameObject:
   - component: {fileID: 1519161952}
   - component: {fileID: 1519161955}
   - component: {fileID: 1519161956}
+  - component: {fileID: 1519161957}
   m_Layer: 0
   m_Name: GrillButton
   m_TagString: button
@@ -2076,6 +2082,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grill: {fileID: 1716013318}
   buttonCube: {fileID: 1519161954}
+--- !u!82 &1519161957
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519161950}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 00784f2964957434ba99029b74a5c6d5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1542704119 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2906654267018565830, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
@@ -2136,7 +2239,6 @@ MonoBehaviour:
   lettuce: {fileID: 0}
   fries: {fileID: 0}
   pita: {fileID: 2099467560998445897, guid: 15839edc4f5b3444a820772188871dc5, type: 3}
-  hand: {fileID: 809856783}
   grabHand: {fileID: 1542704122}
 --- !u!114 &1542704124
 MonoBehaviour:
@@ -2155,6 +2257,8 @@ MonoBehaviour:
   crosshairUIScript: {fileID: 1260300204}
   hand: {fileID: 1542704122}
   ingredient: {fileID: 1542704123}
+  playerHand: {fileID: 0}
+  wrap: {fileID: 0}
 --- !u!114 &1542704125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,10 +2309,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d4ef8b1c56f474e93f721e856038f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  mouseSensitivity: 2
   interactDistance: 3
+  controller: {fileID: 0}
+  cameraTransform: {fileID: 0}
   shawarma: {fileID: 1406259926}
   holdPoint: {fileID: 809856784}
   customer: {fileID: 0}
+  isHolding: 0
 --- !u!1 &1629544433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,9 +2592,10 @@ MonoBehaviour:
   bottomPlate: {fileID: 1321915926}
   cookTime: 4
   cookedMaterial: {fileID: 2100000, guid: 7f0b4b0fbd41ce14ebed11c98878c047, type: 2}
-  sizzleSound: {fileID: 0}
+  sizzleSound: {fileID: 8300000, guid: fa6793aafe67ff943a1900d469cc3d30, type: 3}
   currentWrap: {fileID: 1406259919}
   isCooking: 0
+  isCooked: 0
 --- !u!4 &1716013319
 Transform:
   m_ObjectHideFlags: 0

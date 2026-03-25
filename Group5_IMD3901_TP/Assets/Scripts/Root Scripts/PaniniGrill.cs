@@ -23,7 +23,7 @@ public class PaniniGrill : MonoBehaviour
 
     public void TryStartGrilling()
     {
-        if (currentWrap != null && !isCooking)
+        if (currentWrap != null && !isCooking && !isCooked)
         {
             Debug.Log("Starting to grill...");
             StartCoroutine(CookWrap());
@@ -36,6 +36,10 @@ public class PaniniGrill : MonoBehaviour
         {
             Debug.Log("Already cooking!");
         }
+        else if (isCooked)
+        {
+            Debug.Log("Wrap is already cooked, pick it up!");
+        }    
     }
 
     // called by PlayerInteraction when player presses E near grill with cooked wrap

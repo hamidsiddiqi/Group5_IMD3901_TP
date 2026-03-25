@@ -145,8 +145,14 @@ public class PlayerInteraction : MonoBehaviour
         // G key to start grilling - uses nearest grill
         if (Keyboard.current.gKey.wasPressedThisFrame)
         {
+            Debug.Log("G pressed!");
             PaniniGrill grill = GetNearestGrill();
-            if (grill != null) grill.TryStartGrilling();
+            if (grill != null)
+            {
+                GrillButton button = grill.GetComponentInChildren<GrillButton>();
+                if (button != null) button.Press();
+                else grill.TryStartGrilling();
+            }
         }
     }
 
