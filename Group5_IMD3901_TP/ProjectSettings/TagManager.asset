@@ -24,6 +24,7 @@ TagManager:
   - Scooper_Area
   - BeefSkewer
   - ChickenSkewer
+  - table
   layers:
   - Default
   - TransparentFX

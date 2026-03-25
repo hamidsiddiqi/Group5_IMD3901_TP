@@ -38,6 +38,8 @@ public class WrapObject : MonoBehaviour
             return;
         }
 
+        //collider.GetComponent<Rigidbody>().isKinematic = true;
+        
         collider.transform.SetParent(transform);
 
     }
@@ -68,9 +70,42 @@ public class WrapObject : MonoBehaviour
         {
             return;
         }
-
         collider.transform.SetParent(null);
 
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "table")
+        {
+            foreach (Transform child in gameObject.transform)
+            {
+                if (child.name != "pita")
+                {
+                    child.GetComponent<Rigidbody>().isKinematic = true;
+                    Debug.Log(child.name);
+                }
+                
+            }
+            Debug.Log("leave table");
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "table")
+        {
+            foreach (Transform child in gameObject.transform)
+            {
+                if (child.name != "pita")
+                {
+                    child.GetComponent<Rigidbody>().isKinematic = false;
+                    Debug.Log(child.name);
+                }
+            }
+
+            Debug.Log("enter table");
+        }
     }
 
 }

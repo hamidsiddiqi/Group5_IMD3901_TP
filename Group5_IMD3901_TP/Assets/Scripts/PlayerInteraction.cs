@@ -119,10 +119,6 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         hand.pickUpObj(hit.collider.gameObject);
                     }
-                    else if (hit.collider.CompareTag("Container"))
-                    {
-                        ingredient.grabIngredient(hit.collider.gameObject, playerHand, 1);
-                    }
                     //hitting the knife and scoop then pick that up
                     else if (hit.collider.CompareTag("scooper"))
                     {
@@ -135,6 +131,7 @@ public class PlayerInteraction : MonoBehaviour
                             if (hit.collider.CompareTag(foodTags[i]))
                             {
                                 hand.pickUpObj(hit.collider.gameObject);
+                                hand.isIngred = true;
                             }
                         }
                     }

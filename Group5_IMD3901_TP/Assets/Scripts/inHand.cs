@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -80,9 +81,9 @@ public class inHand : MonoBehaviour
 
             //have it move from hand and shoot slightly forward
             Vector3 newPos = objInHand.transform.position;
-            newPos.y += 0.5f;
+            newPos.y += 0.3f;
             objInHand.transform.position = newPos;
-            objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*5f);
+            objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*3f);
 
         }
 
