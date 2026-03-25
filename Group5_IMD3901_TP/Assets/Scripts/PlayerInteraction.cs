@@ -21,14 +21,14 @@ public class PlayerInteraction : MonoBehaviour
 
     PaniniGrill GetNearestGrill()
     {
-        PaniniGrill[] grills = FindObjectsOfType<PaniniGrill>();
+        PaniniGrill[] grills = FindObjectsByType<PaniniGrill>(FindObjectsSortMode.None);
         PaniniGrill nearest = null;
         float closestDist = Mathf.Infinity;
 
         foreach (PaniniGrill grill in grills)
         {
             float dist = Vector3.Distance(transform.position, grill.transform.position);
-            if (dist < closestDist)
+            if (dist < closestDist && dist <= 3f) // max 3 units away
             {
                 closestDist = dist;
                 nearest = grill;
