@@ -9329,7 +9329,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137841098}
-  - component: {fileID: 1137841097}
   - component: {fileID: 1137841096}
   m_Layer: 0
   m_Name: KnifeScoop
@@ -9365,27 +9364,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &1137841097
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137841095}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.88085055, y: 0.28555593, z: 1.5457015}
-  m_Center: {x: -0.30569708, y: 0.16671135, z: 0.14041156}
 --- !u!4 &1137841098
 Transform:
   m_ObjectHideFlags: 0
