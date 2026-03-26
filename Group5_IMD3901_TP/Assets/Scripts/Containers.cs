@@ -1,30 +1,45 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class Containers : MonoBehaviour
 {
-    private HashSet<Rigidbody> objectsInside = new HashSet<Rigidbody>();
+    public GameObject fries;
+    public GameObject lettuce;
+    public GameObject tomato;
+    public GameObject pickle;
+    public GameObject onion;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerExit(Collider collider)
     {
-        Rigidbody rb = other.attachedRigidbody;
 
-        if (rb != null && !objectsInside.Contains(rb))
+        if (collider.TryGetComponent<XRGrabInteractable>(out var interactable))
         {
-            objectsInside.Add(rb);
-            rb.isKinematic = true;
+            Debug.Log("you can grab it");
+            if (interactable.isSelected)
+            {
+                Debug.Log("its been grabbed");
+            }
+        }
+
+        if(transform.parent.transform.childCount < 9)
+        {
+            Debug.Log("we missing stuff");
+            Vector3 location = transform.position;
+            location.x += Random.Range(-0.2f, 0.2f);
+            location.y += 0.02f;
+            location.z += Random.Range(-0.2f, 0.2f);
+
+            if (collider.tag == "fries")
+            {
+                Debug.Log("FRIES GONE");
+                GameObject replace = Instantiate(fries, location, Quaternion.identity);
+                replace.transform.parent = transform.parent.transform;
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Rigidbody rb = other.attachedRigidbody;
 
-        if (rb != null && objectsInside.Contains(rb))
-        {
-            objectsInside.Remove(rb);
-            rb.isKinematic = false;
-        }
-    }
 
 }
