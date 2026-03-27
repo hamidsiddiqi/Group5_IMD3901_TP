@@ -28,13 +28,32 @@ public class Containers : MonoBehaviour
             Debug.Log("we missing stuff");
             Vector3 location = transform.position;
             location.x += Random.Range(-0.2f, 0.2f);
-            location.y += 0.02f;
+            location.y += 0.03f;
             location.z += Random.Range(-0.2f, 0.2f);
 
             if (collider.tag == "fries")
             {
-                Debug.Log("FRIES GONE");
                 GameObject replace = Instantiate(fries, location, Quaternion.identity);
+                replace.transform.parent = transform.parent.transform;
+            }
+            if (collider.tag == "onions")
+            {
+                GameObject replace = Instantiate(onion, location, Quaternion.identity);
+                replace.transform.parent = transform.parent.transform;
+            }
+            if (collider.tag == "lettuce")
+            {
+                GameObject replace = Instantiate(lettuce, location, Quaternion.identity);
+                replace.transform.parent = transform.parent.transform;
+            }
+            if (collider.tag == "tomatoes")
+            {
+                GameObject replace = Instantiate(tomato, location, Quaternion.identity);
+                replace.transform.parent = transform.parent.transform;
+            }
+            if (collider.tag == "pickle")
+            {
+                GameObject replace = Instantiate(pickle, location, Quaternion.identity);
                 replace.transform.parent = transform.parent.transform;
             }
         }
