@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.FilePathAttribute;
 
 public class ShawarmaGrab : MonoBehaviour
 {
-    public GameObject shawarmaFlat;
     public GameObject shawarmaReady;
 
     public Transform player; // Drag your Player object here
@@ -12,7 +12,6 @@ public class ShawarmaGrab : MonoBehaviour
     void Start()
     {
         // Initial state: Flat is visible, Ready is hidden
-        if (shawarmaFlat != null) shawarmaFlat.SetActive(true);
         if (shawarmaReady != null) shawarmaReady.SetActive(false);
     }
 
@@ -34,22 +33,20 @@ public class ShawarmaGrab : MonoBehaviour
 
     void WrapShawarma()
     {
-        if (shawarmaFlat.activeSelf)
-        {
-            Debug.Log("Shawarma Wrapped!");
-        
-            // spawn wrap at same position as flat wrap
-            shawarmaReady.transform.position = shawarmaFlat.transform.position;
-            shawarmaReady.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-        
-            shawarmaFlat.SetActive(false);
-            shawarmaReady.SetActive(true);
+        Debug.Log("Shawarma Wrapped!");
 
-            Rigidbody rb = shawarmaReady.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.isKinematic = true;
-            }
+        // spawn wrap at same position as flat wrap
+        GameObject wrap = Instantiate(shawarmaReady, this.transform.position, Quaternion.identity);
+        wrap.transform.Rotate(0f,0f, -90f);
+        wrap.SetActive(true);
+        this.gameObject.SetActive(false);
+        /*
+        Rigidbody rb = shawarmaReady.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
         }
+        */
+        //Destroy(this.gameObject);
     }
 }
