@@ -12,7 +12,7 @@ public class PlayerInteraction : MonoBehaviour
     public pickIngredient ingredient;
     public GameObject playerHand;
     public WrapObject wrap;
-    string[] foodTags = { "fries", "lettuce", "tomatoes", "onions", "pickle", "wrap" };
+    string[] foodTags = { "fries", "lettuce", "tomatoes", "onions", "pickle", "wrap", "flatwrap" };
 
     void Start()
     {
@@ -130,6 +130,7 @@ public class PlayerInteraction : MonoBehaviour
                         {
                             if (hit.collider.CompareTag(foodTags[i]))
                             {
+                                Debug.Log("grab it");
                                 hand.pickUpObj(hit.collider.gameObject);
                                 hand.isIngred = true;
                             }

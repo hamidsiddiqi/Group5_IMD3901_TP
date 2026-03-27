@@ -7,7 +7,7 @@ public class ShawarmaGrab : MonoBehaviour
     public GameObject shawarmaReady;
 
     public Transform player; // Drag your Player object here
-    public float wrapDistance = 3f;
+    public float wrapDistance = 15f;
 
     void Start()
     {

@@ -5,7 +5,7 @@ public class ShawarmaTransition : MonoBehaviour
 {
     public float speed = 5f;
     public float mouseSensitivity = 2f;
-    public float interactDistance = 3f;
+    public float interactDistance = 15f;
 
     public CharacterController controller;
     public Transform cameraTransform;

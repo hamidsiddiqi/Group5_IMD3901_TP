@@ -74,7 +74,7 @@ public class inHand : MonoBehaviour
         if (isIngred)
         {
             //if its a wrap don't make it rotate 
-            if (objInHand.tag == "wrap")
+            if (objInHand.tag == "flatwrap")
             {
                 objInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             }
