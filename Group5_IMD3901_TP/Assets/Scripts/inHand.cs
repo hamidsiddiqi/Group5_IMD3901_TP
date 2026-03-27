@@ -35,8 +35,9 @@ public class inHand : MonoBehaviour
             if (objInHand.tag == "scooper")
             {
                 //move the knife to right hand, scooper to left
+                
                 knife.transform.position = rightHand.transform.position;
-                knife.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                knife.transform.rotation = Quaternion.Euler(0f,0f,0f);
                 //Scooper.transform.position = leftHand.transform.position;
             }
             //any other thing put in the middle
