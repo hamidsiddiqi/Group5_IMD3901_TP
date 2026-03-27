@@ -24,7 +24,10 @@ public class TitleScreen : MonoBehaviour
     public TransitionManager transitionManager;
 
     public GameObject credits;
-    public GameObject settings; 
+    public GameObject settings;
+
+    public AudioSource music; 
+    public AudioSource StartSound; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +38,8 @@ public class TitleScreen : MonoBehaviour
 
     public void play()
     {
-        pressedSound.Play();
+        music.Stop();
+        StartSound.Play();
         transitionManager.playGame();
         // SceneManager.LoadScene("KAIT_ASSETS");
     }
