@@ -12,13 +12,13 @@ public class PaniniGrill : MonoBehaviour
     public GameObject currentWrap;
     public bool isCooking = false;
     public bool isCooked = false;
-    private Vector3 topPlateOpenPos;
-    private Vector3 topPlateClosedPos;
+    private Quaternion topPlateOpenRot;
+    private Quaternion topPlateClosedRot;
 
     void Start()
     {
-        topPlateOpenPos = topPlate.position;
-        topPlateClosedPos = topPlate.position - new Vector3(0, 0.15f, 0);
+        topPlateOpenRot = topPlate.transform.rotation;
+        topPlateClosedRot = Quaternion.Euler(35f,0f,0f); 
     }
 
     public void TryStartGrilling()
@@ -75,11 +75,12 @@ public class PaniniGrill : MonoBehaviour
         float t = 0f;
         while (t < 1f)
         {
-            topPlate.position = Vector3.Lerp(topPlateOpenPos, topPlateClosedPos, t);
+            
+            topPlate.rotation = Quaternion.Lerp(topPlateOpenRot, topPlateClosedRot, t);
             t += Time.deltaTime * 2f;
             yield return null;
         }
-        topPlate.position = topPlateClosedPos;
+        topPlate.rotation = Quaternion.Euler(35, 0, 0);
 
         // play sizzle sound
         if (sizzleSound != null)
@@ -97,11 +98,11 @@ public class PaniniGrill : MonoBehaviour
         t = 0f;
         while (t < 1f)
         {
-            topPlate.position = Vector3.Lerp(topPlateClosedPos, topPlateOpenPos, t);
+            topPlate.rotation = Quaternion.Lerp(topPlateClosedRot, topPlateOpenRot, t);
             t += Time.deltaTime * 2f;
             yield return null;
         }
-        topPlate.position = topPlateOpenPos;
+        topPlate.rotation = topPlateOpenRot;
 
         // mark wrap as cooked on WrapObject
         WrapObject wrapObj = currentWrap.GetComponent<WrapObject>();
