@@ -17,8 +17,11 @@ public class PaniniGrill : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(topPlate.transform.rotation);
         topPlateOpenRot = topPlate.transform.rotation;
-        topPlateClosedRot = Quaternion.Euler(35f,0f,0f); 
+        topPlateClosedRot = Quaternion.Euler(35f,270f,0f);
+
+        Debug.Log(topPlateOpenRot);
     }
 
     public void TryStartGrilling()
@@ -80,7 +83,7 @@ public class PaniniGrill : MonoBehaviour
             t += Time.deltaTime * 2f;
             yield return null;
         }
-        topPlate.rotation = Quaternion.Euler(35, 0, 0);
+        topPlate.rotation = Quaternion.Euler(35, 270, 0);
 
         // play sizzle sound
         if (sizzleSound != null)
