@@ -10,6 +10,10 @@ public class WrapObject : MonoBehaviour
     public int pickles;
     public int lettuce;
     public int tomatoes;
+    public int chicken;
+    public int beef;
+    public int garlic;
+    public int hotSauce;
     
     void OnTriggerEnter(Collider collider)
     {
@@ -37,6 +41,22 @@ public class WrapObject : MonoBehaviour
         else if (collider.gameObject.tag == "lettuce")
         {
             lettuce += 1;
+        }
+        else if (collider.gameObject.tag == "chicken")
+        {
+            chicken += 1;
+        }
+        else if (collider.gameObject.tag == "beef")
+        {
+            beef += 1;
+        }
+        else if (collider.gameObject.tag == "garlic")
+        {
+            garlic += 1;
+        }
+        else if (collider.gameObject.tag == "hotSauce")
+        {
+            hotSauce += 1;
         }
         else
         {
@@ -70,6 +90,22 @@ public class WrapObject : MonoBehaviour
         else if (collider.gameObject.tag == "lettuce")
         {
             lettuce -= 1;
+        }
+        else if (collider.gameObject.tag == "chicken")
+        {
+            chicken -= 1;
+        }
+        else if (collider.gameObject.tag == "beef")
+        {
+            beef -= 1;
+        }
+        else if (collider.gameObject.tag == "garlic")
+        {
+            garlic -= 1;
+        }
+        else if (collider.gameObject.tag == "hotSauce")
+        {
+            hotSauce -= 1;
         }
         else
         {

@@ -25,6 +25,10 @@ TagManager:
   - BeefSkewer
   - ChickenSkewer
   - table
+  - chicken
+  - beef
+  - garlic
+  - hotSauce
   layers:
   - Default
   - TransparentFX

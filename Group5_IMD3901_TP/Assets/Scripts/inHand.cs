@@ -9,7 +9,6 @@ public class inHand : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
     public GameObject hand;
-    public bool isIngred;
     public Camera mainCamera;
     public GameObject customer;
 
@@ -22,7 +21,6 @@ public class inHand : MonoBehaviour
     {
         objInHand = null;
         isHolding = false;
-        isIngred = false;
     }
 
     // Update is called once per frame
@@ -71,27 +69,23 @@ public class inHand : MonoBehaviour
         objInHand.transform.SetParent(null);
         objInHand.GetComponent<Rigidbody>().isKinematic = false;
 
-        //if it is an ingredient that you are holding
-        if (isIngred)
+
+        //if its a wrap don't make it rotate 
+        if (objInHand.tag == "flatwrap")
         {
-            //if its a wrap don't make it rotate 
-            if (objInHand.tag == "flatwrap")
-            {
-                objInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            }
-
-            //have it move from hand and shoot slightly forward
-            Vector3 newPos = objInHand.transform.position;
-            newPos.y += 0.3f;
-            objInHand.transform.position = newPos;
-            objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*3f);
-
+            objInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
+
+        //have it move from hand and shoot slightly forward
+        Vector3 newPos = objInHand.transform.position;
+        newPos.y += 0.3f;
+        objInHand.transform.position = newPos;
+        objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*3f);
 
         //set variables back to nothing in hand
         objInHand =null;
         isHolding=false;
-        isIngred=false;
+
     }
 
     public void pickUpObj(GameObject newObject)
@@ -137,7 +131,6 @@ public class inHand : MonoBehaviour
         //reset variables 
         objInHand = null;
         isHolding = false;
-        isIngred = false;
     }
 
 }

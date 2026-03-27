@@ -9,10 +9,9 @@ public class PlayerInteraction : MonoBehaviour
     public Camera playerCamera;
     public CrosshairUI crosshairUIScript;
     public inHand hand;
-    public pickIngredient ingredient;
     public GameObject playerHand;
     public WrapObject wrap;
-    string[] foodTags = { "fries", "lettuce", "tomatoes", "onions", "pickle", "wrap", "flatwrap" };
+    string[] foodTags = { "fries", "lettuce", "tomatoes", "onions", "pickle", "wrap", "flatwrap", "chicken", "beef" };
 
     void Start()
     {
@@ -132,7 +131,6 @@ public class PlayerInteraction : MonoBehaviour
                             {
                                 Debug.Log("grab it");
                                 hand.pickUpObj(hit.collider.gameObject);
-                                hand.isIngred = true;
                             }
                         }
                     }

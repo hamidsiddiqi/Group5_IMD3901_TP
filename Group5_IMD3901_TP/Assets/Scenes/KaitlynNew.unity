@@ -1491,7 +1491,6 @@ MonoBehaviour:
   playerCamera: {fileID: 238778940}
   crosshairUIScript: {fileID: 0}
   hand: {fileID: 238205182}
-  ingredient: {fileID: 238205181}
   playerHand: {fileID: 260630829}
   wrap: {fileID: 0}
 --- !u!114 &238205178
@@ -1551,7 +1550,6 @@ MonoBehaviour:
   leftHand: {fileID: 260630831}
   rightHand: {fileID: 260630830}
   hand: {fileID: 260630829}
-  isIngred: 0
   mainCamera: {fileID: 238778940}
   customer: {fileID: 0}
   knife: {fileID: 0}
@@ -5213,7 +5211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sauceColor: {r: 0.9622642, g: 0.0127091, b: 0.0127091, a: 1}
-  sauceSplatPrefab: {fileID: 598616973885888801, guid: 4847c3bac7909fd4fb4b4fa53a2d671b, type: 3}
+  sauceSplatPrefab: {fileID: 598616973885888801, guid: e4563d44c18286e40a8e2dcb8a459ca6, type: 3}
 --- !u!23 &1090768398
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6826,7 +6824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.218
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10486,7 +10484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sauceColor: {r: 0.9622642, g: 0.0127091, b: 0.0127091, a: 1}
-  sauceSplatPrefab: {fileID: 598616973885888801, guid: 4847c3bac7909fd4fb4b4fa53a2d671b, type: 3}
+  sauceSplatPrefab: {fileID: 598616973885888801, guid: e4563d44c18286e40a8e2dcb8a459ca6, type: 3}
 --- !u!23 &2132215137
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11540,6 +11538,18 @@ PrefabInstance:
     - target: {fileID: 6862543927354304136, guid: 6cb6ba45172097e4ea6757369d1ab2f2, type: 3}
       propertyPath: m_TagString
       value: table
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182495809374379613, guid: 6cb6ba45172097e4ea6757369d1ab2f2, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4659866
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182495809374379613, guid: 6cb6ba45172097e4ea6757369d1ab2f2, type: 3}
+      propertyPath: m_Size.z
+      value: 0.9999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182495809374379613, guid: 6cb6ba45172097e4ea6757369d1ab2f2, type: 3}
+      propertyPath: m_Center.x
+      value: -0.2329909
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

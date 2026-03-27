@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: -1031898164504172781}
   - component: {fileID: 9195691034329945117}
   m_Layer: 0
-  m_Name: SauceSplat
-  m_TagString: garlic
+  m_Name: SauceSplat 1
+  m_TagString: hotSauce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 7bb7d8eb9cb6a38458e239ae8fbe7ed5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7798742, g: 0.076025344, b: 0.076025344, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
