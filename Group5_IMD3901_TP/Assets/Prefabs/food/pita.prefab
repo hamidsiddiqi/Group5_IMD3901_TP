@@ -94,7 +94,7 @@ PrefabInstance:
       addedObject: {fileID: 3532693534609157740}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e56da0758b2e05347b3a60a8f0e1134e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4978746770457084072}
+      addedObject: {fileID: 8624536218104996405}
   m_SourcePrefab: {fileID: 100100000, guid: e56da0758b2e05347b3a60a8f0e1134e, type: 3}
 --- !u!1 &2541956262652877410 stripped
 GameObject:
@@ -147,8 +147,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 18.586977, y: 1, z: 17.893648}
-  m_Center: {x: 2.1278982, y: 0, z: 4.9413424}
+  m_Size: {x: 18.586977, y: 0.93706906, z: 17.893648}
+  m_Center: {x: 2.1278977, y: 0.2955237, z: 4.9413424}
 --- !u!114 &-9083360255727346275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,8 +289,8 @@ MonoBehaviour:
   pickles: 0
   lettuce: 0
   tomatoes: 0
---- !u!65 &-4978746770457084072
-BoxCollider:
+--- !u!136 &8624536218104996405
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -307,6 +307,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 18.586977, y: 2.4846041, z: 17.893648}
-  m_Center: {x: 2.1278977, y: 1.6651525, z: 4.9413424}
+  serializedVersion: 2
+  m_Radius: 8.642189
+  m_Height: 17.284378
+  m_Direction: 1
+  m_Center: {x: 1.7780136, y: 0.6028875, z: 4.7231245}
