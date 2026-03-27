@@ -5,7 +5,7 @@ public class UseItem : MonoBehaviour
 {
     public inHand hand;
     public Camera playerCamera;
-    public float interactRange = 5f;
+    public float interactRange = 7f;
 
     void Update()
     {
@@ -17,8 +17,11 @@ public class UseItem : MonoBehaviour
                 Debug.Log("Child count: " + hand.hand.transform.childCount);
                 if (hand.hand.transform.childCount > 0)
                 {
+                    
                     GameObject heldObj = hand.hand.transform.GetChild(0).gameObject;
                     SauceBottle heldSauce = heldObj.GetComponent<SauceBottle>();
+                    Debug.Log(heldSauce);
+
 
                     if (heldSauce != null)
                     {
