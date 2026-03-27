@@ -13,6 +13,11 @@ public class WrapObject : MonoBehaviour
     
     void OnTriggerEnter(Collider collider)
     {
+        if(collider.transform.position.y - 0.001 < transform.position.y)
+        {
+            return;
+        }
+
         if(collider.gameObject.tag == "onions")
         {
             onions += 1;
