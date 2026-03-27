@@ -33,7 +33,6 @@ public class inHand : MonoBehaviour
             if (objInHand.tag == "scooper")
             {
                 //move the knife to right hand, scooper to left
-                
                 knife.transform.position = rightHand.transform.position;
                 knife.transform.rotation = Quaternion.Euler(0f,0f,0f);
                 //Scooper.transform.position = leftHand.transform.position;
@@ -68,7 +67,7 @@ public class inHand : MonoBehaviour
         //unparent the object and make kinematic false
         objInHand.transform.SetParent(null);
         objInHand.GetComponent<Rigidbody>().isKinematic = false;
-
+        Debug.Log("hello");
 
         //if its a wrap don't make it rotate 
         if (objInHand.tag == "flatwrap")

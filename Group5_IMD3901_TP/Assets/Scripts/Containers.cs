@@ -13,7 +13,7 @@ public class Containers : MonoBehaviour
 
     void OnTriggerExit(Collider collider)
     {
-
+        //if it leaves and its vr 
         if (collider.TryGetComponent<XRGrabInteractable>(out var interactable))
         {
             Debug.Log("you can grab it");
@@ -23,14 +23,17 @@ public class Containers : MonoBehaviour
             }
         }
 
+        //if the container has less than 9 objects in it 
         if(transform.parent.transform.childCount < 9)
         {
-            Debug.Log("we missing stuff");
+            //make location
             Vector3 location = transform.position;
+            //randomize x & z, plus move up y slightly
             location.x += Random.Range(-0.2f, 0.2f);
             location.y += 0.03f;
             location.z += Random.Range(-0.2f, 0.2f);
 
+            //check what left the box and replace it 
             if (collider.tag == "fries")
             {
                 GameObject replace = Instantiate(fries, location, Quaternion.identity);
@@ -58,7 +61,4 @@ public class Containers : MonoBehaviour
             }
         }
     }
-
-
-
 }

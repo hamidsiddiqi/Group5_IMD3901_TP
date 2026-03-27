@@ -17,11 +17,13 @@ public class WrapObject : MonoBehaviour
     
     void OnTriggerEnter(Collider collider)
     {
+        //if the object us underneath the peta get outtaaa here
         if(collider.transform.position.y - 0.001 < transform.position.y)
         {
             return;
         }
 
+        //check what entered and add it to the pita
         if(collider.gameObject.tag == "onions")
         {
             onions += 1;
@@ -63,14 +65,14 @@ public class WrapObject : MonoBehaviour
             return;
         }
 
-        //collider.GetComponent<Rigidbody>().isKinematic = true;
-        
+        //parent to the pita
         collider.transform.SetParent(transform);
 
     }
 
     void OnTriggerExit(Collider collider)
     {
+        //if it leaves compare tag and remove from pita
         if (collider.gameObject.tag == "onions")
         {
             onions -= 1;
@@ -111,14 +113,17 @@ public class WrapObject : MonoBehaviour
         {
             return;
         }
+        //unparent it
         collider.transform.SetParent(null);
 
     }
 
     void OnCollisionExit(Collision collision)
     {
+        //if it leaves the table
         if(collision.gameObject.tag == "table")
         {
+            //go through each child and turn on kinematic
             foreach (Transform child in gameObject.transform)
             {
                 if (child.name != "pita")
@@ -134,8 +139,10 @@ public class WrapObject : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        //if it lands on table
         if (collision.gameObject.tag == "table")
         {
+            //go through each child and turn off kinematic
             foreach (Transform child in gameObject.transform)
             {
                 if (child.name != "pita")

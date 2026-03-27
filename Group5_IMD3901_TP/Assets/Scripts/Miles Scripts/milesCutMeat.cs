@@ -9,7 +9,9 @@ public class milesCutMeat : MonoBehaviour
     public GameObject BeefPiece; 
 
     public GameObject beefSkewer;
-    public GameObject chickenSkewer; 
+    public GameObject chickenSkewer;
+    public GameObject beefSkewer2;
+    public GameObject chickenSkewer2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +22,8 @@ public class milesCutMeat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+        chickenSkewer2.transform.Rotate(Vector3.up * 5f * Time.deltaTime);
+        beefSkewer2.transform.Rotate(Vector3.up * 5f * Time.deltaTime);
         chickenSkewer.transform.Rotate(Vector3.up * 5f * Time.deltaTime);
         beefSkewer.transform.Rotate(Vector3.up * 5f * Time.deltaTime);
         
