@@ -128,8 +128,12 @@ public class WrapObject : MonoBehaviour
             {
                 if (child.name != "pita")
                 {
-                    child.GetComponent<Rigidbody>().isKinematic = true;
-                    Debug.Log(child.name);
+                    Rigidbody rb = child.GetComponent<Rigidbody>();
+                    // Only change settings if the Rigidbody actually exists
+                    if (rb != null) 
+                    {
+                        rb.isKinematic = false;
+                    }
                 }
                 
             }
@@ -147,8 +151,13 @@ public class WrapObject : MonoBehaviour
             {
                 if (child.name != "pita")
                 {
-                    child.GetComponent<Rigidbody>().isKinematic = false;
-                    Debug.Log(child.name);
+                    Rigidbody rb = child.GetComponent<Rigidbody>();
+
+                    // Only change settings if the Rigidbody actually exists
+                    if (rb != null) 
+                    {
+                        rb.isKinematic = false;
+                    }
                 }
             }
 
