@@ -5,7 +5,8 @@ using static UnityEditor.FilePathAttribute;
 public class ShawarmaGrab : MonoBehaviour
 {
     public GameObject shawarmaReady;
-    public Transform player; // Drag your Player object here
+    public Transform player; // desktop player
+    public Transform vrPlayer; // VR player
     public float wrapDistance = 15f;
 
     void Start()
@@ -16,9 +17,11 @@ public class ShawarmaGrab : MonoBehaviour
 
     void Update()
     {
-        // Check for Spacebar press
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        // Check for Spacebar press or 1 for VR 
+        if (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.digit1Key.wasPressedThisFrame)
         {
+            Debug.Log("Wrap key pressed!");
+            Transform activePlayer = (vrPlayer != null && vrPlayer.gameObject.activeInHierarchy) ? vrPlayer : player; //check if active player is desktop or vr
             // Check if player is close enough to the table/shawarma
             float distance = Vector3.Distance(player.position, transform.position);
             Debug.Log("Space pressed! Distance: " + distance + " wrapDistance: " + wrapDistance);
