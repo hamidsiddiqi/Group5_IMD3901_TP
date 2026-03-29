@@ -1,12 +1,20 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 using UnityEngine.XR;
 
 public class Order : MonoBehaviour
 {
 
+    public GameObject hat1;
+    public GameObject hat2;
+    public GameObject ponytail1;
+    public GameObject ponytail2;
+    public GameObject currentCustomer; 
     public GameObject ordBubble;
-    public GameObject customer;
+    private GameObject CurrentOrdBubble;
+
     public Camera playerCamera;
     public float interactRange = 5f;
 
@@ -14,7 +22,6 @@ public class Order : MonoBehaviour
     public GameObject pita;
 
     public GameObject chicken;
-    public GameObject falafel;
     public GameObject beef;
 
     public GameObject lettuce;
@@ -32,20 +39,20 @@ public class Order : MonoBehaviour
     public int[] toppings = { 0,0,0,0,0};
     public int[] sauces = { 0, 0 };
 
-    public ShawarmaTransition shawTrans;
+    public inHand inPlayerHand;
     bool isHoldingShaw = false;
+    public GameObject oih;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         list.SetActive(false);
-        ordBubble.SetActive(true);
+        //ordBubble.SetActive(true);
 
         pita.SetActive(false);
         chicken.SetActive(false);
         beef.SetActive(false);
-        falafel.SetActive(false);
 
         lettuce.SetActive(false);
         tomato.SetActive(false);
@@ -56,26 +63,37 @@ public class Order : MonoBehaviour
         garlic.SetActive(false);
         hotSauce.SetActive(false);
         top2.SetActive(false);
+
+        currentCustomer = Instantiate(hat1, new Vector3(-3.61f, 1f, 5.88f), Quaternion.Euler(0f,-90f,0f));
+        CurrentOrdBubble = Instantiate(ordBubble, new Vector3(-3.61f, 1f, 5.88f), Quaternion.Euler(90f, 0f, 0f));
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        oih = inPlayerHand.objInHand;
+        
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
-        isHoldingShaw = shawTrans.isHolding;
+        CurrentOrdBubble.transform.position = new Vector3 (currentCustomer.transform.position.x, currentCustomer.transform.position.y + 2.75f, currentCustomer.transform.position.z);
 
+       
+       
         // Debug.Log(shawTrans.isHolding);
+        
 
         if (Physics.Raycast(ray, out hit, interactRange))
         {
-            if (hit.collider.CompareTag("customer"))
+
+                    if (hit.collider.CompareTag("customer"))
             {
                if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    if (isHoldingShaw == false)
+
+                    if (oih == null)
                     {
 
                         Debug.Log("not yippee!!!!");
@@ -89,13 +107,13 @@ public class Order : MonoBehaviour
                         hotSauce.SetActive(true);
 
                         list.SetActive(true);
-                        ordBubble.SetActive(false);
+                        CurrentOrdBubble.SetActive(false);
                     }
 
-                    if (isHoldingShaw == true)
-                    {
-                        Debug.Log("yipee!!!!");
 
+                    if (oih.name == "wrap")
+                    {
+                        Debug.Log("Order Complete");
                         pita.SetActive(false);
                         chicken.SetActive(false);
 
@@ -106,8 +124,9 @@ public class Order : MonoBehaviour
                         hotSauce.SetActive(false);
 
                         list.SetActive(false);
-
                     }
+
+                
                     
                 }
             }
@@ -116,6 +135,7 @@ public class Order : MonoBehaviour
 
 
 }
+
 
 
 }

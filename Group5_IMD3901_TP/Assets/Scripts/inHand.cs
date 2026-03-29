@@ -15,6 +15,9 @@ public class inHand : MonoBehaviour
     public GameObject knife;
     public GameObject Scooper;
 
+    public Order ord;
+    public GameObject shawObj;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -114,18 +117,12 @@ public class inHand : MonoBehaviour
 
     public void GiveShawarma()
     {
-        // Parent it to the customer so they "hold" it
-        objInHand.transform.SetParent(customer.transform);
+        customer = ord.currentCustomer;
 
-        // Position it in front of the customer capsule
-        objInHand.transform.localPosition = new Vector3(0f, 0.5f, 0.6f);
-        objInHand.transform.localRotation = Quaternion.identity;
+        objInHand.SetActive(false);
 
-        // Keep it kinematic so it doesn't fall off the customer
-        if (objInHand.GetComponent<Rigidbody>())
-        {
-            objInHand.GetComponent<Rigidbody>().isKinematic = true;
-        }
+        shawObj = customer.transform.Find("Shawarma_wrap").gameObject;
+        shawObj.SetActive(true);
 
         //reset variables 
         objInHand = null;
