@@ -73,7 +73,11 @@ public class Order : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        oih = inPlayerHand.objInHand;
+        if (inPlayerHand.objInHand != null)
+        {
+            oih = inPlayerHand.objInHand;
+        }
+        
         
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
@@ -88,7 +92,7 @@ public class Order : MonoBehaviour
         if (Physics.Raycast(ray, out hit, interactRange))
         {
 
-                    if (hit.collider.CompareTag("customer"))
+            if (hit.collider.CompareTag("customer"))
             {
                if (Keyboard.current.eKey.wasPressedThisFrame)
                 {

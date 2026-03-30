@@ -8,6 +8,7 @@ public class CustomerMovement : MonoBehaviour
     public GameObject turnPos;
     public GameObject pickUpPos;
     public GameObject leavePos;
+    public GameObject orderBubble;
 
     public int orderNum;
     private GameObject[] moves;
@@ -124,6 +125,13 @@ public class CustomerMovement : MonoBehaviour
             isMove = false;
 
             Invoke("nextMove", 1);
+
+            //once it gets to counter show the bubble
+            if(curMove == 0)
+            {
+                //orderBubble.SetActive(true);
+                return;
+            }
 
         }
     }
