@@ -46,7 +46,7 @@ public class VRSauceBottle : MonoBehaviour
             Ray ray = new Ray(transform.position + Vector3.down * 0.5f, Vector3.down);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, interactRange, layerMask))
+            if (Physics.Raycast(ray, out hit, interactRange, layerMask, QueryTriggerInteraction.Ignore))
             {
 
                 //ignore if we hit the bottle itself

@@ -31,7 +31,9 @@ public class UseItem : MonoBehaviour
                                           playerCamera.transform.forward);
                         RaycastHit hit;
 
-                        if (Physics.Raycast(ray, out hit, interactRange))
+                        int layerMask = ~(1 << LayerMask.NameToLayer("SauceSplat")); //ignore SauceSplat layer
+
+                        if (Physics.Raycast(ray, out hit, interactRange, layerMask, QueryTriggerInteraction.Ignore))
                         {
                             // if the ray hits the bottle itself, ignore it
                             // (the bottle is held in front of the camera so it would block the ray)
