@@ -1,34 +1,43 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.FilePathAttribute;
 
 public class ShawarmaGrab : MonoBehaviour
 {
     public GameObject shawarmaReady;
-    public Transform player; // desktop player
-    public Transform vrPlayer; // VR player
-    public float wrapDistance = 15f;
+    public Transform player;
+    public Transform vrPlayer;
+    public float wrapDistance = 5f;
 
     void Start()
     {
-        // Initial state: Flat is visible, Ready is hidden
         if (shawarmaReady != null) shawarmaReady.SetActive(false);
     }
 
     void Update()
     {
-        // Check for Spacebar press or 1 for VR 
         if (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.digit1Key.wasPressedThisFrame)
         {
-            Debug.Log("Wrap key pressed!");
-            Transform activePlayer = (vrPlayer != null && vrPlayer.gameObject.activeInHierarchy) ? vrPlayer : player; //check if active player is desktop or vr
-            // Check if player is close enough to the table/shawarma
-            float distance = Vector3.Distance(player.position, transform.position);
-            Debug.Log("Space pressed! Distance: " + distance + " wrapDistance: " + wrapDistance);
-            
+            Transform activePlayer = (vrPlayer != null && vrPlayer.gameObject.activeInHierarchy) ? vrPlayer : player;
+            float distance = Vector3.Distance(activePlayer.position, transform.position);
+            Debug.Log("Pita: " + gameObject.name + " Distance: " + distance + " wrapDistance: " + wrapDistance);
+
             if (distance <= wrapDistance)
             {
-                WrapShawarma();
+                Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+                RaycastHit hit;
+
+                if (Physics.SphereCast(ray, 0.3f, out hit, wrapDistance))
+                {
+                    Debug.Log("SphereCast hit: " + hit.collider.gameObject.name);
+                    ShawarmaGrab hitGrab = hit.collider.GetComponent<ShawarmaGrab>();
+                    if (hitGrab == null)
+                        hitGrab = hit.collider.GetComponentInParent<ShawarmaGrab>();
+
+                    if (hitGrab == this)
+                    {
+                        WrapShawarma();
+                    }
+                }
             }
         }
     }
@@ -37,11 +46,9 @@ public class ShawarmaGrab : MonoBehaviour
     {
         Debug.Log("Shawarma Wrapped!");
 
-        // spawn wrap at same position as flat wrap
         GameObject wrap = Instantiate(shawarmaReady, this.transform.position, Quaternion.identity);
-        wrap.transform.Rotate(0f,0f, -90f);
+        wrap.transform.Rotate(0f, 0f, -90f);
         wrap.SetActive(true);
-
         this.gameObject.SetActive(false);
 
         WrapObject currentWrap = this.GetComponent<WrapObject>();

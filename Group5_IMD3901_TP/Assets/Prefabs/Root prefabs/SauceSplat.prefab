@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6704605461025154165}
   - component: {fileID: -1031898164504172781}
   - component: {fileID: 9195691034329945117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SauceSplat
   m_TagString: garlic
   m_Icon: {fileID: 0}

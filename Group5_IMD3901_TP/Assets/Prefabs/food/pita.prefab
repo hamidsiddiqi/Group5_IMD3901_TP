@@ -98,6 +98,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e56da0758b2e05347b3a60a8f0e1134e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3092208210157850662}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e56da0758b2e05347b3a60a8f0e1134e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3622129894549149008}
   m_SourcePrefab: {fileID: 100100000, guid: e56da0758b2e05347b3a60a8f0e1134e, type: 3}
 --- !u!1 &2541956262652877410 stripped
 GameObject:
@@ -127,7 +130,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -333,4 +336,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shawarmaReady: {fileID: 3910268199405599286, guid: 2183d5fc40eee4d4f912af0fe4e75c41, type: 3}
   player: {fileID: 0}
-  wrapDistance: 3
+  vrPlayer: {fileID: 0}
+  wrapDistance: 5
+--- !u!114 &-3622129894549149008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541956262652877410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412655173d6ed994fba756f764490297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

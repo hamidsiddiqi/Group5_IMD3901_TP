@@ -135,6 +135,10 @@ MonoBehaviour:
   pickles: 0
   lettuce: 0
   tomatoes: 0
+  chicken: 0
+  beef: 0
+  garlic: 0
+  hotSauce: 0
 --- !u!65 &2670676747726676968
 BoxCollider:
   m_ObjectHideFlags: 0

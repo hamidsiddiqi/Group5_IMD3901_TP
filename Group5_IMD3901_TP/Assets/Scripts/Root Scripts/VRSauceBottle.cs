@@ -41,11 +41,21 @@ public class VRSauceBottle : MonoBehaviour
 
         if (Keyboard.current.tKey.wasPressedThisFrame)
         {
-            Ray ray = new Ray(transform.position, Vector3.down);
+            Debug.Log("Ray direction: " + Vector3.down);
+            int layerMask = ~(1 << LayerMask.NameToLayer("SauceSplat"));
+            Ray ray = new Ray(transform.position + Vector3.down * 0.5f, Vector3.down);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, interactRange))
+            if (Physics.Raycast(ray, out hit, interactRange, layerMask))
             {
+
+                //ignore if we hit the bottle itself
+                if (hit.collider.gameObject == gameObject || hit.collider.transform.IsChildOf(transform))
+                {
+                    Debug.Log("Hit self, ignoring...");
+                    return;
+                }
+
                 GameObject target = hit.collider.gameObject;
                 if (!target.CompareTag("flatwrap") && target.transform.parent != null)
                     target = target.transform.parent.gameObject;
