@@ -62,6 +62,7 @@ public class VRSauceBottle : MonoBehaviour
 
                 if (target.CompareTag("flatwrap"))
                 {
+                    Debug.Log("Hit point Y: " + hit.point.y + " target: " + target.name);
                     sauceBottle.ApplySauce(target, hit);
                     Debug.Log("VR Sauce applied!");
                 }
