@@ -32,20 +32,11 @@ public class inHand : MonoBehaviour
         //if you have smth in your hand
         if (objInHand != null && isHolding)
         {
-            //if its a scooper
-            if (objInHand.tag == "scooper")
-            {
-                //move the knife to right hand, scooper to left
-                knife.transform.position = rightHand.transform.position;
-                knife.transform.rotation = Quaternion.Euler(0f,0f,0f);
-                //Scooper.transform.position = leftHand.transform.position;
-            }
             //any other thing put in the middle
             if (objInHand.GetComponent<SauceBottle>() != null)
             {
                 objInHand.transform.position = hand.transform.position + Vector3.up * 1f;
             }
-            
             else
             {
                 objInHand.transform.position = hand.transform.position;
@@ -61,17 +52,20 @@ public class inHand : MonoBehaviour
         {
             return;
         }
+
         //reset sauce bottle rotation
         if (objInHand.GetComponent<SauceBottle>() != null)
         {
-        objInHand.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+            objInHand.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
         }
 
         //unparent the object and make kinematic false
         objInHand.transform.SetParent(null);
         objInHand.GetComponent<Rigidbody>().isKinematic = false;
-        Debug.Log("hello");
+        objInHand.GetComponent<Rigidbody>().useGravity = true;
+        objInHand.GetComponent<Rigidbody>().WakeUp();
 
+        objInHand.transform.position += mainCamera.transform.forward * 0.1f;
         //if its a wrap don't make it rotate 
         if (objInHand.tag == "flatwrap")
         {
@@ -82,7 +76,9 @@ public class inHand : MonoBehaviour
         Vector3 newPos = objInHand.transform.position;
         newPos.y += 0.3f;
         objInHand.transform.position = newPos;
-        objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*3f);
+        objInHand.GetComponent<Rigidbody>().linearVelocity = (mainCamera.transform.forward*2f);
+
+        Debug.Log(objInHand.GetComponent<Rigidbody>().linearVelocity);
 
         //set variables back to nothing in hand
         objInHand =null;
@@ -103,7 +99,7 @@ public class inHand : MonoBehaviour
         objInHand= newObject;
 
         //parent the object to hand and enable kinematics
-        objInHand.transform.SetParent(hand.transform,false);
+        objInHand.transform.SetParent(hand.transform,true);
         objInHand.GetComponent<Rigidbody>().isKinematic = true;
 
         // flip upside down if its a sauce bottle
@@ -111,6 +107,11 @@ public class inHand : MonoBehaviour
         {
             objInHand.transform.localRotation = Quaternion.Euler(270f, 0f, 0f);
             objInHand.transform.localPosition = new Vector3(0f, 100f, 0f);
+        }
+
+        if (newObject.CompareTag("knife"))
+        {
+            objInHand.transform.localRotation = Quaternion.Euler(270f, 0f, 180f);
         }
 
     }

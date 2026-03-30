@@ -119,7 +119,7 @@ public class PlayerInteraction : MonoBehaviour
                         hand.pickUpObj(hit.collider.gameObject);
                     }
                     //hitting the knife and scoop then pick that up
-                    else if (hit.collider.CompareTag("scooper"))
+                    else if (hit.collider.CompareTag("knife"))
                     {
                         hand.pickUpObj(hit.collider.gameObject);
                     }

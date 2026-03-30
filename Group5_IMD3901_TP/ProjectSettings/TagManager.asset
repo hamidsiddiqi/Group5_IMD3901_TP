@@ -30,6 +30,7 @@ TagManager:
   - garlic
   - hotSauce
   - locator
+  - knife
   layers:
   - Default
   - TransparentFX
