@@ -92,10 +92,12 @@ public class PaniniGrill : MonoBehaviour
         // wait while cooking
         yield return new WaitForSeconds(cookTime);
 
-        // change to cooked material
-        Renderer rend = currentWrap.GetComponent<Renderer>();
-        if (rend != null && cookedMaterial != null)
-            rend.material = cookedMaterial;
+        // change to cooked material on all child renderers of the wrap prefab
+        Renderer[] renderers = currentWrap.GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in renderers)
+        {
+            rend.material.color = rend.material.color * 0.8f;
+        }
 
         // open grill animation
         t = 0f;

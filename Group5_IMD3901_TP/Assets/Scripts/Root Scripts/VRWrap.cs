@@ -18,18 +18,33 @@ public class VRWrap : MonoBehaviour
     void OnGrab(SelectEnterEventArgs args)
     {
         isGrabbed = true;
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void OnRelease(SelectExitEventArgs args)
     {
         isGrabbed = false;
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void Update()
     {
+        // press t to start grilling when wrap is on grill (not held)
+        if (Keyboard.current.tKey.wasPressedThisFrame && !isGrabbed)
+        {
+            PaniniGrill grill = FindObjectsByType<PaniniGrill>(FindObjectsSortMode.None)[0];
+            if (grill != null && grill.currentWrap != null && !grill.isCooking)
+            {
+                GrillButton button = grill.GetComponentInChildren<GrillButton>();
+                if (button != null) button.Press();
+                else grill.TryStartGrilling();
+                Debug.Log("VR: Grilling started!");
+            }
+        }
+
         if (!isGrabbed) return;
 
-        // press 2 to place wrap on grill
+        // press 2 to place wrap on grill while holding it
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
             PaniniGrill grill = FindObjectsByType<PaniniGrill>(FindObjectsSortMode.None)[0];
@@ -49,7 +64,7 @@ public class VRWrap : MonoBehaviour
                         grill.bottomPlate.position.y + 0.1f,
                         grill.bottomPlate.position.z
                     );
-                    transform.rotation = Quaternion.Euler(0.014f, 181.611f, -90.514f);
+                    transform.rotation = Quaternion.Euler(0.014f, 91.611f, -90.514f);
                     GetComponent<Rigidbody>().isKinematic = true;
                     grill.currentWrap = gameObject;
                     Debug.Log("VR: Wrap placed on grill!");

@@ -150,6 +150,8 @@ public class PlayerInteraction : MonoBehaviour
                 else grill.TryStartGrilling();
             }
         }
+
+
     }
 
 }
