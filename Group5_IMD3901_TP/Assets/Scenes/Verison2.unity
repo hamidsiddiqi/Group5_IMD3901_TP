@@ -3003,6 +3003,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 683767230}
     - target: {fileID: 1337239634224382469, guid: 9966db4690bebfe4b95e1dc75b5f5eb0, type: 3}
+      propertyPath: grill
+      value: 
+      objectReference: {fileID: 523339681638497815}
+    - target: {fileID: 1337239634224382469, guid: 9966db4690bebfe4b95e1dc75b5f5eb0, type: 3}
       propertyPath: customer
       value: 
       objectReference: {fileID: 0}
@@ -9788,7 +9792,7 @@ GameObject:
   - component: {fileID: 2815063609899628457}
   - component: {fileID: 7127103552583974887}
   m_Layer: 0
-  m_Name: grill4 1
+  m_Name: NEW GRILL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
