@@ -19,21 +19,7 @@ public class Order : MonoBehaviour
     public float interactRange = 5f;
 
     public GameObject list;
-    public GameObject pita;
-
-    public GameObject chicken;
-    public GameObject beef;
-
-    public GameObject lettuce;
-    public GameObject tomato;
-    public GameObject fries;
-    public GameObject onion;
-    public GameObject pickle;
-
-    public GameObject top2;
-
-    public GameObject garlic;
-    public GameObject hotSauce;
+   
 
     public int protein;
     public int[] toppings = { 0,0,0,0,0};
@@ -49,20 +35,6 @@ public class Order : MonoBehaviour
     {
         list.SetActive(false);
         //ordBubble.SetActive(true);
-
-        pita.SetActive(false);
-        chicken.SetActive(false);
-        beef.SetActive(false);
-
-        lettuce.SetActive(false);
-        tomato.SetActive(false);
-        fries.SetActive(false);
-        onion.SetActive(false);
-        pickle.SetActive(false);
-
-        garlic.SetActive(false);
-        hotSauce.SetActive(false);
-        top2.SetActive(false);
 
         currentCustomer = Instantiate(hat1, new Vector3(-3.61f, 1f, 5.88f), Quaternion.Euler(0f,-90f,0f));
         CurrentOrdBubble = Instantiate(ordBubble, new Vector3(-3.61f, 1f, 5.88f), Quaternion.Euler(90f, 0f, 0f));
@@ -101,14 +73,7 @@ public class Order : MonoBehaviour
                     {
 
                         Debug.Log("not yippee!!!!");
-                        pita.SetActive(true);
-                        chicken.SetActive(true);
-
-                        lettuce.SetActive(true);
-                        top2.SetActive(true);
-                        tomato.SetActive(true);
-
-                        hotSauce.SetActive(true);
+                       
 
                         list.SetActive(true);
                         CurrentOrdBubble.SetActive(false);
@@ -118,14 +83,7 @@ public class Order : MonoBehaviour
                     if (oih.name == "wrap")
                     {
                         Debug.Log("Order Complete");
-                        pita.SetActive(false);
-                        chicken.SetActive(false);
-
-                        lettuce.SetActive(false);
-                        top2.SetActive(false);
-                        tomato.SetActive(false);
-
-                        hotSauce.SetActive(false);
+                      
 
                         list.SetActive(false);
                     }
