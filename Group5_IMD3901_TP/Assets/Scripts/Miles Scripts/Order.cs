@@ -29,6 +29,8 @@ public class Order : MonoBehaviour
     bool isHoldingShaw = false;
     public GameObject oih;
 
+    public PaniniGrill grill;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,10 +47,9 @@ public class Order : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inPlayerHand.objInHand != null)
-        {
+
             oih = inPlayerHand.objInHand;
-        }
+
         
         
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
@@ -68,7 +69,7 @@ public class Order : MonoBehaviour
             {
                if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
-
+                    Debug.Log("oih: " + oih); 
                     if (oih == null)
                     {
 
@@ -80,12 +81,13 @@ public class Order : MonoBehaviour
                     }
 
 
-                    if (oih.name == "wrap")
+                    if (oih.name == "wrap" && grill.isCooked)
                     {
                         Debug.Log("Order Complete");
                       
 
                         list.SetActive(false);
+                        grill.isCooked = false;
                     }
 
                 
