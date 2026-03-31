@@ -7,6 +7,7 @@ public class ShawarmaGrab : MonoBehaviour
     public Transform player;
     public Transform vrPlayer;
     public float wrapDistance = 5f;
+    public AudioSource wrappedSound;
 
     void Start()
     {
@@ -36,6 +37,11 @@ public class ShawarmaGrab : MonoBehaviour
                     if (hitGrab == this)
                     {
                         WrapShawarma();
+                        
+                        if (wrappedSound != null)
+                        {
+                            wrappedSound.Play();
+                        }
                     }
                 }
             }
@@ -46,9 +52,17 @@ public class ShawarmaGrab : MonoBehaviour
     {
         Debug.Log("Shawarma Wrapped!");
 
+   
+
         GameObject wrap = Instantiate(shawarmaReady, this.transform.position, Quaternion.identity);
         wrap.transform.Rotate(0f, 0f, -90f);
         wrap.SetActive(true);
+
+        //if (wrappedSound != null)
+        //{
+        //    wrappedSound.transform.SetParent(wrap.transform);
+        //}
+
         this.gameObject.SetActive(false);
 
         WrapObject currentWrap = this.GetComponent<WrapObject>();

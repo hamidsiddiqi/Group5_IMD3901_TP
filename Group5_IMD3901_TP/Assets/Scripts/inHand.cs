@@ -18,6 +18,9 @@ public class inHand : MonoBehaviour
     public Order ord;
     public GameObject shawObj;
 
+    public AudioSource grabSound;
+    public AudioSource dropSound;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -53,6 +56,8 @@ public class inHand : MonoBehaviour
         {
             return;
         }
+
+        if (dropSound != null) dropSound.Play();
 
         //reset sauce bottle rotation
         if (objInHand.GetComponent<SauceBottle>() != null)
@@ -95,8 +100,10 @@ public class inHand : MonoBehaviour
             return;
         }
 
+        if (grabSound != null) grabSound.Play();
+
         //set variables 
-        isHolding=true;
+        isHolding =true;
         objInHand= newObject;
 
         //parent the object to hand and enable kinematics

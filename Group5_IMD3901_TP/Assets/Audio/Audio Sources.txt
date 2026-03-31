@@ -6,4 +6,6 @@ Start Transition: Recorded by Hamid Siddiqi
 Cha Ching: https://pixabay.com/sound-effects/film-special-effects-cha-ching-7053/
 Order Graphic Appear: https://pixabay.com/sound-effects/film-special-effects-digital-beeping-151921/
 Wrapping Shawarma: https://pixabay.com/sound-effects/film-special-effects-shuffle2-85598/
-Cutting Meat: https://pixabay.com/sound-effects/household-chopping-meat-92010/
+Cutting Meat: https://pixabay.com/sound-effects/household-vlees-snijden-102677/
+Grabbing Items: https://pixabay.com/sound-effects/film-special-effects-hard-object-drop-98768/
+Drop Item: https://pixabay.com/sound-effects/film-special-effects-object-fall-soft-275694/
