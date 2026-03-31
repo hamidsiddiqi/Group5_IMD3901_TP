@@ -13,6 +13,8 @@ public class milesCutMeat : MonoBehaviour
     public GameObject beefSkewer2;
     public GameObject chickenSkewer2;
 
+    public AudioSource meatCutSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,14 +36,18 @@ public class milesCutMeat : MonoBehaviour
         if (other.gameObject.tag == "BeefSkewer" )
         {
             // Creates a new meat prefab at the knife's point of intersection 
+            if (meatCutSound != null) meatCutSound.Play();
             Instantiate(BeefPiece, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), Quaternion.identity);
-            
+            Debug.Log("Beef is cut!");
+
         }
 
         if (other.gameObject.tag == "ChickenSkewer")
         {
             // Creates a new meat prefab at the knife's point of intersection 
+            if (meatCutSound != null) meatCutSound.Play();
             Instantiate(ChickenPiece, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), Quaternion.identity);
+            Debug.Log("Chicken is cut!");
 
         }
 
