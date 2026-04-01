@@ -35,10 +35,14 @@ public class VRWrap : MonoBehaviour
             PaniniGrill grill = FindObjectsByType<PaniniGrill>(FindObjectsSortMode.None)[0];
             if (grill != null && grill.currentWrap != null && !grill.isCooking)
             {
-                GrillButton button = grill.GetComponentInChildren<GrillButton>();
-                if (button != null) button.Press();
-                else grill.TryStartGrilling();
-                Debug.Log("VR: Grilling started!");
+                float dist = Vector3.Distance(transform.position, grill.transform.position);
+                if (dist <= grillDistance)
+                {
+                    GrillButton button = grill.GetComponentInChildren<GrillButton>();
+                    if (button != null) button.Press();
+                    else grill.TryStartGrilling();
+                    Debug.Log("VR: Grilling started!");
+                }
             }
         }
 
