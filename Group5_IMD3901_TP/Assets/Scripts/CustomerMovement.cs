@@ -32,6 +32,7 @@ public class CustomerMovement : MonoBehaviour
 
     public AudioSource hello;
     public AudioSource thanks;
+    public AudioSource bark;
 
     public CustomerMovement nextPlayer;
 
@@ -224,6 +225,7 @@ public class CustomerMovement : MonoBehaviour
             }
         }
         Debug.Log("you failed");
+        bark.Play();
         return false;
     }
 }
