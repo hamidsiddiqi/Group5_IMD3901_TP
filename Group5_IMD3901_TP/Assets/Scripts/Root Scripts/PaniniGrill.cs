@@ -7,7 +7,7 @@ public class PaniniGrill : MonoBehaviour
     public Transform bottomPlate;
     public float cookTime = 4f;
     public Material cookedMaterial;
-    public AudioClip sizzleSound;
+    public AudioSource sizzleSound;
 
     public GameObject currentWrap;
     public bool isCooking = false;
@@ -17,6 +17,7 @@ public class PaniniGrill : MonoBehaviour
 
     void Start()
     {
+        
         Debug.Log(topPlate.transform.localRotation);
         topPlateOpenRot = topPlate.transform.localRotation;
         //topPlateClosedRot = Quaternion.Euler(35f,270f,0f);
@@ -86,7 +87,8 @@ public class PaniniGrill : MonoBehaviour
 
         // play sizzle sound
         if (sizzleSound != null)
-            AudioSource.PlayClipAtPoint(sizzleSound, transform.position);
+            //AudioSource.PlayClipAtPoint(sizzleSound, transform.position);
+            sizzleSound.Play();
 
         // wait while cooking
         yield return new WaitForSeconds(cookTime);

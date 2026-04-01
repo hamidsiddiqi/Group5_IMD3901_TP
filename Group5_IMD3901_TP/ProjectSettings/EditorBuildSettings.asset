@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: 036605099762e444596b96abc76a489d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KAIT_ASSETS.unity
     guid: 99e859d6a9584d747be67417ac1c46d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Verison2.unity
     guid: 813425f6b6e8c4044ab523818b0fc851
+  - enabled: 1
+    path: Assets/Scenes/Ver Four.unity
+    guid: aa2fca0435c51114f9f2e34eb8d2a942
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0ffd4c80912ba1c4cb0f81ef8bebd80b, type: 2}
