@@ -30,6 +30,9 @@ public class CustomerMovement : MonoBehaviour
 
     public bool gaveOrder = false;
 
+    public AudioSource hello;
+    public AudioSource thanks;
+
     public CustomerMovement nextPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -161,6 +164,7 @@ public class CustomerMovement : MonoBehaviour
 
     public void getOrder()
     {
+        hello.Play();
         gaveOrder = true; 
         orderBubble.SetActive(false);
         order.SetActive(true);
@@ -207,6 +211,7 @@ public class CustomerMovement : MonoBehaviour
                                             if(wrap.isGrilled == true)
                                             {
                                                 Debug.Log("thats all correct");
+                                                thanks.Play();
                                                 return true;
                                             }
                                         }
