@@ -124,18 +124,4 @@ public class inHand : MonoBehaviour
 
     }
 
-    public void GiveShawarma()
-    {
-        customer = ord.currentCustomer;
-
-        objInHand.SetActive(false);
-
-        shawObj = customer.transform.Find("Shawarma_wrap").gameObject;
-        shawObj.SetActive(true);
-
-        //reset variables 
-        objInHand = null;
-        isHolding = false;
-    }
-
 }

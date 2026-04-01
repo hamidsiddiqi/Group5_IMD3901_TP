@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1236046529244541372}
   m_Layer: 0
   m_Name: wrap
-  m_TagString: Interactable
+  m_TagString: wrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

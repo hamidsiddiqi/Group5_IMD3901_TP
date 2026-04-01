@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2670676747726676968}
   m_Layer: 0
   m_Name: GrilledWrap
-  m_TagString: Interactable
+  m_TagString: wrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

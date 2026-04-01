@@ -14,6 +14,7 @@ public class WrapObject : MonoBehaviour
     public int beef;
     public int garlic;
     public int hotSauce;
+    public bool isGrilled=true;
     
     void OnTriggerEnter(Collider collider)
     {

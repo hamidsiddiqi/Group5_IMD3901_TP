@@ -43,6 +43,31 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
+            if (Physics.Raycast(ray, out hit, interactRange))
+            {
+                if (hit.collider.CompareTag("customer"))
+                {
+                    if (hit.collider.GetComponent<CustomerMovement>().gaveOrder == false)
+                    {
+                        hit.collider.GetComponent<CustomerMovement>().getOrder();
+                    }
+                    else
+                    {
+                        if (hand.isHolding)
+                        {
+                            if (hand.objInHand.tag == "wrap")
+                            {
+                                hit.collider.GetComponent<CustomerMovement>().giveOrder(hand.objInHand);
+                                hand.objInHand.SetActive(false);
+                                Destroy(hand.objInHand);
+                                hand.objInHand=null;
+                                hand.isHolding = false;
+                            }
+                        }
+                    }
+                }
+            }
+
             if (hand.isHolding)
             {
                 WrapObject isWrap = hand.objInHand.GetComponent<WrapObject>();
@@ -79,16 +104,6 @@ public class PlayerInteraction : MonoBehaviour
                         return;
                     }
                 }
-
-                if (Physics.Raycast(ray, out hit, interactRange))
-                {
-                    if (hit.collider.CompareTag("customer"))
-                    {
-                        hand.GiveShawarma();
-                        return;
-                    }
-                }
-
                 hand.dropObj();
             }
             else

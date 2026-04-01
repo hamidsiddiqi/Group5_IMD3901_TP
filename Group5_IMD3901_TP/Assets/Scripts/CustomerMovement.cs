@@ -9,6 +9,8 @@ public class CustomerMovement : MonoBehaviour
     public GameObject pickUpPos;
     public GameObject leavePos;
     public GameObject orderBubble;
+    public GameObject order;
+    public GameObject shawarma;
 
     public int orderNum;
     private GameObject[] moves;
@@ -26,6 +28,9 @@ public class CustomerMovement : MonoBehaviour
 
     public bool isMove;
 
+    public bool gaveOrder = false;
+
+    public CustomerMovement nextPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,7 +58,7 @@ public class CustomerMovement : MonoBehaviour
         if (isMove==true)
         {
             //if in movement 0, 2, or 4
-            if (curMove == 0||curMove==2||curMove==4)
+            if (curMove == 0||curMove==3||curMove==4)
             {
                 //adjust z by negative value
                 transform.position = transform.position + new Vector3(0f,0f,-0.02f);
@@ -91,6 +96,7 @@ public class CustomerMovement : MonoBehaviour
             //turns away from counter
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             //does not move until it gets the order so isMove is still false
+            isMove = true;
         }
         //if it is at the end
         else if (curMove == 4)
@@ -121,18 +127,98 @@ public class CustomerMovement : MonoBehaviour
             //deactivate locator so it can move again
             collider.gameObject.SetActive(false); 
 
-            //turn off movement
-            isMove = false;
-
-            Invoke("nextMove", 1);
-
             //once it gets to counter show the bubble
             if(curMove == 0)
             {
-                //orderBubble.SetActive(true);
-                return;
+                orderBubble.SetActive(true);
             }
-
+            if (curMove == 1)
+            {
+                nextMove();
+            }
+            else if (curMove == 2)
+            {
+                isMove = true;
+                curMove++;
+            }
+            else if (curMove == 3)
+            {
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                isMove = false;
+            }
+            else if (curMove == 4)
+            {
+                nextPlayer.isMove = true;
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("is it here?");
+                isMove = false;
+            }
         }
+    }
+
+    public void getOrder()
+    {
+        gaveOrder = true; 
+        orderBubble.SetActive(false);
+        order.SetActive(true);
+        Invoke("nextMove", 2);
+    }
+
+    public void giveOrder(GameObject wrap)
+    {
+        WrapObject wo= wrap.GetComponent<WrapObject>();
+
+        if(compareOrder(wo) == false)
+        {
+            return;
+        }
+
+        else
+        {
+            shawarma.SetActive(true);
+            nextMove();
+        }
+
+    }
+
+    bool compareOrder(WrapObject wrap)
+    {
+        if (wrap.onions == onions)
+        {
+            if (wrap.fries == fries)
+            {
+                if (wrap.tomatoes == tomatoes)
+                {
+                    if(wrap.lettuce== lettuce)
+                    {
+                        if (wrap.pickles == pickles)
+                        {
+                            if (wrap.chicken == chicken)
+                            {
+                                if (wrap.beef == beef)
+                                {
+                                    if(wrap.garlic == garlic)
+                                    {
+                                        if(wrap.hotSauce == hotSauce)
+                                        {
+                                            if(wrap.isGrilled == true)
+                                            {
+                                                Debug.Log("thats all correct");
+                                                return true;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Debug.Log("you failed");
+        return false;
     }
 }

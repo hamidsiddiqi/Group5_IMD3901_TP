@@ -6,56 +6,37 @@ using UnityEngine.XR;
 
 public class Order : MonoBehaviour
 {
-
-    public GameObject hat1;
-    public GameObject hat2;
-    public GameObject ponytail1;
-    public GameObject ponytail2;
-    public GameObject currentCustomer; 
     public GameObject ordBubble;
-    private GameObject CurrentOrdBubble;
 
     public Camera playerCamera;
-    public float interactRange = 5f;
-
-    public GameObject list;
-   
-
-    public int protein;
-    public int[] toppings = { 0,0,0,0,0};
-    public int[] sauces = { 0, 0 };
+    public float interactRange = 5f; 
 
     public inHand inPlayerHand;
     bool isHoldingShaw = false;
     public GameObject oih;
 
-    public PaniniGrill grill;
+    public CustomerMovement movement;
 
+    public PaniniGrill grill;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        list.SetActive(false);
-        //ordBubble.SetActive(true);
 
-        currentCustomer = Instantiate(hat1, new Vector3(-3.61f, 1f, 5.88f), Quaternion.Euler(0f,-90f,0f));
-        CurrentOrdBubble = Instantiate(ordBubble, new Vector3(-3.61f, 1f, 5.88f), Quaternion.Euler(90f, 0f, 0f));
-
-       
     }
 
     // Update is called once per frame
     void Update()
     {
 
-            oih = inPlayerHand.objInHand;
+        oih = inPlayerHand.objInHand;
 
         
         
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
-        CurrentOrdBubble.transform.position = new Vector3 (currentCustomer.transform.position.x, currentCustomer.transform.position.y + 2.75f, currentCustomer.transform.position.z);
+        ordBubble.transform.position = new Vector3 (this.gameObject.transform.position.x, this.gameObject.transform.position.y + 2.75f, this.gameObject.transform.position.z);
 
        
        
@@ -72,27 +53,15 @@ public class Order : MonoBehaviour
                     
                     if (oih == null)
                     {
-
                         Debug.Log("not yippee!!!!");
-                       
-
-                        list.SetActive(true);
-                        CurrentOrdBubble.SetActive(false);
+                        ordBubble.SetActive(false);
                     }
-
-
-                    if (oih.name == "wrap(Clone)" && grill.isCooked)
-                    {
-                      
-                            Debug.Log("Order Complete");
-                            list.SetActive(false);
-                            grill.isCooked = false;
-                        
-                       
+                    if (oih.tag == "wrap")
+                    {  
+                        Debug.Log("Order Complete");
+                        grill.isCooked = false;  
                     }
                     Debug.Log("oih: " + oih.name);
-
-
                 }
             }
 
