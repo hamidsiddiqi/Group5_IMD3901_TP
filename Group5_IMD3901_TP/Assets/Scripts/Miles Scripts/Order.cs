@@ -69,7 +69,7 @@ public class Order : MonoBehaviour
             {
                if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    Debug.Log("oih: " + oih); 
+                    
                     if (oih == null)
                     {
 
@@ -81,17 +81,18 @@ public class Order : MonoBehaviour
                     }
 
 
-                    if (oih.name == "wrap" && grill.isCooked)
+                    if (oih.name == "wrap(Clone)" && grill.isCooked)
                     {
-                        Debug.Log("Order Complete");
                       
-
-                        list.SetActive(false);
-                        grill.isCooked = false;
+                            Debug.Log("Order Complete");
+                            list.SetActive(false);
+                            grill.isCooked = false;
+                        
+                       
                     }
+                    Debug.Log("oih: " + oih.name);
 
-                
-                    
+
                 }
             }
 

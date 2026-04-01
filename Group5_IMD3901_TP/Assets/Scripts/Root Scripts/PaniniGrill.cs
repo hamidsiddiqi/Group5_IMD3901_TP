@@ -17,11 +17,10 @@ public class PaniniGrill : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(topPlate.transform.rotation);
-        topPlateOpenRot = topPlate.transform.rotation;
-        topPlateClosedRot = Quaternion.Euler(35f,270f,0f);
-
-        Debug.Log(topPlateOpenRot);
+        Debug.Log(topPlate.transform.localRotation);
+        topPlateOpenRot = topPlate.transform.localRotation;
+        //topPlateClosedRot = Quaternion.Euler(35f,270f,0f);
+        topPlateClosedRot = Quaternion.Euler(30f, 0f, 0f);
     }
 
     public void TryStartGrilling()
@@ -79,11 +78,11 @@ public class PaniniGrill : MonoBehaviour
         while (t < 1f)
         {
             
-            topPlate.rotation = Quaternion.Lerp(topPlateOpenRot, topPlateClosedRot, t);
+            topPlate.localRotation = Quaternion.Lerp(topPlateOpenRot, topPlateClosedRot, t);
             t += Time.deltaTime * 2f;
             yield return null;
         }
-        topPlate.rotation = Quaternion.Euler(35, 270, 0);
+        topPlate.localRotation = Quaternion.Euler(30, 0, 0);
 
         // play sizzle sound
         if (sizzleSound != null)
@@ -103,11 +102,11 @@ public class PaniniGrill : MonoBehaviour
         t = 0f;
         while (t < 1f)
         {
-            topPlate.rotation = Quaternion.Lerp(topPlateClosedRot, topPlateOpenRot, t);
+            topPlate.localRotation = Quaternion.Lerp(topPlateClosedRot, topPlateOpenRot, t);
             t += Time.deltaTime * 2f;
             yield return null;
         }
-        topPlate.rotation = topPlateOpenRot;
+        topPlate.localRotation = topPlateOpenRot;
 
         // mark wrap as cooked on WrapObject
         WrapObject wrapObj = currentWrap.GetComponent<WrapObject>();

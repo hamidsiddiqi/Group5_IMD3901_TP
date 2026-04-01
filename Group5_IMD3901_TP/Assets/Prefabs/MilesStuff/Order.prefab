@@ -961,27 +961,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fb6c679a22b1b4893e7cc37670ac90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ordBubble: {fileID: 0}
-  customer: {fileID: 0}
+  hat1: {fileID: 1704983544198434840, guid: 062f22bb775dc9c46b5d28fbabfdc6f9, type: 3}
+  hat2: {fileID: 391915201738626717, guid: 1de5f0302ba4e254087243a83e5a6247, type: 3}
+  ponytail1: {fileID: 2197983008782126025, guid: ede53b860ed1d1e48a432a90c964ccc8, type: 3}
+  ponytail2: {fileID: 5440193751198562065, guid: 89040ba774cba924ba982df6317cb10d, type: 3}
+  currentCustomer: {fileID: 0}
+  ordBubble: {fileID: 6073172000585218992, guid: 94a4613adfb1e5f40a2c2ea0d658051b, type: 3}
   playerCamera: {fileID: 0}
   interactRange: 5
-  list: {fileID: 7874213848842583766}
-  pita: {fileID: 1493975167508283663}
-  chicken: {fileID: 987716793262491486}
-  falafel: {fileID: 787591730415114698}
-  beef: {fileID: 870700846146600348}
-  lettuce: {fileID: 737852113997658712}
-  tomato: {fileID: 7205455714588762057}
-  fries: {fileID: 6912410843046661966}
-  onion: {fileID: 4184975978246594332}
-  pickle: {fileID: 919648554032732423}
-  top2: {fileID: 2138110741370745586}
-  garlic: {fileID: 5871622519412398406}
-  hotSauce: {fileID: 277096938076401035}
+  list: {fileID: 0}
   protein: 0
   toppings: 
   sauces: 
-  shawTrans: {fileID: 0}
+  inPlayerHand: {fileID: 0}
+  oih: {fileID: 0}
+  grill: {fileID: 0}
 --- !u!1 &7874213848842583766
 GameObject:
   m_ObjectHideFlags: 0

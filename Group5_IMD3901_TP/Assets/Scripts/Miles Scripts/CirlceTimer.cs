@@ -33,7 +33,7 @@ public class CirlceTimer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Verison2")
+        if (SceneManager.GetActiveScene().name == "Ver Four")
         {
             ActivateCountdown(time);
         }
