@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TImer : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class TImer : MonoBehaviour
     public GameObject effect;
     public bool isActive;
     public CirlceTimer circTime;
+
+    public TextMeshProUGUI moneyText;
 
     public void StartTimer(float time)
     {
@@ -41,6 +44,9 @@ public class TImer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        moneyText.SetText("$"+Results.Money.ToString());
+
         if (time >= 0)
         {
             time -= Time.deltaTime;
@@ -48,6 +54,7 @@ public class TImer : MonoBehaviour
         else
         {
             timerText.SetText("Time's up!");
+            SceneManager.LoadScene("Results");
         }
         timerText.SetText(MathF.Ceiling(time).ToString());
     }

@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,10 +21,7 @@ public class Order : MonoBehaviour
 
     public PaniniGrill grill;
 
-    public GameObject vrPlayer;
-    public GameObject DesktopPlayer;
 
-    public TitleScreen title;  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,18 +34,6 @@ public class Order : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("desktop or VR: " + TitleScreen.DesktopOrVR);
-
-        //if (title.DesktopOrVR == "VR")
-        //{
-        //    vrPlayer.SetActive(true);
-        //    DesktopPlayer.SetActive(false);
-        //}
-        //else
-        //{
-        //    vrPlayer.SetActive(false);
-        //    DesktopPlayer.SetActive(true);
-        //}
 
 
 

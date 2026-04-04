@@ -33,6 +33,7 @@ public class CustomerMovement : MonoBehaviour
     public AudioSource hello;
     public AudioSource thanks;
     public AudioSource bark;
+    public AudioSource chaChing;
 
     public CustomerMovement nextPlayer;
 
@@ -212,6 +213,9 @@ public class CustomerMovement : MonoBehaviour
                                             if(wrap.isGrilled == true)
                                             {
                                                 Debug.Log("thats all correct");
+                                                Results.CustomersServed++; 
+                                                Results.Money += 10;
+                                                chaChing.Play();
                                                 thanks.Play();
                                                 return true;
                                             }
