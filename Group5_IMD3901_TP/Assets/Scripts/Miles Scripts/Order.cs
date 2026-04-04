@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEngine.XR;
 
@@ -19,15 +20,36 @@ public class Order : MonoBehaviour
 
     public PaniniGrill grill;
 
+    public GameObject vrPlayer;
+    public GameObject DesktopPlayer;
+
+    public TitleScreen title;  
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
+     
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+      //Debug.Log("desktop or VR: "+ title.DesktopOrVR);
+
+      //  if (title.DesktopOrVR == "VR")
+      //  {
+      //     vrPlayer.SetActive(true);
+      //      DesktopPlayer.SetActive(false);
+      //  }
+      //  else
+      //  {
+      //      vrPlayer.SetActive(false);
+      //      DesktopPlayer.SetActive(true);
+      //  }
+
+
 
         oih = inPlayerHand.objInHand;
 

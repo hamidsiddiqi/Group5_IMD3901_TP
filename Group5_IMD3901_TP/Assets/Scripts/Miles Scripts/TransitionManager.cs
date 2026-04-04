@@ -32,11 +32,11 @@ public class TransitionManager : MonoBehaviour
 
     }
 
-    private IEnumerator WaitSec2()
+    private IEnumerator WaitSec2(string sceneNumber)
     {
       
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("Ver Four");
+            SceneManager.LoadScene("Level "+sceneNumber);
 
     }
 
@@ -50,9 +50,9 @@ public class TransitionManager : MonoBehaviour
     void Update()
     {
 
-        if (SceneManager.GetActiveScene().name == "Ver Four" && transitioning == false)
+        if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3" && transitioning == false)
         {
-            Debug.Log("Transitioning");
+            //Debug.Log("Transitioning");
             transitioning = true;
             //_startingSceneTransition.SetActive(true);
 
@@ -64,10 +64,10 @@ public class TransitionManager : MonoBehaviour
 
     }
 
-    public void playGame()
+    public void playGame(string SceneNum)
     {
         _EndingSceneTransition.SetActive(true);
-        StartCoroutine(WaitSec2());
+        StartCoroutine(WaitSec2(SceneNum));
     }
 
 }

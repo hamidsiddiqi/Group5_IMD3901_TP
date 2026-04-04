@@ -27,21 +27,50 @@ public class TitleScreen : MonoBehaviour
     public GameObject settings;
 
     public AudioSource music; 
-    public AudioSource StartSound; 
+    public AudioSource StartSound;
+
+    public GameObject LevelSelect;
+
+    public GameObject VRDesktopScreen;
+    public GameObject DesktopButton;
+    public GameObject VRButton; 
+
+    public string DesktopOrVR = "";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         credits.SetActive(false);
         settings.SetActive(false);
+        LevelSelect.SetActive(false);
+        VRDesktopScreen.SetActive(false);   
+
+       
     }
 
-    public void play()
+    public void play(string sceneNumber)
     {
         music.Stop();
         StartSound.Play();
-        transitionManager.playGame();
+        transitionManager.playGame(sceneNumber);
         // SceneManager.LoadScene("KAIT_ASSETS");
+    }
+
+    public void LevelStart(string lvlID)
+    {
+        SceneManager.LoadScene("Level "+lvlID);
+    }
+
+    public void vrorDeskScreen()
+    {
+        VRDesktopScreen.SetActive(true);
+    }
+
+    public void LevelSelectScreen(string DorV)
+    {
+        DesktopOrVR = DorV; 
+        pressedSound.Play();
+        LevelSelect.SetActive(true);
     }
 
     public void Settings()
