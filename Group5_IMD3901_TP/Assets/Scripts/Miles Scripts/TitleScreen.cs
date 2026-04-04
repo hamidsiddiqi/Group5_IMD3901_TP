@@ -35,7 +35,7 @@ public class TitleScreen : MonoBehaviour
     public GameObject DesktopButton;
     public GameObject VRButton; 
 
-    public string DesktopOrVR = "";
+    public static string DesktopOrVR = "";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +50,7 @@ public class TitleScreen : MonoBehaviour
 
     public void play(string sceneNumber)
     {
+        Debug.Log(DesktopOrVR);
         music.Stop();
         StartSound.Play();
         transitionManager.playGame(sceneNumber);

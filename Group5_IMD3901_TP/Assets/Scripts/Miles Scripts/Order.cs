@@ -35,19 +35,19 @@ public class Order : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-      //Debug.Log("desktop or VR: "+ title.DesktopOrVR);
 
-      //  if (title.DesktopOrVR == "VR")
-      //  {
-      //     vrPlayer.SetActive(true);
-      //      DesktopPlayer.SetActive(false);
-      //  }
-      //  else
-      //  {
-      //      vrPlayer.SetActive(false);
-      //      DesktopPlayer.SetActive(true);
-      //  }
+        Debug.Log("desktop or VR: " + TitleScreen.DesktopOrVR);
+
+        //if (title.DesktopOrVR == "VR")
+        //{
+        //    vrPlayer.SetActive(true);
+        //    DesktopPlayer.SetActive(false);
+        //}
+        //else
+        //{
+        //    vrPlayer.SetActive(false);
+        //    DesktopPlayer.SetActive(true);
+        //}
 
 
 

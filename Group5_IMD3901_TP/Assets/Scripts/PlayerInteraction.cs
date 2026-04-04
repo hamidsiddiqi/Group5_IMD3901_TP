@@ -15,7 +15,7 @@ public class PlayerInteraction : MonoBehaviour
 
     void Start()
     {
-
+        Debug.Log("yyyyyyyyyyyyyyyyyyyyyyyyyy");
     }
 
     PaniniGrill GetNearestGrill()

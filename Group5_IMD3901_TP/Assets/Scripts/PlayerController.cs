@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 
     float xRotation = 0f;
 
+    public GameObject desktopplayer;
+    public GameObject vrPlayer; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +21,12 @@ public class PlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (TitleScreen.DesktopOrVR == "VR")
+        {
+            desktopplayer.SetActive(false);
+            vrPlayer.SetActive(true);
+        }
 
     }
 
