@@ -52,9 +52,9 @@ public class TransitionManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3" && transitioning == false)
         {
-            //Debug.Log("Transitioning");
+            Debug.Log("Transitioning");
             transitioning = true;
-            //_startingSceneTransition.SetActive(true);
+            _startingSceneTransition.SetActive(true);
 
             //DisableStartingSceneTransition();
             StartCoroutine(WaitSec());

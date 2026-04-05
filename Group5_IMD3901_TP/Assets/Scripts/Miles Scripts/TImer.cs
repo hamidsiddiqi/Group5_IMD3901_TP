@@ -47,7 +47,7 @@ public class TImer : MonoBehaviour
     void Update()
     {
 
-        moneyText.SetText("$"+Results.Money.ToString());
+        moneyText.SetText(Results.Money.ToString());
 
         if (time >= 0)
         {

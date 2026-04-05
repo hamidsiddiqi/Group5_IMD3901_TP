@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomerMovement : MonoBehaviour
 {
@@ -76,7 +77,12 @@ public class CustomerMovement : MonoBehaviour
             }
 
         }
-        
+
+        if (curMove == 4 && SceneManager.GetActiveScene().name == "Level 1")
+        {
+                SceneManager.LoadScene("Level 2");
+        }
+
     }
 
     public void nextMove()
@@ -113,6 +119,8 @@ public class CustomerMovement : MonoBehaviour
             }
             //deactivate
             gameObject.SetActive(false);
+
+            
 
         }
         //increase current move counter
