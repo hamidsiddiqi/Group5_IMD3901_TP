@@ -10,6 +10,7 @@ public class TImer : MonoBehaviour
 
     public TextMeshProUGUI timerText;
     public float time =10;
+    public float orignalTime; 
 
     public GameObject effect;
     public bool isActive;
@@ -40,6 +41,7 @@ public class TImer : MonoBehaviour
     {
         timerText.SetText(time.ToString());
 
+        orignalTime = time;
 
     }
 

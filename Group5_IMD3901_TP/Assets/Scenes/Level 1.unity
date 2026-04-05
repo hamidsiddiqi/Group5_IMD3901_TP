@@ -21089,7 +21089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1918807217}
-  time: 75
+  time: 100
   effect: {fileID: 632040565}
   isActive: 1
   circTime: {fileID: 1601209311}
@@ -21107,7 +21107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radialProgressBar: {fileID: 632040567}
-  time: 75
+  time: 100
 --- !u!4 &1601460279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5684037718020540643, guid: db490d86564c0ba409d5da2b96047fec, type: 3}

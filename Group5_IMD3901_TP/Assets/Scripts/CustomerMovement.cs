@@ -36,6 +36,9 @@ public class CustomerMovement : MonoBehaviour
     public AudioSource bark;
     public AudioSource chaChing;
 
+    public TImer time;
+    public int wrongOrder = 0; 
+
     public CustomerMovement nextPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -78,6 +81,7 @@ public class CustomerMovement : MonoBehaviour
 
         }
 
+        // chagnes from level 1 to level 2 when the customer recives the shawarma
         if (curMove == 4 && SceneManager.GetActiveScene().name == "Level 1")
         {
                 SceneManager.LoadScene("Level 2");
@@ -202,6 +206,8 @@ public class CustomerMovement : MonoBehaviour
 
     bool compareOrder(WrapObject wrap)
     {
+
+        Debug.Log("wrong: "+wrongOrder);
         if (wrap.onions == onions)
         {
             if (wrap.fries == fries)
@@ -224,8 +230,24 @@ public class CustomerMovement : MonoBehaviour
                                             {
                                                 Debug.Log("thats all correct");
                                                 order.SetActive(false);
-                                                Results.CustomersServed++; 
-                                                Results.Money += 10;
+                                                Results.CustomersServed++;
+
+
+                                                // if handed to in the first 2/3 give 30 dollars, if handed in the last 1/3 give 20 dollars, if handed in the last 1/3 give 10 dollars
+                                                if (time.time >= time.orignalTime*0.66)
+                                                {
+                                                    Results.Money += 30;
+                                                }
+                                                else if (time.time >= time.orignalTime*0.33)
+                                                {
+                                                    Results.Money += 20;
+                                                }
+                                                else
+                                                {
+                                                    Results.Money += 10;
+                                                }
+
+
                                                 chaChing.Play();
                                                 thanks.Play();
                                                 return true;
@@ -241,6 +263,7 @@ public class CustomerMovement : MonoBehaviour
         }
         Debug.Log("you failed");
         bark.Play();
+        wrongOrder++; 
         return false;
     }
 }
