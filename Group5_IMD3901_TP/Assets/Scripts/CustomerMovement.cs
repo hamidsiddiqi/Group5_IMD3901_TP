@@ -47,20 +47,22 @@ public class CustomerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = startPos.transform.position;
-        transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+        if (orderNum == 0)
+        {
+            startCust();
+        }
+        else
+        {
+            isMove = false;
+        }
 
-        moves = new GameObject[5];
+            moves = new GameObject[5];
 
         moves[0] = startPos;
         moves[1] = orderPos;
         moves[2] = turnPos;
         moves[3] = pickUpPos;
         moves[4] = leavePos;
-
-        //isMove = false;
-       
-        curMove = 0;
     }
 
     // Update is called once per frame
@@ -125,6 +127,7 @@ public class CustomerMovement : MonoBehaviour
             {
                 moves[i].SetActive(true);
             }
+
             //deactivate
             gameObject.SetActive(false);
 
@@ -156,9 +159,11 @@ public class CustomerMovement : MonoBehaviour
             if (curMove == 1)
             {
                 nextMove();
+                Debug.Log("triggered at 1");
             }
             else if (curMove == 2)
             {
+                Debug.Log("this runs");
                 isMove = true;
                 curMove++;
             }
@@ -171,7 +176,7 @@ public class CustomerMovement : MonoBehaviour
             {
                 if (nextPlayer != null)
                 {
-                    nextPlayer.isMove = true;
+                    nextPlayer.startCust();
                 }
                 gameObject.SetActive(false);
             }
@@ -188,7 +193,7 @@ public class CustomerMovement : MonoBehaviour
         gaveOrder = true; 
         orderBubble.SetActive(false);
         order.SetActive(true);
-        Invoke("nextMove", 2);
+        Invoke("nextMove", 3);
     }
 
     public void giveOrder(GameObject wrap)
@@ -281,5 +286,17 @@ public class CustomerMovement : MonoBehaviour
         bark.Play();
         wrongOrder++; 
         return false;
+    }
+
+    public void startCust()
+    {
+        transform.position = startPos.transform.position;
+        transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+
+        gameObject.SetActive(true);
+
+        isMove = true;
+
+        curMove = 0;
     }
 }
