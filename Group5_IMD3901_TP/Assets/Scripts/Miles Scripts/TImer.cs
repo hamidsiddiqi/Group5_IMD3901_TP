@@ -1,22 +1,29 @@
-using TMPro;
-using UnityEngine;
 using System;
 using System.Collections;
-using UnityEngine.UI;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TImer : MonoBehaviour
 {
 
     public TextMeshProUGUI timerText;
-    public float time =10;
+    public float time =100;
     public float orignalTime; 
 
     public GameObject effect;
     public bool isActive;
+
+    public bool start = false;
+
     public CirlceTimer circTime;
 
     public TextMeshProUGUI moneyText;
+
+    public GameObject DesktopInstructions;
+    public GameObject VRInstructions;
 
     public void StartTimer(float time)
     {
@@ -39,9 +46,31 @@ public class TImer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+       
+
         timerText.SetText(time.ToString());
 
         orignalTime = time;
+
+        VRInstructions.SetActive(false);
+        DesktopInstructions.SetActive(false);
+
+        // show the instructions based on which system youre playing 
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+           
+            if (TitleScreen.DesktopOrVR == "VR")
+            {
+                VRInstructions.SetActive(true);
+            }
+            else
+            {
+                DesktopInstructions.SetActive(true);
+            }
+
+
+        }
 
     }
 
@@ -49,22 +78,37 @@ public class TImer : MonoBehaviour
     void Update()
     {
 
-        moneyText.SetText(Results.Money.ToString());
-
-        if (time >= 0)
+        if (SceneManager.GetActiveScene().name == "Level 1" && !start)
         {
-            time -= Time.deltaTime;
+            
+            if (Keyboard.current.xKey.wasPressedThisFrame)
+            {
+                start = true;
+                DesktopInstructions.SetActive(false);
+                VRInstructions.SetActive(false);
+            }
         }
         else
         {
-            timerText.SetText("Time's up!");
-            SceneManager.LoadScene("Results");
+            start = true;
         }
+
+            moneyText.SetText(Results.Money.ToString());
+
+        if (start)
+        {
+            if (time >= 0 && isActive)
+            {
+                time -= Time.deltaTime;
+            }
+            else
+            {
+                timerText.SetText("Time's up!");
+                SceneManager.LoadScene("Results");
+            }
+        }
+       
         timerText.SetText(MathF.Ceiling(time).ToString());
     }
 
-    public void TimerStart()
-    {
-        
-    }
 }

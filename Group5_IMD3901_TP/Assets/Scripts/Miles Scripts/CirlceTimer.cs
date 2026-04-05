@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,13 +11,17 @@ public class CirlceTimer : MonoBehaviour
     private float maxIndicatorTimer;
     public Image radialProgressBar;
 
-    public float time; 
+    public float time;
+
+    public GameObject DesktopInstructions;
+    public GameObject VRInstructions; 
 
     private void Awake()
     {
        
     }
 
+    // start the countdown
     public void ActivateCountdown(float countdownTime)
     {
         isActive = true; 
@@ -33,24 +38,55 @@ public class CirlceTimer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Ver Four" || SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
+        VRInstructions.SetActive(false);
+        DesktopInstructions.SetActive(false);
+
+        // show the instructions based on which system youre playing 
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            ActivateCountdown(time);
+            if (TitleScreen.DesktopOrVR == "VR")
+            {
+                VRInstructions.SetActive(true);
+            }
+            else
+            {
+                DesktopInstructions.SetActive(true);
+            }
+               
+           
         }
+
+        // if not activate the timer
+        if (SceneManager.GetActiveScene().name == "Ver Four" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
+        {
+            //ActivateCountdown(time);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActive)
-        {
-           indicatorTimer -= Time.deltaTime;
-            radialProgressBar.fillAmount = (indicatorTimer / maxIndicatorTimer);
 
-            if (indicatorTimer <= 0)
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            if (Keyboard.current.xKey.wasPressedThisFrame)
             {
-                StopCountDown();
+                //ActivateCountdown(time);
+                DesktopInstructions.SetActive(false);
+                VRInstructions.SetActive(false);
             }
         }
+
+        //if (isActive)
+        //{
+        //   indicatorTimer -= Time.deltaTime;
+        //    radialProgressBar.fillAmount = (indicatorTimer / maxIndicatorTimer);
+
+        //    if (indicatorTimer <= 0)
+        //    {
+        //        StopCountDown();
+        //    }
+        //}
     }
 }
