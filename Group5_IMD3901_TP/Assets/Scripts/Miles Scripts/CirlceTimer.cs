@@ -38,23 +38,23 @@ public class CirlceTimer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        VRInstructions.SetActive(false);
-        DesktopInstructions.SetActive(false);
+        //VRInstructions.SetActive(false);
+        //DesktopInstructions.SetActive(false);
 
-        // show the instructions based on which system youre playing 
-        if (SceneManager.GetActiveScene().name == "Level 1")
-        {
-            if (TitleScreen.DesktopOrVR == "VR")
-            {
-                VRInstructions.SetActive(true);
-            }
-            else
-            {
-                DesktopInstructions.SetActive(true);
-            }
+        //// show the instructions based on which system youre playing 
+        //if (SceneManager.GetActiveScene().name == "Level 1")
+        //{
+        //    if (TitleScreen.DesktopOrVR == "VR")
+        //    {
+        //        VRInstructions.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        DesktopInstructions.SetActive(true);
+        //    }
                
            
-        }
+        //}
 
         // if not activate the timer
         if (SceneManager.GetActiveScene().name == "Ver Four" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
@@ -68,15 +68,15 @@ public class CirlceTimer : MonoBehaviour
     void Update()
     {
 
-        if (SceneManager.GetActiveScene().name == "Level 1")
-        {
-            if (Keyboard.current.xKey.wasPressedThisFrame)
-            {
-                //ActivateCountdown(time);
-                DesktopInstructions.SetActive(false);
-                VRInstructions.SetActive(false);
-            }
-        }
+        //if (SceneManager.GetActiveScene().name == "Level 1")
+        //{
+        //    if (Keyboard.current.xKey.wasPressedThisFrame)
+        //    {
+        //        //ActivateCountdown(time);
+        //        DesktopInstructions.SetActive(false);
+        //        VRInstructions.SetActive(false);
+        //    }
+        //}
 
         //if (isActive)
         //{

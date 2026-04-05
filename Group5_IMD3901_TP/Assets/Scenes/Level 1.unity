@@ -21495,6 +21495,7 @@ MonoBehaviour:
   moneyText: {fileID: 1154566537}
   DesktopInstructions: {fileID: 2066906270}
   VRInstructions: {fileID: 1838554655}
+  vrTriggerAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1601209311
 MonoBehaviour:
   m_ObjectHideFlags: 0

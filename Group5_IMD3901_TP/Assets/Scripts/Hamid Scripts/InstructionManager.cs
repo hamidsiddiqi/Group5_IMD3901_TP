@@ -56,8 +56,8 @@ public class InstructionManager : MonoBehaviour
 
     void StartGame()
     {
-        desktopInstructions.SetActive(false);
-        vrInstructions.SetActive(false);
-        Debug.Log("Instructions closed and game started.");
+    //    desktopInstructions.SetActive(false);
+    //    vrInstructions.SetActive(false);
+    //    Debug.Log("Instructions closed and game started.");
     }
 }

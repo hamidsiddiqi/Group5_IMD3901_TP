@@ -11,6 +11,7 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] private GameObject _EndingSceneTransition;
 
     private bool transitioning = false;
+    private string sceneName;
 
     private void startScene()
     {
@@ -36,7 +37,18 @@ public class TransitionManager : MonoBehaviour
     {
       
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("Level "+sceneNumber);
+            switch (sceneNumber)
+            {
+                case "1":
+                    SceneManager.LoadScene("Level 1");
+                    break;
+                case "2":
+                    SceneManager.LoadScene("Level 2");
+                    break;
+                case "3":
+                    SceneManager.LoadScene("Level 3");
+                    break;
+        }
 
     }
 

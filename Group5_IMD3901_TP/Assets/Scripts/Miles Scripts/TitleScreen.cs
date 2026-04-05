@@ -36,6 +36,7 @@ public class TitleScreen : MonoBehaviour
     public GameObject VRButton; 
 
     public static string DesktopOrVR = "";
+    private string sceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,12 +55,6 @@ public class TitleScreen : MonoBehaviour
         music.Stop();
         StartSound.Play();
         transitionManager.playGame(sceneNumber);
-        // SceneManager.LoadScene("KAIT_ASSETS");
-    }
-
-    public void LevelStart(string lvlID)
-    {
-        SceneManager.LoadScene("Level "+lvlID);
     }
 
     public void vrorDeskScreen()

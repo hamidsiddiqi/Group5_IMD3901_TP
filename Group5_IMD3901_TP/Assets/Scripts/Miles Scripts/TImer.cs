@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class TImer : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class TImer : MonoBehaviour
 
     public GameObject DesktopInstructions;
     public GameObject VRInstructions;
+
+    public InputActionReference vrTriggerAction;
 
     public void StartTimer(float time)
     {
@@ -46,8 +49,6 @@ public class TImer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-       
 
         timerText.SetText(time.ToString());
 
@@ -81,6 +82,12 @@ public class TImer : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level 1" && !start)
         {
             
+            if (vrTriggerAction != null && vrTriggerAction.action.WasPressedThisFrame())
+            {
+                start = true;
+                DesktopInstructions.SetActive(false);
+                VRInstructions.SetActive(false);
+            }
             if (Keyboard.current.xKey.wasPressedThisFrame)
             {
                 start = true;
