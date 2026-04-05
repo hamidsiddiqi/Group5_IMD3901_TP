@@ -40,7 +40,6 @@ public class TImer : MonoBehaviour
     {
         timerText.SetText(time.ToString());
 
-        StartTimer(time);
 
     }
 
