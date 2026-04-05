@@ -39,6 +39,9 @@ public class TImer : MonoBehaviour
     void Start()
     {
         timerText.SetText(time.ToString());
+
+        StartTimer(time);
+
     }
 
     // Update is called once per frame
