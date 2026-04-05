@@ -59,6 +59,12 @@ public class VRWrap : MonoBehaviour
 
                 if (dist <= grillDistance)
                 {
+                    //only allow wraps onto the grill
+                    if (!gameObject.CompareTag("wrap"))
+                    {
+                        Debug.Log("Only wraps can be placed on the grill!");
+                        return;
+                    }
                     // release from hand
                     grabInteractable.interactionManager.CancelInteractableSelection((UnityEngine.XR.Interaction.Toolkit.Interactables.IXRSelectInteractable)grabInteractable);
 

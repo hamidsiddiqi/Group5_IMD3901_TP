@@ -73,7 +73,7 @@ public class PlayerInteraction : MonoBehaviour
                 WrapObject isWrap = hand.objInHand.GetComponent<WrapObject>();
 
                 // only place on grill if it's an uncooked wrap
-                if (isWrap != null && !isWrap.isCooked)
+                if (isWrap != null && !isWrap.isCooked && hand.objInHand.CompareTag("wrap"))
                 {
                     PaniniGrill grill = GetNearestGrill();
                     if (grill != null && !grill.isCooking)
