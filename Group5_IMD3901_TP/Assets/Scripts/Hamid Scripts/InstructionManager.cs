@@ -1,5 +1,7 @@
+
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 public class InstructionManager : MonoBehaviour
 {
@@ -11,26 +13,42 @@ public class InstructionManager : MonoBehaviour
     public GameObject desktopPlayer;
     public GameObject vrPlayer;
 
+    [Header("VR Trigger Action")]
+    // Drag your 'Select' or 'Trigger' action here from your VR Input Actions
+    public InputActionReference vrTriggerAction;
+
     void Start()
     {
         desktopInstructions.SetActive(false);
         vrInstructions.SetActive(false);
 
-        // Checking which player is currently active in the scene and show their instructions
+        // Check which player's camera is actually being used by the game
         if (vrPlayer != null && vrPlayer.activeInHierarchy)
         {
             vrInstructions.SetActive(true);
+            if (vrTriggerAction != null) vrTriggerAction.action.Enable();
+
+            // Force desktop instructions OFF just in case
+            desktopInstructions.SetActive(false);
         }
-        else if (desktopPlayer != null && desktopPlayer.activeInHierarchy)
+        else
         {
             desktopInstructions.SetActive(true);
+            vrInstructions.SetActive(false);
         }
     }
 
+
     void Update()
     {
-        // If X is pressed, hide everything to begin the game
+        // Check for Keyboard X
         if (Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            StartGame();
+        }
+
+        // Check for VR Trigger press
+        if (vrTriggerAction != null && vrTriggerAction.action.WasPressedThisFrame())
         {
             StartGame();
         }
@@ -40,8 +58,6 @@ public class InstructionManager : MonoBehaviour
     {
         desktopInstructions.SetActive(false);
         vrInstructions.SetActive(false);
-
-        Debug.Log("Instructions Hidden");
-        // You can add logic here to enable player movement if it was frozen
+        Debug.Log("Instructions closed and game started.");
     }
 }
