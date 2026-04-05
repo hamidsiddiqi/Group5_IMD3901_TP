@@ -59,7 +59,7 @@ public class CirlceTimer : MonoBehaviour
         // if not activate the timer
         if (SceneManager.GetActiveScene().name == "Ver Four" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3")
         {
-            //ActivateCountdown(time);
+            ActivateCountdown(time);
         }
 
     }
@@ -78,15 +78,15 @@ public class CirlceTimer : MonoBehaviour
         //    }
         //}
 
-        //if (isActive)
-        //{
-        //   indicatorTimer -= Time.deltaTime;
-        //    radialProgressBar.fillAmount = (indicatorTimer / maxIndicatorTimer);
+        if (isActive)
+        {
+            indicatorTimer -= Time.deltaTime;
+            radialProgressBar.fillAmount = (indicatorTimer / maxIndicatorTimer);
 
-        //    if (indicatorTimer <= 0)
-        //    {
-        //        StopCountDown();
-        //    }
-        //}
+            if (indicatorTimer <= 0)
+            {
+                StopCountDown();
+            }
+        }
     }
 }

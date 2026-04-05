@@ -54,13 +54,15 @@ public class TImer : MonoBehaviour
 
         orignalTime = time;
 
-        VRInstructions.SetActive(false);
-        DesktopInstructions.SetActive(false);
+        
 
         // show the instructions based on which system youre playing 
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-           
+
+            VRInstructions.SetActive(false);
+            DesktopInstructions.SetActive(false);
+
             if (TitleScreen.DesktopOrVR == "VR")
             {
                 VRInstructions.SetActive(true);
