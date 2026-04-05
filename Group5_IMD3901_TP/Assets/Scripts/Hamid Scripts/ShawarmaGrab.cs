@@ -16,7 +16,7 @@ public class ShawarmaGrab : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.digit1Key.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.tKey.wasPressedThisFrame)
         {
             Transform activePlayer = (vrPlayer != null && vrPlayer.gameObject.activeInHierarchy) ? vrPlayer : player;
             float distance = Vector3.Distance(activePlayer.position, transform.position);

@@ -34,7 +34,7 @@ public class VRWrap : MonoBehaviour
         if (Keyboard.current.tKey.wasPressedThisFrame && !isGrabbed)
         {
             PaniniGrill grill = FindObjectsByType<PaniniGrill>(FindObjectsSortMode.None)[0];
-            if (grill != null && grill.currentWrap != null && !grill.isCooking)
+            if (grill != null && grill.currentWrap == gameObject && !grill.isCooking)
             {
                 float dist = Vector3.Distance(transform.position, grill.transform.position);
                 if (dist <= grillDistance)

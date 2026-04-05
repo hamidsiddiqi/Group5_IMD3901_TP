@@ -125,6 +125,16 @@ public class PlayerInteraction : MonoBehaviour
                     }
                 }
 
+                //start grilling if wrap is on grill
+                PaniniGrill grillToStart = GetNearestGrill();
+                if (grillToStart != null && grillToStart.currentWrap != null && !grillToStart.isCooking)
+                {
+                    GrillButton button = grillToStart.GetComponentInChildren<GrillButton>();
+                    if (button != null) button.Press();
+                    else grillToStart.TryStartGrilling();
+                    return;
+                }
+
                 // otherwise normal raycast pickup
                 if (Physics.Raycast(ray, out hit, interactRange))
                 {
@@ -152,21 +162,6 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
-
-        // E key to start grilling - uses nearest grill
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            Debug.Log("E pressed!");
-            PaniniGrill grill = GetNearestGrill();
-            if (grill != null)
-            {
-                GrillButton button = grill.GetComponentInChildren<GrillButton>();
-                if (button != null) button.Press();
-                else grill.TryStartGrilling();
-            }
-        }
-
-
     }
 
 }

@@ -71,6 +71,11 @@ public class PaniniGrill : MonoBehaviour
 
     IEnumerator CookWrap()
     {
+        if (currentWrap == null)
+        {
+            Debug.Log("No wrap to cook!");
+            yield break;
+        }
         isCooking = true;
         isCooked = false;
 
