@@ -4075,7 +4075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906654267018565830, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4472675862127118614, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4796,7 +4796,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d69c7939ca0a2f14da8f0cceefc81adc, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -8580,7 +8580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &594732761
 Transform:
   m_ObjectHideFlags: 0
