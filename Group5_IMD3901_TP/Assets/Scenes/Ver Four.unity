@@ -916,6 +916,7 @@ GameObject:
   - component: {fileID: 87701910}
   - component: {fileID: 87701913}
   - component: {fileID: 87701914}
+  - component: {fileID: 87701915}
   m_Layer: 0
   m_Name: VR Player
   m_TagString: Untagged
@@ -1013,6 +1014,20 @@ MonoBehaviour:
   shawarma: {fileID: 84000075}
   holdPoint: {fileID: 1170918524}
   customer: {fileID: 0}
+--- !u!114 &87701915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87701909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae29aa49c907ed640b09d96a4de66d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrCamera: {fileID: 390170085}
+  interactRange: 5
 --- !u!1001 &89422475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3933,7 +3948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906654267018565830, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4472675862127118614, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8117,7 +8132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &594732761
 Transform:
   m_ObjectHideFlags: 0
