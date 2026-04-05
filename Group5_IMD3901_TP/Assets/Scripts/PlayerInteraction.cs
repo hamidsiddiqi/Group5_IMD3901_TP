@@ -153,10 +153,10 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        // G key to start grilling - uses nearest grill
-        if (Keyboard.current.gKey.wasPressedThisFrame)
+        // E key to start grilling - uses nearest grill
+        if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            Debug.Log("G pressed!");
+            Debug.Log("E pressed!");
             PaniniGrill grill = GetNearestGrill();
             if (grill != null)
             {
