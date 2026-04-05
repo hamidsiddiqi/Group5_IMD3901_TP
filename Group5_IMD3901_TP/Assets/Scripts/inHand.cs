@@ -64,6 +64,10 @@ public class inHand : MonoBehaviour
         {
             objInHand.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
         }
+        if (objInHand.CompareTag("wrap"))
+        {
+            objInHand.layer = LayerMask.NameToLayer("Default");
+        }
 
         //unparent the object and make kinematic false
         objInHand.transform.SetParent(null);
@@ -121,7 +125,10 @@ public class inHand : MonoBehaviour
         {
             objInHand.transform.localRotation = Quaternion.Euler(270f, 0f, 180f);
         }
-
+        if (newObject.CompareTag("wrap"))
+        {
+            objInHand.layer = LayerMask.NameToLayer("Ignore Raycast");
+        }
     }
 
 }
