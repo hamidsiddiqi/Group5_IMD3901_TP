@@ -1134,6 +1134,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1321398848351673824, guid: 92166d06f9609e94ea130cd186229d91, type: 3}
   m_PrefabInstance: {fileID: 8902692449196051957}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &100947388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9100449591327961811, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+  m_PrefabInstance: {fileID: 719062921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &101218360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,7 +1596,7 @@ MonoBehaviour:
   thanks: {fileID: 115984662}
   bark: {fileID: 115984664}
   chaChing: {fileID: 115984667}
-  time: {fileID: 0}
+  time: {fileID: 1601209310}
   wrongOrder: 0
   currentMoney: 0
   nextPlayer: {fileID: 0}
@@ -3445,7 +3450,7 @@ MonoBehaviour:
   crosshairUIScript: {fileID: 0}
   hand: {fileID: 238205182}
   playerHand: {fileID: 260630829}
-  wrap: {fileID: 0}
+  wrap: {fileID: 3280452503110658042, guid: 2183d5fc40eee4d4f912af0fe4e75c41, type: 3}
 --- !u!114 &238205178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10043,6 +10048,128 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6662100223220687037, guid: 252ba3e38d8305342a06178bc3dc5660, type: 3}
   m_PrefabInstance: {fileID: 1013759928}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &719062921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3208134611698251452, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: Pan2D
+      value: -0.885
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_Name
+      value: KnifeScoop (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_TagString
+      value: knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702887551733234243, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.914
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.144
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00037390098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 540.04297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533445619158650069, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051168688124112495, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430907842156030057, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.196
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949865508905324132, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: Knife
+      value: 
+      objectReference: {fileID: 100947388}
+    - target: {fileID: 8949865508905324132, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: beefSkewer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949865508905324132, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: beefSkewer2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949865508905324132, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: chickenSkewer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949865508905324132, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: chickenSkewer2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100449591327961811, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_TagString
+      value: knife
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7228501043031023715, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+    - {fileID: 5702887551733234243, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+    - {fileID: -878307415945848558, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+    - {fileID: 8051168688124112495, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+    - {fileID: 8949865508905324132, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1431172410}
+    - targetCorrespondingSourceObject: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1431172409}
+    - targetCorrespondingSourceObject: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1431172408}
+    - targetCorrespondingSourceObject: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1431172407}
+  m_SourcePrefab: {fileID: 100100000, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
 --- !u!1 &726125752
 GameObject:
   m_ObjectHideFlags: 0
@@ -18065,6 +18192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnifeScoop
       objectReference: {fileID: 0}
+    - target: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5702887551733234243, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
       propertyPath: m_Constraints
       value: 0
@@ -18817,6 +18948,101 @@ Transform:
   - {fileID: 756244405}
   m_Father: {fileID: 1312143638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1431172406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4235518603199283139, guid: 5f7169451d2a3994490498d98566ae26, type: 3}
+  m_PrefabInstance: {fileID: 719062921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1431172407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431172406}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.76470923, y: 0.49172473, z: 1.6942475}
+  m_Center: {x: -0.22361958, y: -0.110521436, z: 0.01864445}
+--- !u!65 &1431172408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431172406}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5684843, y: 0.2480731, z: 1.6942475}
+  m_Center: {x: -0.21575797, y: -0.13816047, z: 0.018644452}
+--- !u!114 &1431172409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431172406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af0d487ad4c76644865196ebc7c9716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Knife: {fileID: 1431172406}
+  Scooper: {fileID: 0}
+  ChickenPiece: {fileID: 7950411900058193180, guid: 2adbad067193bac409413c921fb55d48, type: 3}
+  BeefPiece: {fileID: 3795666564769089735, guid: eb1929278e283ad44868b7cdc0ed84d3, type: 3}
+  beefSkewer: {fileID: 1871911188}
+  chickenSkewer: {fileID: 2068992526}
+  beefSkewer2: {fileID: 520988374}
+  chickenSkewer2: {fileID: 1666282726}
+  meatCutSound: {fileID: 0}
+--- !u!54 &1431172410
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431172406}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1440489760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6125952038514729985, guid: fa1faa09f8be51b4e9c6dde6b10a3f81, type: 3}
@@ -32451,3 +32677,4 @@ SceneRoots:
   - {fileID: 1136125222}
   - {fileID: 1258692101}
   - {fileID: 115984656}
+  - {fileID: 719062921}
