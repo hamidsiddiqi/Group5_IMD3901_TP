@@ -51,12 +51,8 @@ public class CustomerMovement : MonoBehaviour
         {
             startCust();
         }
-        else
-        {
-            isMove = false;
-        }
 
-            moves = new GameObject[5];
+        moves = new GameObject[5];
 
         moves[0] = startPos;
         moves[1] = orderPos;
@@ -159,7 +155,6 @@ public class CustomerMovement : MonoBehaviour
             if (curMove == 1)
             {
                 nextMove();
-                Debug.Log("triggered at 1");
             }
             else if (curMove == 2)
             {
@@ -178,10 +173,18 @@ public class CustomerMovement : MonoBehaviour
                 {
                     nextPlayer.startCust();
                 }
+
+                //reset all the positions
+                for (int i = 0; i < moves.Length; i++)
+                {
+                    moves[i].SetActive(true);
+                }
+
                 gameObject.SetActive(false);
             }
             else
             {
+                Debug.Log("is it here");
                 isMove = false;
             }
         }
@@ -296,6 +299,8 @@ public class CustomerMovement : MonoBehaviour
         gameObject.SetActive(true);
 
         isMove = true;
+        orderBubble.SetActive(true);
+        shawarma.SetActive(false);
 
         curMove = 0;
     }
