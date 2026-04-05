@@ -37,7 +37,10 @@ public class CustomerMovement : MonoBehaviour
     public AudioSource chaChing;
 
     public TImer time;
-    public int wrongOrder = 0; 
+    // tracks the number of wrong orders 
+    public int wrongOrder = 0;
+
+    public int currentMoney = 0;
 
     public CustomerMovement nextPlayer;
 
@@ -84,6 +87,7 @@ public class CustomerMovement : MonoBehaviour
         // chagnes from level 1 to level 2 when the customer recives the shawarma
         if (curMove == 4 && SceneManager.GetActiveScene().name == "Level 1")
         {
+            
                 SceneManager.LoadScene("Level 2");
         }
 
@@ -232,21 +236,33 @@ public class CustomerMovement : MonoBehaviour
                                                 order.SetActive(false);
                                                 Results.CustomersServed++;
 
+                                                
 
                                                 // if handed to in the first 2/3 give 30 dollars, if handed in the last 1/3 give 20 dollars, if handed in the last 1/3 give 10 dollars
                                                 if (time.time >= time.orignalTime*0.66)
                                                 {
-                                                    Results.Money += 30;
+                                                    currentMoney += 30 ;
                                                 }
                                                 else if (time.time >= time.orignalTime*0.33)
                                                 {
-                                                    Results.Money += 20;
+                                                    currentMoney += 20;
                                                 }
                                                 else
                                                 {
-                                                    Results.Money += 10;
+                                                    currentMoney += 10;
                                                 }
 
+                                                // removes $5 for each wrong order
+                                                currentMoney -= wrongOrder * 5;
+
+                                                if (currentMoney >= 0)
+                                                {
+                                                    Results.Money += currentMoney;
+                                                    Debug.Log("you got $" + currentMoney);
+                                                }
+
+                                                currentMoney = 0;
+                                                wrongOrder = 0;
 
                                                 chaChing.Play();
                                                 thanks.Play();

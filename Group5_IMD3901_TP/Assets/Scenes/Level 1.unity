@@ -1591,6 +1591,9 @@ MonoBehaviour:
   thanks: {fileID: 115984662}
   bark: {fileID: 115984664}
   chaChing: {fileID: 115984667}
+  time: {fileID: 0}
+  wrongOrder: 0
+  currentMoney: 0
   nextPlayer: {fileID: 0}
 --- !u!82 &115984662
 AudioSource:
@@ -16363,7 +16366,7 @@ PrefabInstance:
     - target: {fileID: 4049396345272072749, guid: bca98e6ff3bea044889ffbc69c20892c, type: 3}
       propertyPath: currentWrap
       value: 
-      objectReference: {fileID: 3910268199405599286, guid: 2183d5fc40eee4d4f912af0fe4e75c41, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4049396345272072749, guid: bca98e6ff3bea044889ffbc69c20892c, type: 3}
       propertyPath: sizzleSound
       value: 
@@ -21109,6 +21112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1918807217}
   time: 100
+  orignalTime: 0
   effect: {fileID: 632040565}
   isActive: 1
   circTime: {fileID: 1601209311}
