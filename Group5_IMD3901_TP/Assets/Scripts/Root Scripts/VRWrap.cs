@@ -20,6 +20,19 @@ public class VRWrap : MonoBehaviour
     {
         isGrabbed = true;
         GetComponent<Rigidbody>().isKinematic = true;
+
+        //if this wrap was on the grill, reset the grill state
+        PaniniGrill[] grills = FindObjectsByType<PaniniGrill>(FindObjectsSortMode.None);
+        foreach (PaniniGrill grill in grills)
+        {
+            if (grill.currentWrap == gameObject)
+            {
+                grill.currentWrap = null;
+                grill.isCooked = false;
+                grill.isCooking = false;
+                break;
+            }    
+        }
     }
 
     void OnRelease(SelectExitEventArgs args)

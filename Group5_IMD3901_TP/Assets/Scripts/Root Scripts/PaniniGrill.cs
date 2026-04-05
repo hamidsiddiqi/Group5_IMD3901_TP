@@ -26,6 +26,7 @@ public class PaniniGrill : MonoBehaviour
 
     public void TryStartGrilling()
     {
+        Debug.Log("TryStartGrilling called. currentWrap: " + (currentWrap != null ? currentWrap.name : "null") + " isCooking: " + isCooking + " isCooked: " + isCooked);
         if (currentWrap != null && !isCooking && !isCooked)
         {
             Debug.Log("Starting to grill...");
@@ -54,6 +55,7 @@ public class PaniniGrill : MonoBehaviour
 
             // unparent from grill
             wrap.transform.SetParent(null);
+            wrap.transform.localScale = new Vector3(0.2615956f, 0.5682309f, 0.1921981f); //reset scale
 
             // re-enable physics
             Rigidbody rb = wrap.GetComponent<Rigidbody>();

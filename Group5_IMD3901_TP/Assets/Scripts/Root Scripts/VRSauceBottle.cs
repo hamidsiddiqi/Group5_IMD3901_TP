@@ -10,7 +10,7 @@ public class VRSauceBottle : MonoBehaviour
     public InputActionReference triggerAction; // drag in the trigger input action
 
     private XRGrabInteractable grabInteractable;
-    private bool isGrabbed = false;
+    public bool isGrabbed = false;
 
     void Start()
     {

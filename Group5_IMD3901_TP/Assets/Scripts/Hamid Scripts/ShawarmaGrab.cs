@@ -18,6 +18,12 @@ public class ShawarmaGrab : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.tKey.wasPressedThisFrame)
         {
+            //dont wrap if player is holding sauce bottle
+            var sauceBottles = FindObjectsByType<VRSauceBottle>(FindObjectsSortMode.None);
+            foreach (var bottle in sauceBottles)
+            {
+                if (bottle.isGrabbed) return;
+            }
             Transform activePlayer = (vrPlayer != null && vrPlayer.gameObject.activeInHierarchy) ? vrPlayer : player;
             float distance = Vector3.Distance(activePlayer.position, transform.position);
             Debug.Log("Pita: " + gameObject.name + " Distance: " + distance + " wrapDistance: " + wrapDistance);

@@ -59,6 +59,12 @@ public class PlayerInteraction : MonoBehaviour
                             {
                                 hit.collider.GetComponent<CustomerMovement>().giveOrder(hand.objInHand);
                                 hand.objInHand.SetActive(false);
+
+                                //clear grill reference if this wrap was on the grill
+                                PaniniGrill nearbyGrill = GetNearestGrill();
+                                if (nearbyGrill != null && nearbyGrill.currentWrap == hand.objInHand)
+                                    nearbyGrill.currentWrap = null;
+
                                 Destroy(hand.objInHand);
                                 hand.objInHand=null;
                                 hand.isHolding = false;
