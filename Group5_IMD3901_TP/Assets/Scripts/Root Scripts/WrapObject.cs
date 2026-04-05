@@ -14,7 +14,6 @@ public class WrapObject : MonoBehaviour
     public int beef;
     public int garlic;
     public int hotSauce;
-    public bool isGrilled=true;
     
     void OnTriggerEnter(Collider collider)
     {
@@ -77,44 +76,82 @@ public class WrapObject : MonoBehaviour
         if (collider.gameObject.tag == "onions")
         {
             onions -= 1;
+            if (onions < 0)
+            {
+                onions = 0;
+            }
         }
         else if (collider.gameObject.tag == "pickle")
         {
             pickles -= 1;
+            if (pickles < 0)
+            {
+                pickles = 0;
+            }
         }
         else if (collider.gameObject.tag == "tomatoes")
         {
             tomatoes -= 1;
+            if (tomatoes < 0)
+            {
+                tomatoes = 0;
+            }
         }
         else if (collider.gameObject.tag == "fries")
         {
             fries -= 1;
+            if (fries < 0)
+            {
+                fries = 0;
+            }
         }
         else if (collider.gameObject.tag == "lettuce")
         {
             lettuce -= 1;
+            if (lettuce < 0)
+            {
+                lettuce = 0;
+            }
         }
         else if (collider.gameObject.tag == "chicken")
         {
             chicken -= 1;
+            if (chicken < 0)
+            {
+                chicken = 0;
+            }
         }
         else if (collider.gameObject.tag == "beef")
         {
             beef -= 1;
+            if (beef < 0)
+            {
+                beef= 0;
+            }
         }
         else if (collider.gameObject.tag == "garlic")
         {
             garlic -= 1;
+            if (garlic < 0)
+            {
+                garlic = 0;
+            }
         }
         else if (collider.gameObject.tag == "hotSauce")
         {
             hotSauce -= 1;
+            if (hotSauce < 0)
+            {
+                hotSauce = 0;
+            }
         }
         else
         {
+            Debug.Log(collider.gameObject.tag);
             return;
         }
         //unparent it
+
         collider.transform.SetParent(null);
 
     }
@@ -138,7 +175,6 @@ public class WrapObject : MonoBehaviour
                 }
                 
             }
-            Debug.Log("leave table");
         }
     }
 
@@ -161,8 +197,6 @@ public class WrapObject : MonoBehaviour
                     }
                 }
             }
-
-            Debug.Log("enter table");
         }
     }
 

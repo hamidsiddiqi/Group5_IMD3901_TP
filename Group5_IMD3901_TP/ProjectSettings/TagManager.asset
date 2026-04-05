@@ -28,9 +28,9 @@ TagManager:
   - chicken
   - beef
   - garlic
-  - hotSauce
   - locator
   - knife
+  - hotSauce
   layers:
   - Default
   - TransparentFX

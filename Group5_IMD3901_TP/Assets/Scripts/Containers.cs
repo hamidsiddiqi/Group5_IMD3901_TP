@@ -39,22 +39,22 @@ public class Containers : MonoBehaviour
                 GameObject replace = Instantiate(fries, location, Quaternion.identity);
                 replace.transform.parent = transform.parent.transform;
             }
-            if (collider.tag == "onions")
+            else if (collider.tag == "onions")
             {
                 GameObject replace = Instantiate(onion, location, Quaternion.identity);
                 replace.transform.parent = transform.parent.transform;
             }
-            if (collider.tag == "lettuce")
+            else if (collider.tag == "lettuce")
             {
                 GameObject replace = Instantiate(lettuce, location, Quaternion.identity);
                 replace.transform.parent = transform.parent.transform;
             }
-            if (collider.tag == "tomatoes")
+            else if (collider.tag == "tomatoes")
             {
                 GameObject replace = Instantiate(tomato, location, Quaternion.identity);
                 replace.transform.parent = transform.parent.transform;
             }
-            if (collider.tag == "pickle")
+            else if (collider.tag == "pickle")
             {
                 GameObject replace = Instantiate(pickle, location, Quaternion.identity);
                 replace.transform.parent = transform.parent.transform;

@@ -153,12 +153,14 @@ public class CustomerMovement : MonoBehaviour
             }
             else if (curMove == 4)
             {
-                nextPlayer.isMove = true;
+                if (nextPlayer != null)
+                {
+                    nextPlayer.isMove = true;
+                }
                 gameObject.SetActive(false);
             }
             else
             {
-                Debug.Log("is it here?");
                 isMove = false;
             }
         }
@@ -206,13 +208,14 @@ public class CustomerMovement : MonoBehaviour
                             {
                                 if (wrap.beef == beef)
                                 {
-                                    if(wrap.garlic == garlic)
+                                    if(wrap.garlic >= garlic)
                                     {
-                                        if(wrap.hotSauce == hotSauce)
+                                        if(wrap.hotSauce >= hotSauce)
                                         {
-                                            if(wrap.isGrilled == true)
+                                            if(wrap.isCooked == true)
                                             {
                                                 Debug.Log("thats all correct");
+                                                order.SetActive(false);
                                                 Results.CustomersServed++; 
                                                 Results.Money += 10;
                                                 chaChing.Play();
