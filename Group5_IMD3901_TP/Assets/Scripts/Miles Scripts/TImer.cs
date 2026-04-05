@@ -69,6 +69,7 @@ public class TImer : MonoBehaviour
             }
             else
             {
+                VRInstructions.SetActive(false);
                 DesktopInstructions.SetActive(true);
             }
 

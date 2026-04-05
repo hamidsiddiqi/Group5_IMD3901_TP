@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
             desktopplayer.SetActive(false);
             vrPlayer.SetActive(true);
         }
+        else
+        {
+            desktopplayer.SetActive(true);
+            vrPlayer.SetActive(false);
+        }
 
     }
 
