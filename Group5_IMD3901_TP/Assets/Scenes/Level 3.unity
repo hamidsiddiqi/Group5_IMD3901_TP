@@ -1681,6 +1681,10 @@ MonoBehaviour:
   hello: {fileID: 115984663}
   thanks: {fileID: 115984662}
   bark: {fileID: 115984664}
+  chaChing: {fileID: 0}
+  time: {fileID: 0}
+  wrongOrder: 0
+  currentMoney: 0
   nextPlayer: {fileID: 0}
 --- !u!82 &115984662
 AudioSource:
@@ -3963,7 +3967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906654267018565830, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4472675862127118614, guid: 07987bbcb4d236d44a9b298bc2dbae34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7466,6 +7470,10 @@ MonoBehaviour:
   hello: {fileID: 0}
   thanks: {fileID: 0}
   bark: {fileID: 0}
+  chaChing: {fileID: 0}
+  time: {fileID: 0}
+  wrongOrder: 0
+  currentMoney: 0
   nextPlayer: {fileID: 0}
 --- !u!65 &526605805
 BoxCollider:
@@ -8357,7 +8365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &594732761
 Transform:
   m_ObjectHideFlags: 0
@@ -21018,7 +21026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1601209305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21129,9 +21137,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1918807217}
   time: 10
+  orignalTime: 0
   effect: {fileID: 632040565}
   isActive: 0
+  start: 0
   circTime: {fileID: 1601209311}
+  moneyText: {fileID: 0}
+  DesktopInstructions: {fileID: 0}
+  VRInstructions: {fileID: 0}
+  vrTriggerAction: {fileID: 0}
 --- !u!114 &1601209311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21146,6 +21160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radialProgressBar: {fileID: 632040567}
   time: 10
+  DesktopInstructions: {fileID: 0}
+  VRInstructions: {fileID: 0}
 --- !u!4 &1601460279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5684037718020540643, guid: db490d86564c0ba409d5da2b96047fec, type: 3}
@@ -30620,6 +30636,10 @@ MonoBehaviour:
   hello: {fileID: 0}
   thanks: {fileID: 0}
   bark: {fileID: 0}
+  chaChing: {fileID: 0}
+  time: {fileID: 0}
+  wrongOrder: 0
+  currentMoney: 0
   nextPlayer: {fileID: 0}
 --- !u!1001 &4076373132453853606
 PrefabInstance:
