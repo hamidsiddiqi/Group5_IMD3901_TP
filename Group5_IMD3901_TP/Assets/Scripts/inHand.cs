@@ -123,7 +123,7 @@ public class inHand : MonoBehaviour
 
         if (newObject.CompareTag("knife"))
         {
-            objInHand.transform.localRotation = Quaternion.Euler(270f, 0f, 180f);
+            objInHand.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         }
         if (newObject.CompareTag("wrap"))
         {
