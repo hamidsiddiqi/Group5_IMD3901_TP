@@ -1,6 +1,10 @@
-using UnityEditor.Rendering;
+
 using UnityEngine;
 using UnityEngine.UIElements;
+
+#if UNITY_EDITOR
+using UnityEditor.Rendering;
+#endif
 
 public class inHand : MonoBehaviour
 {

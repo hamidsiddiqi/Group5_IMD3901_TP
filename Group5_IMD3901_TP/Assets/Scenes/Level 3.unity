@@ -10667,15 +10667,15 @@ RectTransform:
   m_GameObject: {fileID: 726232652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -357}
-  m_LocalScale: {x: 2.0633876, y: 3.8697133, z: 0.73203456}
+  m_LocalScale: {x: 3.9578855, y: 7.422688, z: 1.4041517}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2135498867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 315.57385, y: -91}
-  m_SizeDelta: {x: 77.2936, y: 74.7508}
+  m_AnchoredPosition: {x: 693, y: 67}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &727590864 stripped
 Transform:
@@ -22067,8 +22067,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 845867956}
-  time: 200
-  orignalTime: 200
+  time: 230
+  orignalTime: 230
   effect: {fileID: 404597606}
   isActive: 1
   start: 1
@@ -22090,7 +22090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radialProgressBar: {fileID: 404597608}
-  time: 200
+  time: 230
   DesktopInstructions: {fileID: 1156780206}
   VRInstructions: {fileID: 678652074}
 --- !u!4 &1601460279 stripped

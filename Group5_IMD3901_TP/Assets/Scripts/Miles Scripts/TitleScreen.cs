@@ -1,10 +1,12 @@
 using System.Collections;
 using TMPro;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor.Experimental.GraphView;
+#endif
 
 
 public class TitleScreen : MonoBehaviour
@@ -41,6 +43,9 @@ public class TitleScreen : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+
+
         credits.SetActive(false);
         settings.SetActive(false);
         LevelSelect.SetActive(false);
@@ -97,7 +102,11 @@ public class TitleScreen : MonoBehaviour
     {
         pressedSound.Play();
         Application.Quit();
-     EditorApplication.isPlaying = false;
+
+    #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+    #endif
+
     }
 
     public void grow(TextMeshProUGUI hoverBut)
