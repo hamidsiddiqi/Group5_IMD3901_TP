@@ -4,6 +4,7 @@ public class SauceBottle : MonoBehaviour
 {
     public Color sauceColor = Color.red;
     public GameObject sauceSplatPrefab;
+    public AudioSource squirtSound;
 
     public void ApplySauce(GameObject wrap, RaycastHit hit)
     {
@@ -14,6 +15,8 @@ public class SauceBottle : MonoBehaviour
             GameObject splat = Instantiate(sauceSplatPrefab, spawnPos, rotation);
             splat.transform.parent = wrap.transform;
             splat.GetComponent<SpriteRenderer>().color = sauceColor;
+
+            if (squirtSound != null) squirtSound.Play();
         }
         else
         {
