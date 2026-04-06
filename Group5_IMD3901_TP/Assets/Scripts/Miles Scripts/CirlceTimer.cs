@@ -68,15 +68,15 @@ public class CirlceTimer : MonoBehaviour
     void Update()
     {
 
-        //if (SceneManager.GetActiveScene().name == "Level 1")
-        //{
-        //    if (Keyboard.current.xKey.wasPressedThisFrame)
-        //    {
-        //        //ActivateCountdown(time);
-        //        DesktopInstructions.SetActive(false);
-        //        VRInstructions.SetActive(false);
-        //    }
-        //}
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            if (Keyboard.current.xKey.wasPressedThisFrame)
+            {
+                ActivateCountdown(time);
+                DesktopInstructions.SetActive(false);
+                VRInstructions.SetActive(false);
+            }
+        }
 
         if (isActive)
         {
