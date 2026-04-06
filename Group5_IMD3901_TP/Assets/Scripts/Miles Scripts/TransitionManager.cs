@@ -43,6 +43,7 @@ public class TransitionManager : MonoBehaviour
                     SceneManager.LoadScene("Level 1");
                     break;
                 case "2":
+
                     SceneManager.LoadScene("Level 2");
                     break;
                 case "3":
@@ -55,7 +56,12 @@ public class TransitionManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        transitioning = false;
+
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            startScene();
+        }
     }
 
     // Update is called once per frame
@@ -64,11 +70,11 @@ public class TransitionManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3" && transitioning == false)
         {
-           // Debug.Log("Transitioning");
+           //Debug.Log("Transitioning");
             transitioning = true;
             _startingSceneTransition.SetActive(true);
 
-            //DisableStartingSceneTransition();
+            DisableStartingSceneTransition();
             StartCoroutine(WaitSec());
             _EndingSceneTransition.SetActive(false);
         }

@@ -1649,6 +1649,7 @@ MonoBehaviour:
   wrongOrder: 0
   currentMoney: 0
   nextPlayer: {fileID: 0}
+  tra: {fileID: 2132311439}
 --- !u!82 &115984662
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29218,6 +29219,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8360831198068156873, guid: 37c2a878cc1d6434fb166f3db55c6f67, type: 3}
   m_PrefabInstance: {fileID: 2030176826}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2132311439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5188626673600940097, guid: 37c2a878cc1d6434fb166f3db55c6f67, type: 3}
+  m_PrefabInstance: {fileID: 2030176826}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2d7fbb730b84949a22cb4e0ae9138e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2134269091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1637769519704645201, guid: ec09213133ed9524b9657f080d26c7b6, type: 3}

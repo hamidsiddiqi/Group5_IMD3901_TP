@@ -44,9 +44,15 @@ public class CustomerMovement : MonoBehaviour
 
     public CustomerMovement nextPlayer;
 
+    public TransitionManager tra; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        //tra.playGame("2");
+
+
         if (orderNum == 0)
         {
             startCust();
@@ -178,7 +184,8 @@ public class CustomerMovement : MonoBehaviour
                     switch (SceneManager.GetActiveScene().name)
                     {
                         case "Level 1":
-                            SceneManager.LoadScene("Level 2");
+                            tra.playGame("2");
+                            //SceneManager.LoadScene("Level 2");
                             break;
                         case "Level 2":
                             SceneManager.LoadScene("Level 3");
