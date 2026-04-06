@@ -83,11 +83,11 @@ public class CustomerMovement : MonoBehaviour
         }
 
         // chagnes from level 1 to level 2 when the customer recives the shawarma
-        if (curMove == 4 && SceneManager.GetActiveScene().name == "Level 1")
-        {
+        //if (curMove == 4 && SceneManager.GetActiveScene().name == "Level 1")
+        //{
             
-                SceneManager.LoadScene("Level 2");
-        }
+        //        SceneManager.LoadScene("Level 2");
+        //}
 
     }
 
@@ -173,12 +173,27 @@ public class CustomerMovement : MonoBehaviour
                 {
                     nextPlayer.startCust();
                 }
-
-                //reset all the positions
-                for (int i = 0; i < moves.Length; i++)
+                else
                 {
-                    moves[i].SetActive(true);
+                    switch (SceneManager.GetActiveScene().name)
+                    {
+                        case "Level 1":
+                            SceneManager.LoadScene("Level 2");
+                            break;
+                        case "Level 2":
+                            SceneManager.LoadScene("Level 3");
+                            break;
+                        case "Level 3":
+                            SceneManager.LoadScene("Results");
+                            break;
+                    }
                 }
+
+                    //reset all the positions
+                    for (int i = 0; i < moves.Length; i++)
+                    {
+                        moves[i].SetActive(true);
+                    }
 
                 gameObject.SetActive(false);
             }
